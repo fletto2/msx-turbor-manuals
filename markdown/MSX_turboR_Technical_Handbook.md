@@ -497,8 +497,6 @@ XX: Included in the previous specification, but deleted in the turbo R specifica
 
 Though not listed in this table, turbo R’s speed adjustment may affect PSG, joystick, mouse, printer, keyboard, and clock (battery backup).
 
-This English translation aims to preserve the original technical details and structure of the Japanese text.
-
 22                                                            Chapter 1  MSX turbo R
 
 The operation of the clock IC should be performed via the BIOS.
@@ -908,8 +906,6 @@ Similarly, in the next List 1.3, it's a source list of the "GAMEBOOT.COM" progra
 First, the program is disassembled and a message is displayed, indicating that the disk is exchanged. Next, the boot sector of the replaced disk is read and executed. The environment at that time is the same as when boot sectors are copied twice in the usual way, and the first page contains DOS in ROM, while the other page contains RAM, with the character program being set to RAM.
 
 Additionally, to save the pointer of the error handling program and DOS working area ("3238H area") in the HL register, the program switches pages from RAM to DOS in ROM, and sets the DE register to the location of the program ("3688H area").
-
-This translation preserves the technical details and structure as presented in the original text.
 
 Chapter 1: MSX turbo R
 
@@ -2208,8 +2204,6 @@ Next, if the Kanji driver is invoked from an interrupt call, the contents of reg
 Chapter 4
 V9958 VDP
 
-**Translation:**
-
 --- Page 82 | Chapter 4: V9958 VDP ---
 
 From sections 1 to 4 of this chapter, the editor has recompiled the "V9938 MSX-VIDEO Technical Data Book" and "V9958 Specifications." The common functions of the V9938 and V9958 are described here, so please refer to sources like "MSX-Datapack."
@@ -2232,8 +2226,6 @@ Hardware documentation like the "V9958 Specifications" commonly explains the "VD
 | GRAPHIC 5  | SCREEN 6                     |
 | GRAPHIC 6  | SCREEN 7                     |
 | GRAPHIC 7  | SCREEN 8 (SCREEN 10 ~ 12)    |
-
-(End of translation)
 
 4.1 V9958 Register List
 
@@ -2485,8 +2477,6 @@ K = G - Y
 ```
 
 (Editorial note) The value of Y is an integer from 0 to 31 if there are no attributes. If there are attributes, it is an even number from 0 to 30. The values of J and K are integers from -32 to 31. Conversion results from YJK to RGB are clipped to values 0 to 31.
-
-These translations include the necessary mathematical expressions and data tables as well.
 
 "4.3  V9958 Abolished Functions
 
@@ -2777,8 +2767,6 @@ When the page is 0 and 1, set display pages to 1 and 2, and when 2 and 3, set di
 
 Also, if bit 1 of register 25 is set to 1, 8 dots at the edge of the screen (16 dots in SCREEN6) are invalid, and the border color of the screen will be displayed there. This horizontal scroll is especially useful when horizontally scrolling data on one screen, as the part that overflows from the screen appears immediately from the opposite side. Refer to the program example of horizontal scroll in listing 4.1 (which is twice the screen horizontal scroll) for reference.
 
-(Note: some technical terms are kept as they are for accuracy.)
-
 LIST 4.1 (HSCROLL.BAS)
 
 ```
@@ -2959,8 +2947,6 @@ XX:YY=Y:RETURN
 410 SCREEN 0:COLOR 15,4,7:END
 ```
 
-(Note: `#` represents a special character in this translation that could not be properly rendered.)
-
 **4.6 Decoding the YJK Method**
 
 List 4.3 (YJK2.BAS)
@@ -3046,8 +3032,6 @@ LINE(0, Y0)–(255, Y0 +127), (Y XOR YY)*8, BF, XOR
 
 Meaning, Y represents the destination Y value, while YY keeps the original Y value.
 When specifying a logical operation (bitwise operation) with the LINE command, the result of writing the two values calculated will be written to video RAM. If it is SCREEN 12, 
-
-This translation maintains the terminology and structure of the original text as much as possible while ensuring it is clear and understandable in English.
 
 4.6 Controlling the YJK Method
 
@@ -3220,8 +3204,6 @@ When displaying computer screens, the composition resembles Figure 4.8, but in t
 This method is known as "interlace," a way of describing screen display methods. In fact, this is widely used in television broadcasting. First, the odd-numbered scanning lines of the screen are displayed, such as lines 1, 3, 5, etc., as shown in Figure 4.8. After that, the even-numbered scanning lines like 2, 4, 6, etc. are displayed. In the current TV system, scanning lines are divided to display 212, 213, 214 lines in sequence. By displaying in this "interlace" way with reduced visible scanning lines in every other execution, extra flicker due to video line gaps is significantly reduced. As shown in Figure 4.9, this even and odd line-by-line display method known as the "interlace system" is applied.
 
 In conclusion, considering the nature of the television broadcast adopting this interlace way, the discussion is essential regarding how television broadcasting adopts the interlace system.
-
-Note: This is a literal translation and might not fully capture specialized terminology or contextual meanings.
 
 "Figure 4.9: This is what happens in interlace mode
 
@@ -3934,8 +3916,6 @@ Furthermore, by using a device called a "Spectrum Analyzer (sometimes abbreviate
 
 Generally, the most basic sound is called a "pure tone," represented as a sine wave shape. This tone contains only a single frequency component of the sound. Other examples include "square waves," which contain multiple components of the basic frequency, such as 440Hz, 1320Hz, and 2200Hz.
 
-Note: For full and precise scientific and technical understanding, cross-referencing with the original text or related technical manuals is encouraged, as translation may sometimes simplify technical nuances.
-
 5.1 What is FM sound generation?
 
 Including the tones of musical instruments, the shape of the sound waves of actual musical instruments is close to the short rectangular waves of a clarinet. Next is something similar to a sawtooth wave. This includes sound waves with harmonics that are similar to the characteristics of stringed instruments. The analog synthesizer creates sounds that mimic real musical instruments by processing these sawtooth waves. Now, the sounds of percussion instruments, especially snare drums, differ significantly as their waves are closer to noise (irregular signals). When viewed on a spectrum analyzer, the partial tones in a broad frequency range can be seen.
@@ -4205,8 +4185,6 @@ List 5.4 (FMLIB.H)
 ```
 extern char fmopen(); /* please call this first */
 extern VOID fmclose(); /* please call this last */
-
-This is a rough and straightforward translation of the given Japanese text.
 
 Page 142
 Chapter 5: MSX-MUSIC
@@ -4656,8 +4634,6 @@ With this approach, an assembler like MSX-DOS's assembler (M80) can automaticall
 
 However, this program cannot be directly used as is. In a BASIC context where the PLAY statement is used, using a music macro language would be more appropriate.
 
-This translation should capture the essence of the technical details from the original Japanese text.
-
 # Chapter 5: MSX-MUSIC
 
 (MML) is necessary to convert to FM-BIOS sound source data.
@@ -4734,8 +4710,6 @@ First, designate the type of percussion, and then next, specify the length for e
     0001BSTCH
 
 This specifies the type of percussion, and the next byte indicates length (up to 255). If the length is over 255, first write 255, then the actual length from the next step.
-
-Note: This translation aims to keep the technical terminology and context intact for better comprehension.
 
 Page 154  
 
@@ -5291,8 +5265,6 @@ Mnemonic | Operation | flags | Opcode | Hex | BC
 | ss bc de hl sp | 
 |00 01 10 11 |
 
-Note: The contents within the table columns have been translated as closely as possible given the context of electronic component nomenclature.
-
 A.4 Exchange Instructions
 
 | Mnemonic | Instruction Operation | flags | Opcode |
@@ -5567,8 +5539,6 @@ Table Headings:
 | clr b,\[iy+d\]           | \[iy+d\]\^(b)←0        | · · · · · · · ·      |                      | FD  | 4 7|
 |                           |                       |                       |                      | CB  |    |
 
-Note: Some symbols such as \( \stackrel{x} \)  may not translate perfectly; correct representations depend on the original context or specific implementation details.
-
 A.14 Rotate Instructions                                                       179
 
 A.14  Rotate Instructions
@@ -5762,8 +5732,6 @@ Note: Some symbols may not display precisely due to font limitations.
 Note:
 *1. If b = 1, the value is 1; otherwise, it is 0.
 *2. The contents of [c] and the flags change according to the port indicated by the register, but the contents are not stored anywhere.
-
-The table continues with similar command structures, flags, and opcodes, but the main structure and key points should be clear from this partial translation. 
 
 This text appears to be part of a technical manual, likely for assembly language or machine code instructions for some kind of processor or microcontroller.
 
