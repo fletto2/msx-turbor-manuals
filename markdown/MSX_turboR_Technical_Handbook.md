@@ -1,10 +1,6 @@
 # MSX turboR Technical Hand Book
 
-*English translation from the Japanese original — 201 pages.*
-
----
-
-## msx_-000001
+*English translation from the Japanese original*
 
 The Japanese text on the image translates to:
 
@@ -14,39 +10,19 @@ ASCII Publishing Bureau"
 
 The English title on the book is "MSX turbo R Technical Hand Book".
 
----
-
-## msx_-000002
-
 *(Blank page in the original.)*
-
----
-
-## msx_-000003
 
 MSX turbo R Technical Hand Book
 
 ASCII Publishing Bureau
 
----
-
-## msx_-000004
-
 *(Blank page in the original.)*
-
----
-
-## msx_-000005
 
 **MSX turbo R Technical Hand Book**
 
 At the bottom of the page:
 
 **ASCII Publishing Bureau**
-
----
-
-## msx_-000006
 
 - MSX, MSX-DOS are trademarks of ASCII.
 - MS-DOS is a trademark of Microsoft Corporation.
@@ -55,12 +31,6 @@ At the bottom of the page:
 - MicroTeX is a trademark of Addison-Wesley Publishing Company.
 - Other names used in this book, such as CPU names, system names, and product names, are generally trademarks of their respective manufacturers.
   Please note that TM and © marks are not specified in the text.
-
----
-
-## msx_-000007
-
----
 
 **Preface**
 
@@ -72,24 +42,12 @@ While the diagrams excluding the first page and inner part were roughly sketched
 
 To keep the content concise this time, there are no notes on memory mappers related to "Japanese MSX-DOS2." This will be explained in the "Japanese MSX-DOS2 Technical Handbook (provisional title)," which is scheduled to be published soon.
 
----
-
----
-
-## msx_-000008
-
 * MSX, MSX-DOS is a trademark of ASCII Corporation.
 * MS-DOS is a trademark of Microsoft Corporation.
 * OS-9 is a trademark of Microware System Corporation.
 * TeX is a trademark of American Mathematical Society.
 * MicroTEX is a trademark of Addison-Wesley Publishing Company.
 * The various CPUs, systems, and products mentioned in this manual are also trademarks of their respective owners. Note that in the text, the TM and © marks are not specified.
-
----
-
-## msx_-000009
-
----
 
 **Introduction**
 
@@ -113,27 +71,13 @@ Thus, the MSX turbo R, equipped with both the new R800 and the conventional Z80,
 
 The MSX turbo R is designed to meet the expectations and needs of MSX users by providing superior performance on top of the conventional MSX.
 
----
-
----
-
-## msx_-000010
-
----
 Just by running it on the MSX turbo R as is, you can achieve several times the performance improvement. Also, the knowledge necessary to develop software can be utilized as it is, but by utilizing the young know-how that we introduce in this book, you can pull out even more of the machine's performance and realize a system that boasts overwhelming cost performance.
 
 Systems Business Division 1, Product Integration Department, Integration Department Manager, Ryozo Yamashita
 
----
-
 Note:
 1. *For MSX commercial software, running it on the R800 may result in slower speeds and unstable operations, as there are cases where the Z80 is automatically used for processing and the intended speed may not be achieved.*
 
----
-
-## msx_-000011
-
----
 Table of Contents
 
 1. MSX turbo R ..................................................................................................................................... 15
@@ -164,13 +108,6 @@ Table of Contents
 2. SLOT .......................................................................................................................................  47
   2.1 What is a slot ................................................................................................................... 48
 
----
-
----
-
-## msx_-000012
-
----
 Contents
 
 2.1.1 How is the CPU connected to memory? .............48
@@ -209,17 +146,8 @@ Contents
 4.2.3 Command .........................................87
 4.2.4 Display in YJK mode .............................87
 4.3 Ban function of V9958 .............................89
----
 
 This translation covers the text in the table of contents provided on the image.
-
----
-
-## msx_-000013
-
----
-
-9
 
 Contents
 
@@ -259,10 +187,6 @@ Contents
 5.1.3  What is Operator Averaging? ............................................... 134
 5.1.4  Analyze MSX-MUSIC ......................................................... 135
 5.1.5  Challenge Creating a Score Using FM Sound Source .................. 137
-
----
-
-## msx_-000014
 
 10       Table of Contents
 
@@ -312,10 +236,6 @@ A        R800 Instruction Table ................................................
   A.19   CPU control command ........................................................ 186
 ```
 
----
-
-## msx_-000015
-
 I. Table of Contents
 
 1.1 Configuration of the MSX turbo R system ...................... 17
@@ -346,11 +266,6 @@ I. Table of Contents
 4.9 This is what happens in interlace mode! .................... 112
 4.10 The principle of load cutting is ......................... 114
 
----
-
-## msx_-000016
-
----
 Table of Contents
 
 4.11 Procedure for Raster Line Slicing ............................ 115
@@ -365,13 +280,7 @@ Table of Contents
 5.4 Drum Tone Data .................................................... 153
 5.5 Tone Data ............................................................. 157
 5.6 List of OPLL Registers ............................................ 161
----
 
----
-
-## msx_-000017
-
----
 **Table of Contents**
 
 1.1  I/O Map of MSX turbo R ........................ 21  
@@ -403,11 +312,6 @@ Table of Contents
 5.1  Comparison of Performance of Electronic Instruments ........ 131  
 5.2  Relationship between Pitch and Frequency .......... 134
 
----
-
-## msx_-000018
-
----
 Contents
 
 5.3 List of Tones that Can Be Set with MSX-Music .................. 135
@@ -418,18 +322,8 @@ Contents
 5.8 Example of Instrument Data ....................................... 155
 5.9 List of Preset Data ....................................................... 163
 
----
-
-## msx_-000019
-
 Chapter 1
 MSX turbo R
-
----
-
-## msx_-000020
-
----
 
 This chapter is a re-edited compilation of articles from the MSX Magazine, November 1990 issue and December 1990 issue, "MSX Turbo R: Technical & Analysis" and "PCM Limit Usage."
 
@@ -453,14 +347,6 @@ The hardware configuration of the MSX Turbo R (hereinafter referred to as Turbo 
 
 The performance of this new hardware is comparably superior to the recently developed 16-bit CPU V30 (the NEC-developed 16-bit CPU). The performance transformation is also included in ROM, and by keeping the RAM and device capacity optimized, the traditional MSX design philosophy has been carried forward. For now, Turbo R hardware will be evaluated as "aiming to be a practical system," unlike the latest notebook PCs.
 
----
-
----
-
-## msx_-000021
-
----
-
 1.1 MSX turbo R Hardware
 
 Figure 1.1: MSX turbo R System Configuration
@@ -478,12 +364,6 @@ The “273” below it, is a driver for controlling the printer.
 Additionally, "SRAM" is memory for saving results of kanji learning without turning off the power, but as far as write cycle characteristics are concerned, it has a vendor-specific optional feature to prevent errors.
 As for R800 and main RAM, the S1990 is the key, and it’s involved (not shown in the figure, it’s connected to S1990).
 For example, when using R800's VDP, it temporarily suspends S1990 signals, and if further necessary, temporarily suspends R800's specific signals and operates in sync with Z80's signal timing or performs this operation. The S1990 suspends R800 signals based on the central memory mapping processing.
-
----
-
----
-
-## msx_-000022
 
 Page 18 - Chapter 1 MSX Turbo R
 
@@ -503,11 +383,6 @@ Instead of needing 4 ROMs of 32 kilobytes or 1 ROM of 128 kilobytes, simplifying
 
 Since both the primary ROM is connected to D8H and sub ROM connected to D9H slots are visible as single ROM, it simplifies ROM management. Thus, combining primary, DOS (consisting of MSX-DOS2 with 48 kilobytes), and various segments occupies slot 3-2, interchanging between 16-kilobyte space, effectively managing internal storage.
 
----
-
-## msx_-000023
-
----
 **1.1 MSX turbo R Hardware**
 
 **Fig 1.2: ROM Structure Changes in MSX turbo R**
@@ -532,8 +407,6 @@ Since both the primary ROM is connected to D8H and sub ROM connected to D9H slot
 
 The connections have been replaced.
 
----
-
 **1.1.5 System Timer to Adjust Speed**
 
 When using R800 and V9958 (an LSI that controls the display) at intervals of 8 microseconds or less, the R800 waits automatically upon receiving an interrupt from the VDP interface circuit built into the S1990. This prevents the V9958 from malfunctioning due to the CPU being too fast. However, other LSIs do not have automatic wait functions, so software self-adjustment timing is required. Many traditional software use:
@@ -545,10 +418,6 @@ or
 
 PUSH HL
 POP  HL
-
----
-
-## msx_-000024
 
 Though it takes time, there is a method of incorporating complex instruction sequences into the program to obtain accurate timing. However, as explained earlier, the instruction execution time of the R800 is not consistent, so it is impossible to take timings using such a method. Therefore, the turbo R has a "system timer" to accurately take readings. This is a 16-bit counter whose value increments every 3.911 microseconds. The lower byte is assigned to I/O port 0E6H, and the upper byte is assigned to I/O port 0E7H. However, if you try to read the full 16-bit value, the count may change midway and the reading will not be reliable, so use only either the lower-byte or the upper-byte value. Below is an example program that waits for (the value of the B register) x 3.911 microseconds. By using the upper-byte value instead of the lower-byte value and writing the program in the same way, you can wait for (the value of the B register) x 1001.2 microseconds.
 
@@ -580,12 +449,6 @@ WAIT_LOOP:
 The original turbo R documentation did not include an I/O map, so based on information obtained by disassembling and analyzing the hardware, I created an I/O map referring to the MSX2+ I/O map. The remark "add" is used for the I/O ports newly added in the turbo R.
 
 First, the "A/D converter" is an I/O port used to stop a program by a key click while playing back PCM recordings using the BIOS. Another example, "snooze control," is an I/O port used to allow stopping a program with the snooze key during disk operation. These will be explained in detail later.
-
----
-
-## msx_-000025
-
----
 
 **1.1 Hardware of MSX turbo R**
 
@@ -638,13 +501,7 @@ XX: Included in the previous specification, but deleted in the turbo R specifica
 
 Though not listed in this table, turbo R’s speed adjustment may affect PSG, joystick, mouse, printer, keyboard, and clock (battery backup).
 
----
-
 This English translation aims to preserve the original technical details and structure of the Japanese text.
-
----
-
-## msx_-000026
 
 22                                                            Chapter 1  MSX turbo R
 
@@ -667,10 +524,6 @@ The minimum time required for a memory read or write operation is called the "ac
 
 When using the R800 for speed, would it not be better to run programs from RAM rather than ROM? Therefore, the contents of the BIOS, BASIC, sub-ROM, and kanji-driver ROM are transferred (copied) to DRAM (main RAM) for use. This is called "DRAM mode." In this mode, 64 Kbytes of main RAM is detached from the CPU address space, the ROM contents are written into that RAM, and then it is reconnected to the CPU.
 
----
-
-## msx_-000027
-
 1.1 MSX turbo R Hardware                                                      23
 
 From the CPU's point of view, it appears as if an ordinary ROM has been replaced with a high-speed ROM. When executing a program written in BASIC, the ROM containing the BIOS and BASIC interpreter is in use, so the speed of DRAM mode could not be fully utilized. However, when running a machine-language program, especially a DOS program, the time the ROM is used is relatively short. Therefore, rather than using DRAM mode, it may be more advantageous to use the freed-up memory for a RAM disk or the like.
@@ -689,12 +542,6 @@ Also, transferring a ROM-cartridge program to RAM lets it run faster, but with t
 The R800, adopted as the CPU of the turbo R, is a high-speed CPU that is upward software-compatible with the conventional Z80. In other words, software developed for the Z80 can be run as-is at high speed on the R800. As features added to the Z80, it formally provides a 16-bit multiply instruction and instructions for byte access to the IX/IY registers, which were treated as "tricks" on the Z80. The instruction set of the R800 is given later, so please refer to it.
 
 The conventional MSX clock frequency is 3.58 MHz, while the turbo R clock frequency is 7.16 MHz. However, just looking at this it might seem that the speed has doubled, but that is not actually the case. On the R800 the number of clocks required to execute a single instruction is reduced, and furthermore no M1-cycle wait occurs when accessing RAM, so the program execution speed becomes even faster. To achieve the same processing speed as the R800 on a conventional Z80
-
----
-
-## msx_-000028
-
----
 
 To achieve this, the clock frequency is increased to approximately 29 MHz, which results in a significant speed up.
 
@@ -729,12 +576,6 @@ The turbo R also has a memory mapper function, but these functions are not only 
 
 Next, we will explain "DRAM Page Access" in detail. First, this---
 
----
-
-## msx_-000029
-
----
-
 1.1 MSX turbo R Hardware
 
 1.3: Internal Block Diagram of R800
@@ -763,14 +604,6 @@ CPU
     Next, the types of DRAM used when connected to the R800 are listed. The varieties of DRAM that can be used are 256 kilobits (32 kilobytes), 1 megabit (128 kilobytes), 4 megabits (512 kilobytes), etc. The minimum main RAM capacity is 256 kilobytes.
 ```
 
----
-
----
-
-## msx_-000030
-
----
-
 Figure 1.4: Difference in memory access methods between Z80 and R800
 
 Method of memory access with R800:
@@ -780,14 +613,6 @@ Method of conventional memory access:
 \[ \text{Memory cycle time} \approx 280\text{nS} \]
 
 Even with the turbo R, having just two 1-megabit DRAMs is sufficient. The first MSX developed in 1983 used 16-kilobit DRAM chips, totaling 8, yet even that provided ample RAM capacity with 16 kilobytes. Looking back, it's astonishing to think that just two 256-kilobit DRAMs were enough. While the MSX functionality has indeed increased, the size and power consumption of the hardware have decreased. It is noteworthy achievements of the latest Japanese semiconductor technologies that have resulted in the recent emergence of popular notebook computers and the turbo R.
-
----
-
----
-
-## msx_-000031
-
----
 
 1.2 Effective Use of MSX turbo R 
 
@@ -809,15 +634,7 @@ Therefore, to adjust program speed, use something like a "system timer." Additio
 
 Also, although this explanation is about programming and problems, consider that inadequate development materials make developing software challenging.
 
----
-
 Note that some context or specific technical terms might need further clarification by someone with specialized knowledge in this field.
-
----
-
-## msx_-000032
-
----
 
 It is inconvenient that powerful "ICE (in-circuit emulator)" cannot be used for debugging.
 
@@ -843,13 +660,7 @@ Mode
  10  R800 DRAM
 ```
 
----
-
 LED: Always write 0.
-
----
-
-## msx_-000033
 
 1.2 How to Utilize MSX turbo R                                                25
 
@@ -891,24 +702,24 @@ Frequency value
 EHL (Data address)
 DBC (Data length)
 
----
-
-## msx_-000034
-
 30                                                            Chapter 1  MSX turbo R
 
 If bit 7 of the A register is set to 1, data is placed in video RAM, and if set to 0, data is placed in main RAM or PCM sound-source data. Note that the values of the D and E registers are meaningful only when the data is in video RAM.
 
 Bits 1 and 0 of the A register are used to set the sampling frequency. However, 15.75 kHz can be specified only when the turbo R is operating in R800 DRAM mode.
 
+```
 00   15.75 kHz
 01    7.875 kHz
 10    5.25 kHz
 11    3.9375 kHz
+```
 
 Output: Carry flag
+```
 0  Normal completion
 1  Abnormal completion
+```
 ```
    A (Reason for abnormality)
        1  Frequency specification error
@@ -934,12 +745,6 @@ EHL (Data address)
 DBC (Data length)
 
 The settings of bits 7, 1, and 0 of the A register are the same as those explained for PCMPLY. Bits 6 to 3 of the A register specify the "trigger level."
-
----
-
-## msx_-000035
-
----
 
 1.2 Utilizing MSX turbo R
 
@@ -977,14 +782,6 @@ Similarly, "GTPADB" or "NEWPAD" will read the value 8-11 from the register A and
 For altered BIOs, in order to know the version of the MSX used, the contents of the main ROM at address 002DH is accessed, which should be changed to 03H. When developing software for Turbo R, it is important to first ensure that the contents at 002DH are 03H or higher and then program accordingly. Otherwise, MSX2 software should display an alert and stop to prevent errors.
 
 The meaning of the revision in 002DH as 03H is significant as it guarantees future software compatibility for the MSX. Consider it necessary to ensure it is functional at 03H or higher. Generally, it's important to consider the version of hardware and OS.
-
----
-
----
-
-## msx_-000036
-
----
 
 Table 1.3: List of BIOS and BASIC changes in MSX turbo R
 
@@ -1032,12 +829,6 @@ Furthermore, similar to BIOS, BASIC functionalities in turbo R have also been ad
 
 MSX turbo R does not always operate solely on R800 exclusive hardware. When accessing a peripheral slot, there's a wait, and accessing the ROM or internal DRAM is accompanied by paging waits. Therefore, to reduce these waits as much as possible, the program must be created with utmost care. In terms of precautions, please note them succinctly.
 
----
-
-## msx_-000037
-
----
-
 **1.2 Utilizing MSX turbo R**
 
 First of all, transferring the program itself to RAM and then executing it. Software provided by floppy disks will definitely operate in RAM, so there are no issues here. However, attention must be paid to programs supplied in ROM cartridges. By transferring the necessary parts to RAM and then executing from there, considerably high-speed execution becomes possible.
@@ -1064,12 +855,6 @@ Switches to R800 in ROM mode,
 
 CHGCPU 2
 
----
-
----
-
-## msx_-000038
-
 The R800’s DRAM mode or ROM mode can be selected respectively. When explaining the contents of the program, the program checks the contents of memory area 5DH (technically correct, the default PCB area) in the DOS work area, and sets (or reads) values to the A register according to the first letter of the command.
 
 The BIOS at main ROM address 180H has a function called “CHGCPU”.
@@ -1077,8 +862,6 @@ The BIOS at main ROM address 180H has a function called “CHGCPU”.
 Also, to verify the practicality of the program, the DOS version number is checked and processed. Specifically, if the contents of the 2DH address at the DOS work area’s main-ROM is more than 03H, it means it’s turbo R.
 
 It confirms that the machine is turbo R, uses DOS system call 6FH, and ensures that the DOS kernel version number is two or higher.
-
----
 
 List 1.2 (CHGCPU.Z80)
 
@@ -1111,15 +894,7 @@ NOTDOS2:
     ld c,9
 ```
 
----
-
 Note: Comments in the code remain untranslated, as they cover specific technical functions that mostly include constants and labels used for Z80 assembly programming.
-
----
-
-## msx_-000039
-
----
 
 **1.2 How to Utilize MSX turbo R**
 
@@ -1140,16 +915,8 @@ First, the program is disassembled and a message is displayed, indicating that t
 
 Additionally, to save the pointer of the error handling program and DOS working area ("3238H area") in the HL register, the program switches pages from RAM to DOS in ROM, and sets the DE register to the location of the program ("3688H area").
 
----
-
 This translation preserves the technical details and structure as presented in the original text.
 
----
-
-## msx_-000040
-
----
-36
 Chapter 1: MSX turbo R
 
 List 1.3 (GAME.BOOT.Z80)
@@ -1196,19 +963,12 @@ prompt:      db    'Insert game disk in drive A:', 0dh, 0ah
              db    'and press any key $'
 
 end
----
 
----
-
-## msx_-000041
-
----
-
-### 1.3 Making Full Use of PCM to the Limit
+# 1.3 Making Full Use of PCM to the Limit
 
 The new feature added to turbo R is PCM. As a feature that Sensei was particular about applying fully, it is Mr. Koji’s intention to use this feature to the limit. Here, we introduce how to utilize PCM from BASIC to machine language, making full use of its unique qualities, including watermarked sound-data copying.
 
-#### 1.3.1 Basics - How to Use with BASIC
+# 1.3.1 Basics - How to Use with BASIC
 
 First, let's introduce the basic method using BASIC, to start with. 
 PCM converts and memorizes the sound input from a microphone, etc., into digital, then replay it as desired. 
@@ -1230,18 +990,11 @@ setting the screen mode and then recording PCM sound, the data will be displayed
 
 The basic method for PCM recording and reproduction is as described. Also, adjusting the reproduction sampling rate allows for reproduction at various speeds. However, the problem is, when replaying PCM, the processing load on turbo R is quite intense, so adjustments are needed.
 
----
-
----
-
-## msx_-000042
-
----
-
 It becomes difficult, so unfortunately, you cannot do anything else while playing PCM.
 
 List 1.4 (PCM1.BAS)
 
+```
 10 CLEAR100,&H9000
 20 PRINT "Micropower Login System.";
 30 A$=INPUTS(1):PRINT
@@ -1250,12 +1003,13 @@ List 1.4 (PCM1.BAS)
 60 A$=INPUTS(1):PRINT
 70 _PCMPLAY (@&H9000,&HCFFF,0)
 80 GOTO 20
+```
 
 1.3.2 BASIC Commands Related to PCM
 
-#### CALL PCMREC
+**CALL PCMREC**
 
-### Syntax
+**Syntax**
 
 - Recording to main RAM or video RAM:
 
@@ -1273,9 +1027,9 @@ List 1.4 (PCM1.BAS)
 
 Trigger Level: When the recording level exceeds the specified level at the start of recording. The value (between 0-127) starts the recording if the input level exceeds it. If not specified, recording starts immediately. The compression switch is for compressing PCM voice data by 1/2 if set to 1. Setting it to 0 or leaving it blank will record without compression.
 
-#### CALL PCMPLAY
+**CALL PCMPLAY**
 
-### Syntax
+**Syntax**
 
 - Playing from main RAM or video RAM:
 
@@ -1283,14 +1037,6 @@ Trigger Level: When the recording level exceeds the specified level at the start
 - Playing from an array:
 
   CALL PCMSLAY(array_name, [length], sample_rate)
-
----
-
----
-
-## msx_-000043
-
----
 
 1.3 Clever Uses of PCM
 
@@ -1318,12 +1064,6 @@ Here’s the usage of the program:
 2. PCM BEEP Reset
    Restore the BEEP sound to its original state. Execute this command when switching to DOS or DOS2 with "CALL SYSTEM."
 
----
-
----
-
-## msx_-000044
-
 40                                                            Chapter 1  MSX turbo R
 
 3 PCM Data Playback
@@ -1345,6 +1085,7 @@ In addition, simple messages are displayed on screen, so refer to them.
 
 List 1.5 (PCM2.BAS)
 
+```
 10 SCREEN0:WIDTH40:DEFINT A-Z
 20 CLEAR100,&HD800
 30 DEFUSR=&HD800:DEFUSR1=&HD806:DEFUSR2=&HD803
@@ -1369,12 +1110,7 @@ List 1.5 (PCM2.BAS)
 260 PRINT"When using DOS or DOS2, always reset PCM BEEP again."
 270 PRINT"PCM BEEP data is in page 1 (4100H to 60FFH)."
 280 PRINT"Setting B000H or above with the CLEAR command is OK, but memory-disk commands such as CALL MEMINI cannot be used."
-
----
-
-## msx_-000045
-
----
+```
 
 **1.3 PCM utilization method to the limit**
 
@@ -1422,12 +1158,6 @@ Since this is the advanced version, we will introduce a program that can record 
 
 When using BIOS, you can choose between four types of sampling rates: 15.75 kHz, 7.875 kHz, 5.25 kHz, and 3.9375 kHz. One type changes every 63.5 microseconds. This counter value is changed every 3.911 microseconds so the system cannot adjust the counter, and the counter value changes every 3.911 microseconds.
 
----
-
-## msx_-000046
-
----
-
 It is a program introduced here that replaces the timer.
 
 First, let's explain how to use the recording program. HL register contains the starting address of the PCM data to be recorded, BC register contains the size of the data to be recorded, and E register contains the wait count that decides how many system timer ticks to include. Setting this to 16 corresponds to a frequency of 15.75 kHz.
@@ -1472,19 +1202,9 @@ REC1:
     PUSH BC
 ```
 
----
-
----
-
-## msx_-000047
-
 The Japanese text on this image translates to:
 
 "1.3 Efficient Use of PCM Interface Methods"
-
----
-
-## msx_-000048
 
 DEFB 0EDH,70H
 JP M,RECAD7
@@ -1542,10 +1262,6 @@ LD A,C
 OR B              ; end of data?
 JR NZ,PLAY1      ; next data
 
----
-
-## msx_-000049
-
 1.3 Making the Most of PCM (to its limits) — p.45
 
 ```
@@ -1582,10 +1298,6 @@ Table 1.4: I/O Ports for PCM
 
 [Note: Transcribed and translated directly from the source page.]
 
----
-
-## msx_-000050
-
 Table 1.1: I/O ports for PCM
 
 | Address    | bit 7 | bit 6 | bit 5 | bit 4 | bit 3 | bit 2 | bit 1 | bit 0 |
@@ -1603,20 +1315,8 @@ Table 1.1: I/O ports for PCM
 
 [Note: this page is a severely degraded, mirror-flipped scan. The I/O-port table above was recovered from the legible cells and cross-checked against the identical PCM port table  elsewhere in this manual (Table 1.4); it is reliable. The remainder of the page (a faint assembly listing) could not be transcribed at usable fidelity.]
 
----
-
-## msx_-000051
-
 Chapter 2
 SLOT
-
----
-
-## msx_-000052
-
----
-
-48
 
 Chapter 2 SLOT
 
@@ -1640,15 +1340,9 @@ To manage such memory, many microcomputers have separate numbers for each byte i
 
 As mentioned in 2.1, CPU and memory are connected by an "address bus" and a "data bus". The address bus is a signal that specifies the memory address that the CPU wants to read or write, and the CPU sends it to the memory. The data bus is a signal used to send the contents of the memory. It should be noted that the address bus from CPU to memory is unidirectional, whereas the data bus is bidirectional.
 
----
+# 2.1 What is a Slot?
 
-## msx_-000053
-
----
-
-### 2.1 What is a Slot?
-
-#### Figure 2.1: Memory of a Z80 CPU
+**Figure 2.1: Memory of a Z80 CPU**
 
 (Z80 CPU Image Diagram)
 - Address bus: 16 bits
@@ -1677,14 +1371,6 @@ Previously, we talked about MSX being an 8-bit computer. Recently, 16-bit comput
 
 The MSX turbo R has the 16-bit CPU R800. To allow it to connect to the conventional cartridges, it still has an 8-bit data bus.
 
----
-
----
-
-## msx_-000054
-
----
-
 **50**
 
 **Chapter 2: SLOT**
@@ -1707,15 +1393,7 @@ Though this section discusses MSX specifically, these basic concepts apply broad
 
 As mentioned earlier, the 8-bit CPU can handle up to 64 KB of main memory. Since that wasn't enough, the initial 8-bit computers used various methods to handle memory expansion. Nowadays, technology allows for more than 64 KB of memory expansion, and, as explained in section 2.2, MSX allows switching between different 64 KB memory slots, making it possible to use up to 256 KB. Eventually, a system was created allowing the configuration and switching of 4 slots, permitting the maximum use of 256 KB.
 
----
-
----
-
-## msx_-000055
-
----
-
-### 2.1 What are Slots?
+# 2.1 What are Slots?
 This makes it possible to handle more memory. This memory is called the "primary slot" and is assigned to the cartridge slots provided in the machine.
 
 **Fig. 2.2: MSX Slot Configuration (Part 1)**
@@ -1741,14 +1419,6 @@ Additionally, instead of one primary slot, you can use four groups of "expansion
 Now, while you can handle memory beyond 64 kilobytes by switching slots, it is actually difficult to switch the entire memory simultaneously. Therefore, the MSX divides the memory into units called "pages" for management.
 
 The 16 kilobytes of memory from 0000H to 3FFFH are managed as "page 0," the 16 kilobytes from 4000H to 7FFFH as "page 1," and the 16 kilobytes from 8000H to BFFFH as "page 2." Finally, the 16 kilobytes from C000H to FFFFH are page 3. You can select a slot for each page. For example, when processing BASIC disk output commands, you switch page 0 to the BASIC interpreter's ROM, and page 2, which is responsible for text interfaces, to RAM (see Fig. 2.3).
-
----
-
----
-
-## msx_-000056
-
-52
 
 Chapter 2: SLOT
 
@@ -1777,12 +1447,6 @@ The MSX slot is not just used for memory expansion, but also for expanding the M
 
 As mentioned earlier, MSX with a disk interface cartridge equipped has a 16 kilobytes ROM slot in the disk interface. When performing disk output, the memory automatically switches to the disk interface slot ROM. Even if the disk interface is inherently equipped, it programmatically switches if connected via cartridge.
 
----
-
-## msx_-000057
-
----
-
 2.1 What is a slot?
 
 There is no obstacle to its operation.
@@ -1803,13 +1467,6 @@ With the MSX2+, a certain level of standardization was achieved within the slot 
 
 2.4 shows distinguishing features when SLOT 3 is expanded. When the standard slot is used, it divides the BASIC’s main ROM into SLOT 1 and SLOT 2, each functioning as partial cartridge ROMs.
 
----
-
----
-
-## msx_-000058
-
----
 Page 54
 
 Figure 2.4: Example of MSX2+ Slot Configuration (When Expanding Only Slot 3)
@@ -1869,12 +1526,6 @@ Now, for MSX2+ with internal software equivalent to Figure 2.5, and only the mai
 
 In the same manner as described for Figure 2.4, MSX2+ can theoretically hold internal software identical to Figure 2.5.
 
----
-
-## msx_-000059
-
----
-
 2.1 What is a Slot?
 
 Figure 2.5: Example of MSX2+ Slot Configuration (when extending slots 0 and 3)
@@ -1902,12 +1553,6 @@ When communication software, etc., is built into the MSX2+ itself, slots 0 and 3
 
 The external cartridge slot prepared exclusively for the MSX machine (the place to insert regular game cartridges) is a basic slot. Here, by connecting a "slot expander," you can expand to four extension slots. For example, the two*pi slots...
 
----
-
----
-
-## msx_-000060
-
 Page 56
 
 Chapter 2 SLOT
@@ -1918,15 +1563,11 @@ One thing to be aware of is that some cartridges do not work with the expander s
 
 The product name of the slot expander is "MSX Expansion Slot Box - EX-4". It is priced at 29,800 yen (excluding tax) and is available from Nippon Electronics (phone 03-3486-4181). In addition, several MSX manufacturers released slot expanders, but currently, it is almost impossible to obtain them.
 
----
-
-## msx_-000061
-
-### 2.2. Challenge of Slot Switching
+# 2.2. Challenge of Slot Switching
 
 MSX cannot be discussed without addressing the concept of slots. Here, we will center our discussion on how to control software to switch slots and the specification changes in MSX2+.
 
-#### 2.2.1. About Slot Switching
+# 2.2.1. About Slot Switching
 
 Although the significance of slots in MSX has been explained before, the method of switching slots has not been explained. From here on, we will introduce such methods. Of course, it's not about physically switching like a human would do with a switch, but about programmatically switching.
 
@@ -1938,15 +1579,10 @@ If a value is written to the I/O port 0A8H, which is for slot switching, you can
 
 Also, while programs can directly switch slots, it might not be the best or the most fun, but it's crucial for machine operations. In practice, "BIOS" is used for slot switching. BIOS stands for "Basic Input Output System." This is a collection of routines stored in ROM for software management. Let's check the various functions handled by BIOS beyond slot switching as well.
 
-#### 2.2.2. How to Specify Slot Numbers
+# 2.2.2. How to Specify Slot Numbers
 
 When switching slots using BIOS, you need to specify the base slot number and the expanded slot number. Usually, this is sufficient for identifying each slot, but occasionally, there can be confusion due to two CPU-level registers (temporary storage of data inside the CPU). Figure
 
----
-
-## msx_-000062
-
----
 Page 58
 
 2.6 Slot numbers are specified by effectively using each bit of 8 bits (1 byte) to distinguish between primary slots and expansion slots.
@@ -1987,12 +1623,6 @@ A slot number specified in the register A, the address read by the HL register i
 E:  Slot number A
 HL:  Address
 
----
-
----
-
-## msx_-000063
-
 **2.2 Slot Switching and Challenges**
 
 **R**
@@ -2029,12 +1659,6 @@ H Page (upper 2 bits)
 None
 AF, BC, DE, HL
 
----
-
-## msx_-000064
-
----
-
 For example, to switch the page, it's sufficient to set the value in the H register to 80H~BFH. Do not set values outside this range.
 
 CALLF
@@ -2070,28 +1694,13 @@ In summary, the BIOS introduced above has certain limitations. No matter which p
 2.2.4 Method to know the slot structure
 As mentioned earlier, the MSX slot structure varies depending on the machine due to options like Disk Interface. As a result, each machines' slot configuration...
 
----
-
 Note that some sentences were incomplete due to the image cut-off at the bottom.
 
----
-
-## msx_-000065
-
----
 2.2.5 Exploring the System Work Area
 
 There are some game software for MSX2 that, if operated with MSX2+, display the title screen in SCREEN 12. Additionally, despite not having a modem cartridge, there are also ones that attempt to communicate.
 
 [Table Content Omitted for Simplicity]
-
----
-
----
-
-## msx_-000066
-
----
 
 As a result, there are programs that display error messages without exception. To create such software, we will introduce methods to examine the types and features of programs and cards.
 
@@ -2113,18 +1722,13 @@ If no value is defined, it is not a problem. The slot numbers and bit values sho
 
 Although the machine is similar, differences exist in expansion slots. Hence, try with your own machine or on a friend's machine. It is recommended to test on many machines to see the results.
 
----
-
 This translation provided captures the content and context based on the text in the image.
-
----
-
-## msx_-000067
 
 2.2 Slot switching challenge       63
 
 List 2.1 (WHO_AM_I.BAS)
 
+```
 100 ' Analyzing slot structure of MSX
 110 ' by nao-j on 9. Jan. 1989
 120 CLEAR : DEFINT A-Z : CLS
@@ -2173,18 +1777,15 @@ List 2.1 (WHO_AM_I.BAS)
 560 IF (SS AND 128) = 0 THEN 570
 560 PRINT USING " extended slot #"; (SS AND 12) ¥ 4;
 570 PRINT : RETURN
+```
 
 The text mainly includes lines of code and comments from a BASIC program that indicates it analyzes the slot structure of an MSX computer system.
 
----
-
-## msx_-000068
-
-### 2.2.6 MSX2+ Hardware Specifications
+# 2.2.6 MSX2+ Hardware Specifications
 
 For the MSX2+, minor improvements have been added to the hardware. Table 2.2 lists the new specifications and additional I/O ports.
 
-#### Table 2.2: MSX2+ I/O Ports
+**Table 2.2: MSX2+ I/O Ports**
 | I/O Address | Usage                     |
 |-------------|---------------------------|
 | 7CH         | Internal FM Sound Power   |
@@ -2213,10 +1814,6 @@ CALL 17DH
 JP  0
 
 When called during initialization, the ROM cartridge program is:
-
----
-
-## msx_-000069
 
 2.2 Challenging Slot Switching                                                63
 
@@ -2254,21 +1851,8 @@ With I/O port number F5H, the hardware in the device can be enabled or disabled 
 (2) Not yet implemented in the specification.
 (3) Not related to modems.
 
----
-
-## msx_-000070
-
----
 Write" etc., if you try to re-initialize the BIOS by jumping to address 0 in the ROM, there could be confusion.
 Therefore, starting from MSX2, it was standardized so that internal hardware can be disconnected by writing 0. By doing this, utilizing the F4H and F5H ports of the I/O ports and creating basic software for MSX2, compatibility and reliability have improved compared to before.
-
----
-
----
-
-## msx_-000071
-
----
 
 2.3 Slot Configuration of MSX turbo R
 
@@ -2287,16 +1871,6 @@ The greatest advantage of the standardized slot configuration is that the standa
 Additionally, the drivers for OPLL, that is, FM-BIOS ROM, are significantly placed in slot 0-2. Therefore, the FM-BIOS search routine for turbo R-specific software is simplified, as specific slot searches need not be prioritized.
 
 With the unification of the slot configuration, there are notable benefits for game processing, especially the "Kompare" for initializing, but also loading slots 1 and 2, and resolving the issues some MSX1 and MSX2 games had that prevented them from running. Now, with the MSX2+ and turbo R, it is a condition where unique games and application software developed easily.
-
----
-
----
-
-## msx_-000072
-
----
-
-68
 
 Figure 2.8: MSX turbo R Slot Configuration
 
@@ -2372,32 +1946,14 @@ Manufacturer Option
 
 Until now, although there were patterns of slot configurations, in the turbo R, it has been standardized in this way. (Note 1) Main RAM means 256 kilobytes of RAM assigned to memory mapper units. In (Note 2), MSX-DOS1 (16 kilobytes) and MSX-DOS2 (48 kilobytes) are referenced, and they can be automatically switched according to the state.
 
----
-
-## msx_-000073
-
----
-
 **2.3 MSX turbo R’s Slot Configuration**
 
 Additionally, for software houses, the unified slot configuration means that issues arising from particular slot configurations are greatly reduced, which is the biggest benefit. From the standpoint of developing software, having a unified slot configuration is much more convenient than having upgraded CPUs and increased RAM capacity. Long live turbo R!
 
----
-
-## msx_-000074
-
 *(This page is too faint in the original to transcribe.)*
-
----
-
-## msx_-000075
 
 Chapter 3
 Kanji BASIC
-
----
-
-## msx_-000076
 
 72                                          Chapter 3  Kanji BASIC
 
@@ -2420,12 +1976,6 @@ For example, "ashita wa hare deshou" is converted into "明日は晴れでしょ
 Also, some of these support the conversion function, so by combining them with an MSX2+, turbo R, DOS2, etc., it is possible to use Kanji BASIC.
 
 MSX-JE has a learning function. For instance, for a frequently used word such as "kanban" (signboard), the preferred kanji are displayed as the leading candidates. In addition, once the user manually selects a preferred kanji conversion, it is automatically given priority in future conversions, making sentence input smooth. This learning data is stored in SRAM, up to a maximum of 8 KB. Because the SRAM contents are retained even when the power is turned off, the more you use it, the easier it becomes to use.
-
----
-
-## msx_-000077
-
----
 
 3.1 Parsing Kanji BASIC
 
@@ -2458,12 +2008,6 @@ MSX-JE is not just a word processor or expanded BASIC, but a configuration combi
 
 Regarding MSX, let's briefly explain the method to display kanji inside the computer. Firstly, although single-byte katakana characters (8-bit) can be represented, kanji characters require 2 bytes (16-bit) of characters to be displayed. According to JIS (Japan Industrial Standards), kanji characters can be handled as follows:
 
----
-
----
-
-## msx_-000078
-
 74                                          Chapter 3  Kanji BASIC
 
 are represented by a 2-byte code:
@@ -2489,10 +2033,6 @@ Thus, when an application or system program displays text on the screen, the cha
 
 This kanji driver is designed to add kanji-handling capability to application programs by converting JIS codes, DOS commands, and so on, just as the BIOS does. Although it may look as if only kanji-handling functionality has been added, applications can now make good use of it.
 
----
-
-## msx_-000079
-
 3.1 Analyzing Kanji BASIC                                                      75
 
 Figure 3.1: Operating principle of the kanji driver
@@ -2502,7 +2042,6 @@ Figure 3.1: Operating principle of the kanji driver
   | Application's display
   | Characters being converted
 ```
------------------------------------------------------------
 ```
  Keyboard --> Kana, romaji --> MSX-JE --> Kanji driver --> BASIC
                                                             DOS
@@ -2536,12 +2075,6 @@ For reference, here we have summarized the hardware and software released so far
   Sony             HB-T600
   Mitsubishi       ML-TS2H
 ```
-
----
-
-## msx_-000080
-
------------------------------------------------------------------------
 
 Page 76
 
@@ -2580,15 +2113,9 @@ Now, I will briefly explain the meaning of Table 3.2. First, "screen dot count" 
 
 "Kanji dot count" refers to the number of dots used to represent one Kanji character. Normal Kanji characters are presented using 16 x 16 dots, but they are compressed to 12 x 12 in the 512-dot screen width mode. Additionally, this mode can display 40 characters horizontally. Since the pattern ROM (Kanji ROM) is automatically selected when connected, the 12 x 12 dot Kanji ROM already embedded is selected.
 
----
+# 3.1 Analyzing Kanji BASIC
 
-## msx_-000081
-
----
-
-### 3.1 Analyzing Kanji BASIC
-
-#### Table 3.2: Screen Modes of Kanji BASIC
+**Table 3.2: Screen Modes of Kanji BASIC**
 
 | Screen Dot Count  | Kanji Character Count | Half-Width Character Count | Setting Method                  |
 |-------------|-----------------------|----------------------------|-------------------------|
@@ -2605,7 +2132,7 @@ Now, I will briefly explain the meaning of Table 3.2. First, "screen dot count" 
 
 One thing to be cautious about is that not all rows in the table can be used with BASIC. This is because the rows used for displaying function keys and Kanji conversion are occupied, making the bottom 1-2 rows unavailable on the screen.
 
-### 3.1.6 Kanji Text and Kanji Graphics
+# 3.1.6 Kanji Text and Kanji Graphics
 
 Now, the screen mode seems simple but involves a bit of complexity. In BASIC:
 
@@ -2620,14 +2147,6 @@ When you execute this command, it refers to the 2nd screen mode from the top of 
 In this mode, you can edit BASIC programs and input using the INPUT command or PRINT command, among others. However, graphics features such as LINE and PAINT cannot be used.
 
 To operate graphics in Kanji mode, you need to switch the screen to "Kanji Graphic Mode" using commands like "SCREEN 5." However, please remember that in this mode graphics features and Kanji text cannot be used simultaneously. To avoid confusion, the screen mode switch is summarized in Table 3.2 above.
-
----
-
----
-
-## msx_-000082
-
----
 
 Page 78 | Chapter 3: Kanji BASIC
 
@@ -2651,27 +2170,23 @@ There is a common belief that the Kanji functionality in MSX is not practical. I
 
 When the "CALL KANJI" command is executed after setting the MSX key, the work area that uses Kanji drivers to set MSX-JE etc. is initialized when the area is used. But, for example, 
 
+```
 10 A = 1
 20 CALL KANJI
 30 PRINT A
+```
 
 When this program is executed, the value "0" is displayed the first time (in other words, the variable has become reset). But from the second time onwards, the value "1" is displayed correctly.
-
----
-
----
-
-## msx_-000083
-
----
 
 **3.1 Analyzing Kanji BASIC**
 
 10 GOSUB 80
 ...
+```
 70 END
 80 CALL KANJI0
 90 RETURN
+```
 
 When running a program like this, if "CALL KANJI0" is executed, and there is no place to return with the "RETURN" command, the program will behave strangely.
 
@@ -2702,32 +2217,14 @@ From now on, the story is for advanced programmers. First of all, in Table 3.3.
 
 If an application program uses any of these hooks, it is likely that the Kanji drivers may not work correctly.
 
----
-
 This should give you an idea of what the text says.
-
----
-
-## msx_-000084
-
----
 
 A list of hooks that can replace the Kanji driver. If another program replaces these hooks, be aware that the Kanji driver may not work correctly. 
 
 Next, if the Kanji driver is invoked from an interrupt call, the contents of registers IX and IY will be corrupted. Thus, for BIOS related to Kanji input/output, assume that the contents of these registers must be preserved, and programs made with this in mind will not work properly in Kanji mode.
 
----
-
----
-
-## msx_-000085
-
 Chapter 4
 V9958 VDP
-
----
-
-## msx_-000086
 
 **Translation:**
 
@@ -2738,8 +2235,6 @@ From sections 1 to 4 of this chapter, the editor has recompiled the "V9938 MSX-V
 Sections 5 to 7 of this chapter re-edit articles from "MSX Magazine" from December 1988, January 1989, November 1989, December 1989, and January 1990 issues, which were edited by the "MSX Technical Examination Team."
 
 Hardware documentation like the "V9958 Specifications" commonly explains the "VDP Modes," but in this book, the screen modes of MSX BASIC are explained in line with MSX Magazine articles. The relationship between the VDP modes and the screen modes of MSX BASIC is shown in Table 4.1.
-
----
 
 **Table 4.1: Correspondence between VDP Modes and BASIC Screen Modes**
 
@@ -2756,15 +2251,7 @@ Hardware documentation like the "V9958 Specifications" commonly explains the "VD
 | GRAPHIC 6  | SCREEN 7                     |
 | GRAPHIC 7  | SCREEN 8 (SCREEN 10 ~ 12)    |
 
----
-
 (End of translation)
-
----
-
-## msx_-000087
-
----
 
 4.1 V9958 Register List
 
@@ -2834,12 +2321,6 @@ T.B.A.: table base address
 † Flags do not exist in V9938, so be sure to write 0.
 Additional register of the new V9958. Their initial values are 0, for the V9958 function, same as V9938. Register 24 is reserved.
 
----
-
-## msx_-000088
-
----
-
 Table 4.3: Command Registers
 
 | br | b6 | b5 | b4 | b3 | b2 | b1 | b0 | Function            |
@@ -2878,11 +2359,6 @@ S#9  | - | 1 | 1 | 1  | 1 | BX8 | BX9 | - | Border X (High)      |
 ※ The significant bits for functions that exist in the V9938 but not in the V9958 are meaningless for the V9958. 
 The ID for the V9958 is 00010B.
 
----
-
-## msx_-000089
-
----
 4.2 New Features of V9958
 
 4.2.1 Horizontal Scroll
@@ -2913,12 +2389,6 @@ HO7-3 8dot
     31 0 29 30 1
 ```
 
----
-
-## msx_-000090
-
----
-
 **Figure 4.2: Horizontal Scroll (In the case of SP2 = 1)**
                       Display Screen
 
@@ -2935,19 +2405,11 @@ HO 8-3 | 8dot |    0   | 1   | 31  | 32 | 62  | 63 |  1 line
  63    |        | 63  | [0] | [0] | 30 | 31  | 61  | 62
 ```
 
----
-
 When SP2 = 0, the data of 1 screen will be displayed with a horizontal scroll. HO₈ is ignored.
 
 When SP2 = 1, the data of 2 screens will be displayed with a horizontal scroll. Set 1 as the base address of the pattern name table A15. As the base address of the pattern name table, 0-31 means it is set to 0, 32-63 means it is set to 1. The base address of the pattern generator table and the color table remain the same and do not change depending on the scroll.
 
 For HO₂ to HO₅, the display value shifts to the right based on the set value, by 1 dot unit (in SCREEN6 and 7 it shifts by 2 dot units) for each shift.
-
----
-
-## msx_-000091
-
----
 
 4.2.2 WAIT
 
@@ -2999,15 +2461,8 @@ When YAE = 0
 
 No attribute. The data format is shown next. Loop the next four dots continuously.
 
----
-
 This should cover all the sections you provided in the image.
 
----
-
-## msx_-000092
-
----
 For YAE = 1 case
 
 There is an attribute per dot. The data format is shown below. Continuous 4 dots are grouped and expressed.
@@ -3050,13 +2505,8 @@ K = G - Y
 ```
 
 (Editorial note) The value of Y is an integer from 0 to 31 if there are no attributes. If there are attributes, it is an even number from 0 to 30. The values of J and K are integers from -32 to 31. Conversion results from YJK to RGB are clipped to values 0 to 31.
----
 
 These translations include the necessary mathematical expressions and data tables as well.
-
----
-
-## msx_-000093
 
 "4.3  V9958 Abolished Functions
 
@@ -3067,10 +2517,6 @@ The following functions that existed in V9938 have been abolished in V9958.
 
 (Note from the editor) The mouse for MSX does not use the mouse interface function of V9938, so the removal of this function does not have an impact."
 
----
-
-## msx_-000094
-
 Page 90                           Chapter 4  V9958 VDP
 
 4.4  V9958 Hardware Specifications (Changes)
@@ -3078,7 +2524,7 @@ Page 90                           Chapter 4  V9958 VDP
 Table 4.5: Changes in V9958 Terminals
 
 No. | Name | I/O | Description | V9958 | V9938 | Name | I/O
-----------------------------------------------------------------
+```
 4   | VRESET | I  | HSYNC/CSYNC 3-state logic input separation | VDS   | O |
 5   | HSYNC  | O  | HSYNC output or burst flag output          | HSYNC | I/O
 6   | CSYNC  | O  |                                               | CSYNC | I/O
@@ -3086,24 +2532,21 @@ No. | Name | I/O | Description | V9958 | V9938 | Name | I/O
 24  | AVDD(DAC)   | O | Analog power supply                     | VIDEO  | O
 26  | WAIT  | O/I | I/O WAIT output                               | LPS    | I
 27  | HRESET | I  | HSYNC/CSYNC 3-state logic input separation    | LPD    | I
+```
 
 If the VDS flag of the control register 25-bit is 0, pin 8 outputs CPUCLK, if the VDS flag is 1, pin 8 outputs VDS.
 
 Table 4.6: V9958 Current Characteristics
 
 VRESET, HRESET
------------------------------------------------------------
 Number | Item                     | Minimum | Standard | Maximum | Unit
------------------------------------------------------------
 ```
  VIL   | Low-level input voltage  | -0.3   |    0.8   |          | V
  VIH   | High-level input voltage |  2.2   |     Vcc   |          | V
 ```
 
 HSYNC, CSYNC, CPUCLK/VDS, WAIT
------------------------------------------------------------
 Number | Item                     | Measurement Conditions | Minimum | Standard | Maximum | Unit
------------------------------------------------------------
 ```
  VOL   | Low-level output voltage | IOL = 1.6mA            |           |   0.4   |          | V
  VOH   | High-level output voltage| IOH = 0.1mA            |  2.4      |           |          | V
@@ -3111,19 +2554,12 @@ Number | Item                     | Measurement Conditions | Minimum | Standard 
                              G, R, B
 ```
 Number | Item                    | Measurement Conditions | Minimum | Standard | Maximum | Unit
------------------------------------------------------------
 ```
  VRGB31  | Maximum output voltage | RL = 470Ω              |           |   2.8   |          | V
  VRGB30  | Maximum output voltage | RL = 470Ω              |           |   2.0   |          | V
  VP-P    | VRGB31-VRGB30          | RL = 470Ω              | 0.8       |         |          | V
  DRGB   | VP-P Value              | RL = 470Ω              |           |           |    5 %   |
 ```
-
----
-
-## msx_-000095
-
----
 
 4.5 V9958 and MSX2+
 
@@ -3163,15 +2599,7 @@ Notes:
 3. Creates a screen display by combining patterns of 8 x 8 dots.
 4. In bitmap display, the color of the dots can be displayed regardless of the color of the surrounding dots.
 
----
-
 This is the translated text from the given image.
-
----
-
-## msx_-000096
-
----
 
 Chapter 4: V9958 VDP
 
@@ -3202,14 +2630,6 @@ Typically, the I/O port addresses to connect the CPU to the VDP extend from 98H 
     | Port 5 | WRITE | ROM offset 7+2 | Connector register |
 ```
 
----
-
----
-
-## msx_-000097
-
----
-
 4.5 V9958 and MSX2+
 
 This is determined. This may be due to the consideration of increasing the VDP in the MSX itself. Note that when writing and reading to the same port, the bank difference in the I/O port may be different.
@@ -3223,27 +2643,24 @@ Next, concerning reading the value of the status register. Here, the value corre
 Table 4.9: Control Register Storage Locations
 
 Control Register Number | VDP Related Number | Storage Address | Label
+```
 0 | : | : | F3DFH | RG0SAV
 1 | : | : | :
+```
 :
+```
 7 | : | F3E6H | RG7SAV
 8 | : | FF7EH | RG8SAV
+```
 :
+```
 23 | 24 | FFF6H | RG23SA
 25 | FFFAH | RG25SA
 26 | 27 | FFF8H | RG26SA
 28 | FFFCH | RG27SA
-
----
+```
 
 Note: This translation captures the specific terms and technical details as they appear in the original text.
-
----
-
-## msx_-000098
-
----
-94
 
 Chapter 4  V9958 VDP
 
@@ -3289,13 +2706,6 @@ Table 4.12: Details of address 0FAFCH (MODE)
 | b0       | 1 if Roman character conversion                 |
 
 By the way, the ROM of MSX2+ contains BIOS with similar functions to those of subroutines, but generally, BIOS is not used to create subroutines. However, these BIOS are ROM in MSX1, called by the processor as subroutines, so ...
----
-
----
-
-## msx_-000099
-
----
 
 **4.5 V9958 and MSX2+** 
 
@@ -3320,12 +2730,6 @@ Furthermore, if bit 1 is written in, the VDP's wait function gets enabled. This 
 The horizontal scroll has two methods: using one screen of image data or using two screens of image data. We will sequentially explain each method.
 
 To start, control register 25, if bit 0 (SP2) is the case, then as shown in figure 4.4, data for 1 screen is horizontally scrolled. The number of scroll dots is specified in registers 26 and 27. Writing values from 0 to 63 in register 26 and that value in register 27 allows scrolling the screen horizontally by 8-dot units.
-
----
-
-## msx_-000100
-
----
 
 Page 96				Chapter 4: V9958 VDP
 
@@ -3361,17 +2765,9 @@ b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0
 - Horizontal scroll dot count
 - Always write 0
 
----
-
 Writing a number from 0 to 7 moves the screen to the right by the specified number of dots. However, be careful that in SCREEN 6 and 7, the number of dots that scroll is twice the specified number. The scroll count increases from 0 to 255, and when it overflows, the scrolled part on the left side of the screen disappears and then reappears on the right side.
 
 When the b7 bit of register 25 is set to 1, as shown in Fig. 4.4, the scrolled part of the image data is displayed, enabling the 2-page horizontal scroll. The image data at this time is stored in page 0 and 1 of the video RAM, or in pages 2 and 3.
-
----
-
-## msx_-000101
-
----
 
 **4.5 V9958 and MSX2+**
 
@@ -3405,17 +2801,11 @@ When the page is 0 and 1, set display pages to 1 and 2, and when 2 and 3, set di
 
 Also, if bit 1 of register 25 is set to 1, 8 dots at the edge of the screen (16 dots in SCREEN6) are invalid, and the border color of the screen will be displayed there. This horizontal scroll is especially useful when horizontally scrolling data on one screen, as the part that overflows from the screen appears immediately from the opposite side. Refer to the program example of horizontal scroll in listing 4.1 (which is twice the screen horizontal scroll) for reference.
 
----
-
 (Note: some technical terms are kept as they are for accuracy.)
 
----
-
-## msx_-000102
-
----
 LIST 4.1 (HSCROLL.BAS)
 
+```
 100 'hscroll.bas
 110 'by nao-i on 26. Oct. 1989
 120 '
@@ -3442,8 +2832,7 @@ LIST 4.1 (HSCROLL.BAS)
 330 IF TIME=0 GOTO 330
 340 IF (VDP(-2) AND 64)=0 GOTO 340
 350 RETURN
-
----
+```
 
 4.5.5 Do not use backdoor methods regardless of the situation
 
@@ -3452,15 +2841,9 @@ There are bits in VDP's registers that can be written to normally, and some that
 Moreover, like the combination of YJK=0 and YAE=1, there are settings decided by VDP’s specifications. If such specifications are not adhered to, unless you know well what you are doing, it could cause problems in the movement. Let’s clarify: an MSX machine that runs correctly is different. Also, there is no guarantee that code for V9958 would work properly on a future VDP. It should be remembered that V9958 VDP made by some manufacturer might behave slightly differently if the method of taking advantage of 'backdoor techniques' is ignored. Currently, there are valid backdoor techniques for V9958, but these may not work in the future.
 
 There was an example in the past where VDP of an MSX machine used Z80 backdoor techniques, causing software runaways especially on HC-90 compatible boards. This was a famous example where the VDP was run on an upgraded CPU (HD64180), leading to troubles that stemmed from ignoring specifications.
----
 
 This translation captures the content and explanation written in the image.
 
----
-
-## msx_-000103
-
----
 4.6  Deciphering the YJK Method
 
 4.6.1  Television Broadcast and YJK Method
@@ -3482,13 +2865,6 @@ Figure 4.5: RGB Method Screen Data Structure
 
 b7 b6 b5 b4 b3 b2 b1 b0
 G   G   R   R   R   B   B   B
----
-
----
-
-## msx_-000104
-
----
 
 **YJK Method (SCREEN 12)**
 
@@ -3505,10 +2881,12 @@ For example, let's describe the 4-byte data where Y = 0, J = K = -32 representin
 \[
 \begin{array}{cccccccc}
 b_7 & b_6 & b_5 & b_4 & b_3 & b_2 & b_1 & b_0 \\
+```
 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+```
 \end{array}
 \]
 
@@ -3520,23 +2898,19 @@ Conversely, let's consider the process of converting RGB data to YJK data. Accor
 
 When displaying the image using the YJK method, the signals output by the VDP are converted to composite (video) signals similar to the conventional analog RGB signals, so a special monitor TV is not necessary for MSX2. The YJK image is fundamentally similar to SCREEN 8, with 1 byte corresponding to 1 dot. However, since the values of J and K are specified for each group of horizontal dots, for instance, when executing PSET(0,0,0), the K value for dots from (0,0) to (3,0) will change. Therefore, using commands such as LINE in SCREEN 12 will cause "color changes." I will explain this again later.
 
----
-
-## msx_-000105
-
----
-
 4.6 Deciphering the YJK Method
 
 Fig 4.6: YJK Method Screen Data Structure
 
 ![Data Table]
 
+```
 0  b7  b6  b5  b4  b3  b2  b1  b0
 1  Y0            K_L
 2  Y1            K_H
 3  Y2            J_L
 4  Y3            J_H
+```
 
 Assigning colors every 4 dots allows you to specify the luminance for each dot.
 
@@ -3544,52 +2918,34 @@ Assigning colors every 4 dots allows you to specify the luminance for each dot.
 Y K_L Y K_H Y J_L Y J_H
 Y K_L Y K_H Y J_L Y J_H
 ...
-211
 Y K_L Y K_H Y J_L Y J_H
-
----
 
 Mixed Method (SCREEN 10, 11)
 
----
-
 The drawback of the YJK method is that it can only specify colors every 4 horizontal dots, making it difficult to align characters or lines naturally. Therefore, SCREEN 10 and 11 which combine the advantages of RGB (SCREEN 5 mode) and YJK (SCREEN 12 mode) were introduced to address this. These screen modes naturally allow overlapping of characters with less color issues compared to SCREEN 12.
-
----
 
 Fig 4.7: Mixed Method Screen Data Structure
 
----
-
+```
 0  b7  b6  b5  b4  b3  b2  b1  b0
 1  Y0            A0 K_L
 2  Y1            A1 K_H
 3  Y2            A2 J_L
 4  Y3            A3 J_H
+```
 
 In one dot, you can display in YJK or RGB mode. With the screening of VRAM's respective horizontal lines, by utilizing YJK method with the extended range (eight segments as one) of SCREEN 12, the mixed method is realized by the way of RGB mode allocation.
 
----
-
 4.6.3 Color Slant Program
 
----
-
 The advantage of the MSX2+ is its ability to display 19,268 colors on SCREEN 12, allowing for an expanded range (same 128kB as MSX2) of color expressions through a method called YJK.
-
----
-
----
-
-## msx_-000106
-
----
 
 As explained earlier, the method of expressing Y, which represents brightness (brightness), combined with color phases B and R values, is used to specify colors.
 List 4.2 is a program that displays all colors that can be expressed in YJK. However, to set the value in the later half of X, 32,768 times PSET is used, and it seems that sometimes an error occurs. Therefore, the PSET value on the left side of the X value is written with the PSET command, and the part corrected with the COPY command is copied using the COPY command.
 
 List 4.2 (YJK1.BAS)
 
+```
 100 'screen 11 & 12 display by PSET
 110 ' by nao-1 on 12, Nov. 1988
 120 CALL KANJI0:WIDTH 64:DEFINT A-Z:YY=0
@@ -3617,27 +2973,25 @@ List 4.2 (YJK1.BAS)
 350 GOTO 280
 360 'Subroutine to write Y in VRAM
 370 IF NS THEN LOCATE 1,0:PRINT USING'SCREE
+```
 NN #';SC:NS=0
+```
 380 LOCATE 1,0:1:PRINT USING'Y’'s value (brightness) as "#'#;YY
 390 LINE(0,48)-(255,175),(Y XOR YY)*#8,BF,XO
+```
 XX:YY=Y:RETURN
+```
 400 'Stop for on stop
 410 SCREEN 0:COLOR 15,4,7:END
+```
 
 (Note: `#` represents a special character in this translation that could not be properly rendered.)
-
----
-
----
-
-## msx_-000107
-
----
 
 **4.6 Decoding the YJK Method**
 
 List 4.3 (YJK2.BAS)
 
+```
 100 'screen 11 and 12 color sample
 110 'by nao-i on 2. Nov. 1988
 120 CALL KANJIO:WIDTH 64:DEFINT A-Z:YY=0
@@ -3666,9 +3020,12 @@ List 4.3 (YJK2.BAS)
 350 IF NS THEN LOCATE 1,0:PRINT USING"SCREE NN ∞";SC:NS=0
 360 LOCATE 1,1:PRINT USING"Y (coordinate)"Y
 370 LINE(0,48)-(255,175),(Y XOR YY)*8,BF,X0
+```
 R:YY:Y=RETURN
+```
 380 on stop goto 390
 390 SCREEN 0:COLOR 15,4,7:END
+```
 
 **4.6.4 Required Logical Operations**
 
@@ -3679,11 +3036,6 @@ X%=&B00000011
 Y%=&B00000101
 AND operation only processes the bits, so it only keeps the rightmost bit 1 in X% and Y%:
 
----
-
-## msx_-000108
-
----
 XX', AND YY'=&B00000001
 
 That’s what it means. Similarly, OR calculation is such that both values or one of the two values becomes 1, while in XOR calculation, the bit becomes 1 if one of the two values becomes 1. Also, NOT is a calculation that inverts each bit of a value, and writing image data inverted is called the PRESET calculation. To make this clear through words is difficult, so I have summarized the contents in Table 4.13:
@@ -3721,15 +3073,7 @@ LINE(0, Y0)–(255, Y0 +127), (Y XOR YY)*8, BF, XOR
 Meaning, Y represents the destination Y value, while YY keeps the original Y value.
 When specifying a logical operation (bitwise operation) with the LINE command, the result of writing the two values calculated will be written to video RAM. If it is SCREEN 12, 
 
----
-
 This translation maintains the terminology and structure of the original text as much as possible while ensuring it is clear and understandable in English.
-
----
-
-## msx_-000109
-
----
 
 4.6 Controlling the YJK Method
 
@@ -3747,6 +3091,7 @@ When executed, not only the single dot at (3,0) but also the J values for four d
 
 List 4.4 (S12.BAS)
 
+```
 10 ' Example of coloring
 20 CALL KANJI
 30 SCREEN 12:COLOR &HF9,2
@@ -3755,6 +3100,7 @@ List 4.4 (S12.BAS)
 60 LOCATE 4,6:COLOR &HF9,2
 70 PRINT "COLORING occurs in SCREEN 12."
 80 GOTO 80
+```
 
 4.6.6 What is the Difference Between SCREEN 10 and 11?
 
@@ -3762,20 +3108,13 @@ The data structure of SCREEN 10 and 11 is summarized in Figure 4.7; in terms of 
 
 CIRCLE (128,106),100,6
 
----
-
----
-
-## msx_-000110
-
----
-
 Let's give it a try. In SCREEN 10, bit 3 of the video RAM is set to 1, causing the red color number specified by the circle command to be written (in binary, 0110). Thanks to the YJK palette background, a red circle can be drawn. However, in SCREEN 11, since the video RAM connects directly (i.e., follows an 8-bit pattern like 00000110), a "color shift" occurs.
 
 As shown in the example, drawing characters or shapes on the YJK screen by stacking them requires the use of SCREEN 10. To process YJK screen data, SCREEN 11 is needed.
 
 List 4.5 (S10.BAS)
 
+```
 100 REM * To avoid color shift *
 110 SCREEN 12
 120 BLOAD "sample.s12",S
@@ -3787,6 +3126,7 @@ List 4.5 (S10.BAS)
 180 SCREEN 11
 190 CIRCLE (128,106),100,6
 200 GOTO 200
+```
 
 4.6.7 Using text even in SCREEN 11
 
@@ -3797,14 +3137,6 @@ For example, using the LINE or PUT KANJI command on SCREEN 10 causes YJK screen 
 What you can do is switch to SCREEN 11, use the SET PAGE command to set video RAM to page 1, and BLOAD background screen data there. Then, after returning to that page, switch background color to 0 using the PRINT command to write text on the background. Also, for characters, use the COPY command with "TAND" specified to write on overlapping parts of page 1’s image data.
 
 TAND allows performing overlapping operations on the transparent (non-colored) parts where colors match. Therefore, text written in one color is ignored as if written in white and displayed correctly.
-
----
-
----
-
-## msx_-000111
-
----
 
 4.6 Decoding the YJK Method
 
@@ -3818,6 +3150,7 @@ It may be difficult to understand YJK method in an MSX2 computer, but when using
 
 List 4.6 (S11.BAS)
 
+```
 100 ' SCREEN 11 Opening
 110 ' by nao-i on 4. Nov. 1988
 120 SCREEN 0: WIDTH 32: CALL KANJIO
@@ -3840,16 +3173,7 @@ List 4.6 (S11.BAS)
 290 GOTO 290
 300 '* * * called by STOP * * *
 310 SET PAGE 0, 0: COLOR 15, 4, 7
-
----
-
----
-
-## msx_-000112
-
----
-
-108
+```
 
 4.6.8 The Trick to Display Text on SCREEN 12
 
@@ -3861,6 +3185,7 @@ are the two different parts. With this, you can set the Y value of the part wher
 
 List 4.7 (S12T.BAS)
 
+```
 100 ' SCREEN 12 Log
 110 ' by nao-i on 4. Nov. 1988
 120 SCREEN 0:WIDTH 32:CALL KANJIO
@@ -3879,18 +3204,12 @@ List 4.7 (S12T.BAS)
 250 GOTO 260
 260 ' called by STOP ***
 270 SET PAGE 0,0:COLOR 15,4,7
+```
 
 4.6.9 YJK Mode VDP Registers
 
 Instead of displaying in YJK mode and in BASIC on SCREEN 10-12, let's introduce a method to manipulate VDP registers and execute lines with machine language programs. Control Registers...
 
----
-
----
-
-## msx_-000113
-
----
 4.6. Decoding the YJK Method
 
 With bit 3 "YJK" of Register 25 and bit 4 "YAE", you can select between screen display by RGB method and YJK method.
@@ -3898,10 +3217,6 @@ With bit 3 "YJK" of Register 25 and bit 4 "YAE", you can select between screen d
 First, let's set registers other than register 25 similar to the case of SCREEN 8. In BASIC language, by specifying screen modes 10 to 12, you can choose the YJK method. However, according to the functions of VDP, it is easier to understand if you think that SCREEN 8 screen is set to RGB method and is "changed later". If bit 3 of YJK is 0 and bit 4 of YAE is also 0, the settings of SCREEN 8 are determined. Then, with other registers as they are, changing bit 3 of YJK to 1 sets the display setting to YJK on SCREEN 12.
 
 To display the mixed method screen of YJK and RGB on SCREEN 10 or 11, set YJK to 1 and YAE to 1. Note that in the case of YJK being 0, the sprite color does not change due to the impact of the palette, but it can be changed to a palette if YJK is 1.
-
----
-
-## msx_-000114
 
 4.7 Examining Raster Lines
 
@@ -3918,12 +3233,6 @@ Modern 16-bit computers often have higher screen resolutions, such as 640 x 400 
 Non-interlaced display method.
 Raster line gaps can be clearly seen.
 
----
-
-## msx_-000115
-
----
-
 4.7 Researching Horizontal Scanning Frequency
 As the horizontal scanning frequency increases, monitors with frequencies such as 31.5 kHz and 34 kHz are used. Here, a monitor that accommodates various horizontal scanning frequencies on a single screen is called a "multi-scan monitor." If it accommodates frequencies from 15.75 kHz to 34 kHz, or if it can switch between two types such as 15.75 kHz and 24 kHz, there are various models. Therefore, when buying a new monitor, it's better to choose a multi-scan monitor that corresponds to the horizontal scanning frequency of the computer you currently have if you don't plan to buy a new one.
 
@@ -3938,32 +3247,26 @@ This method is known as "interlace," a way of describing screen display methods.
 
 In conclusion, considering the nature of the television broadcast adopting this interlace way, the discussion is essential regarding how television broadcasting adopts the interlace system.
 
----
-
 Note: This is a literal translation and might not fully capture specialized terminology or contextual meanings.
-
----
-
-## msx_-000116
-
----
 
 "Figure 4.9: This is what happens in interlace mode
 
+```
 212   - 212
 213   - 213
+```
 -       -
 2       - 1
 -       -
+```
 210  - 210
 423  - 423
 424  - 424
+```
 
 This is the interlace
 - Two fields display method.
 The line spacing becomes visible.
-
----
 
 To reduce the screen disturbance caused by noise of various origins, which occurs due to factors such as the flickering of the screen, the interlace display method is useful. For example, if the 0th and 1st scanning lines flicker a lot, and the 212th scanning lines, which are displayed immediately after them, flicker, the screen disturbance becomes noticeable. Noise generated when radio waves fly through the air, noise generated during the chemical manufacturing process, noise generated at the instant of connection to power outlets, and believe it or not, noise generated from disturbance of TV broadcasts can easily affect it. This interlace mode is a useful method for reducing such noise effects.
 
@@ -3972,14 +3275,6 @@ However, the downside to this interlace method is that the positions of the adja
 4.7.3 Interlace Screens on MSX2
 
 The reason why many computers use "normal" (non-interlace) screens is that MSX2 can use interlace screens... The aim here is for MSX2 and its successors to adopt the interlace method. For MSX2 to display vertical 424 dot screens, it needs a display monitor dedicated for computers (referred to as computer-only monitors unlike general household TV-called TV monitors, intended for vertical 424-dot display). As MSX2 advanced, along with multi-threaded horizontal synchronizing frequencies greater than the existing  15.75kHz or the newer 24kHz monitors that cost over 100,000 yen, it has become the norm. Therefore, with MSX2, combined with multiple..."
-
----
-
----
-
-## msx_-000117
-
----
 
 **4.7 Investigating the Principles of Scan Line Interruption 113**
 
@@ -4005,14 +3300,6 @@ CALL KANJI3
 "Interruption" is to change the flow of the program by external conditions. For example, when a joystick button is pressed, the BASIC program flow is changed by the command "ON STRIG GOSUB," which is one type of such interruption handling.
 
 "Scan line interruption" is the same principle – the processing changes by specifying the scan line number where the display ends. This requires high-speed processing for scan line interruption handling, fitting for machine-language programs rather than BASIC programs.
-
----
-
----
-
-## msx_-000118
-
----
 
 Page 114
 
@@ -4040,14 +3327,6 @@ On MSX2, multiple screens can be used. With 128 kilobytes of VRAM, SCREEN 5 reta
 
 To be honest, I first saw the VDP specifications and thought, "What would the scanline interrupt feature be useful for?" Although it was introduced in references such as the "MSX2 Technical Handbook," showing there was a scanline interrupt...
 
----
-
----
-
-## msx_-000119
-
----
-
 4.7 Researching Raster Split Insertion
 
 Figure 4.11: Procedure for Raster Split Insertion
@@ -4064,12 +3343,6 @@ There were no concrete program examples or applications published. The case wher
 So, once noticed, one might consider the horizontal scrolling with "Gradius" as having key differences. Hereafter, shooting games using raster split insertion began to be developed one after another. Raster split insertion was used in game software to stop the pause display, and then suddenly, the game's two screens would be displayed. Let's actually try it.
 
 Additionally, in MSX2+, the combination of raster split insertion and "hardware horizontal scrolling" is being used to display only part of the screen with horizontal scrolling. This is advertised with the "F1 Spirit 3D Special" game, which scrolls only the game screen horizontally while the F1 machine-like cockpit is displayed at the bottom of the screen with raster split insertion.
-
----
-
-## msx_-000120
-
----
 
 (Page 116) Chapter 4: V9958 VDP
 
@@ -4099,12 +3372,6 @@ IL7 IL6 IL5 IL4 IL3 IL2 IL1 IL0
 - IL: Line interrupt number
 
 *Feature on V9938 only, always write 0 on V9958.
-
----
-
-## msx_-000121
-
----
 
 4.7 Investigate Horizontal Interruptions
 
@@ -4151,14 +3418,6 @@ VDP Control Register - 23
 
 - Display offset
 
----
-
----
-
-## msx_-000122
-
----
-
  Fig. 4.15: Mechanism of hardware vertical scrolling
  
 When Control Register 23 is 0:
@@ -4185,11 +3444,6 @@ When Control Register 23 is 128:
 By writing to it, page swapping becomes possible. 
 Additionally, hardware vertical scrolling can be performed by manipulating Control Register 23. Specifically, as shown in Fig. 4.15, the screen display position changes based on the values set in the register, and a display called vertical scrolling is achieved. However, if this hardware vertical scrolling method is used, there is a possibility of splitting running numbers, necessitating corrections such as adding or subtracting the number of scroll steps from the running numbers. The sample program illustrates this correction starting from "ON_VSYNC".
 
----
-
-## msx_-000123
-
----
 **4.7.8 How to Assemble and the Operation of the BASIC Part**
 
 The sample program to invoke line scanning is composed of parts created in Assembly and parts created in BASIC. We will first explain the assembly method and operation principles, followed by an introduction to the BASIC part.
@@ -4211,12 +3465,6 @@ Accordingly, changing the accumulated line number will change where the line sca
 
 USR(512+Accumulated Line Number)
 
----
-
-## msx_-000124
-
----
-
 which indicates the value in this format. Additionally, although not used this time,
 
   USR(768 + line number)
@@ -4237,6 +3485,7 @@ parameters with real numbers as above cannot be used.
 
 List 4.8 (ONSCAN.BAS)
 
+```
 100 '
 110 ' onscan1.bas : test interrupt on scan
 120 ' by nao-i on 24. Sep. 1989
@@ -4261,10 +3510,7 @@ List 4.8 (ONSCAN.BAS)
 310 NEXT J
 320 JK=USR(0): COLOR 15,4,4: SCREEN 0
 330 END
-
----
-
-## msx_-000125
+```
 
 4.7.9 The Operating Principle of the Assembler Section
 
@@ -4294,12 +3540,6 @@ By writing these five lines, you can call and execute the specified program when
 
 FD9FH is a timer interrupt call (ON_H.TIMI:), which is hierarchical. Here, the call section is invoked when the interrupt occurs by VDP status.
 
----
-
-## msx_-000126
-
----
-
 The value of 0 is stored in the A register, so you should not overwrite the AF register. Also, if you overwrite the stack, save the original value in a temporary buffer like the sample program, and after the interrupt processing is completed, restore the buffer. 
 
 When an interrupt occurs, a program that operates the VDP is called, and appropriate subroutines such as "ON_VSYNC." and "ON_SCAN" are executed. By changing these, it could be used for the purposes of executing interrupt processing at the same timing as the horizontal retrace interrupt (HR interrupt).
@@ -4307,10 +3547,6 @@ When an interrupt occurs, a program that operates the VDP is called, and appropr
 The subroutine "VDPSTA" reads the status register of the VDP. The subroutine "WRTVDP" writes a specified value to the control register of the VDP, storing the value in the respective storage location (refer to Table 4.9 for details). Moreover, the ROM included with the MSX2 and later versions has a BIOS function that performs the same functions as these subroutines, so usually, you don't need to create subroutines yourself if you use the BIOS. But, since the BIOS is in the ROM, calling the BIOS takes several milliseconds, which could be an issue. Therefore, in the interrupt processing as this time, the BIOS was not used due to poor timing.
 
 This isn't particularly related to BASIC programming subroutines, but in DOS programming, the interrupt processing program needs to be placed in a segment larger than 4000H. Below this, specific slot structures on MSX might cause issues.
-
----
-
-## msx_-000127
 
 4.7 Studying Raster (Scan-Line) Interrupts                                    123
 
@@ -4370,10 +3606,6 @@ AD_LOAD:
 ```
 
 [Note: this dense ONSCAN.Z80 listing was transcribed from a low-resolution scan; the EQU constant block (VDPSTA/SETPAG/WRTVDP values) is at the limit of scan legibility and should be spot-checked against a higher-resolution source if exact values are needed.]
-
----
-
-## msx_-000128
 
 124                                                            Chapter 4  V9958 VDP
 
@@ -4439,17 +3671,9 @@ RET_BASIC:
         POP   BC
 ```
 
----
-
-## msx_-000129
-
 "4.7 Studying the Run-Line Overlay (RLO) Design"
 
 The rest of the content appears to be assembly code with comments in English.
-
----
-
-## msx_-000130
 
 130                                                              Chapter 4  V9958 VDP
 
@@ -4516,10 +3740,6 @@ WRTVDP:
         PUSH    HL
         PUSH    DE
 ```
-
----
-
-## msx_-000131
 
 4.7  Studying the scanline interrupt                              131
 
@@ -4589,13 +3809,6 @@ AS_NEXT_EQU:                   ; end of program + 1
         END
 ```
 
----
-
-## msx_-000132
-
----
-
-128
 Chapter 4 V9958 VDP
 
 4.7.10 Machine Language Routine with Scanline Interruption
@@ -4604,6 +3817,7 @@ Finally, to avoid the hassle of entering the source list of the program for scan
 
 List 4.10 (MKONSCAN.BAS)
 
+```
 10 CLEAR 100, &HCFFF:DIM D(15) 
 20 PRINT"Making onscan.bin":AD=&HB000:C=0:L=0 
 30 FOR I=0TO15:READ A$:IF A$="*" GOTO100 
@@ -4634,20 +3848,9 @@ List 4.10 (MKONSCAN.BAS)
 1155 DATA 21, 9F, C9, 3E, 35, 67, 69, 21, DF, 73, FE, 00, 78, D5, 01, CC, 00, F5 
 1165 DATA 21, 7D, 47, 09, 72, 79, 0B, EB, 47, 00, 5D 
 1185 DATA 01, 02, 3F, CD, ID, 42, F5, FA, 
-
----
-
----
-
-## msx_-000133
+```
 
 Chapter 5  MSX-MUSIC
-
----
-
-## msx_-000134
-
----
 
 Page 130
 
@@ -4671,14 +3874,6 @@ Another method aside from PSG used to replicate sound synthesizing is ‘Samplin
 
 Lastly, our topic of interest merges the merits of analog and digital sound sources: the FM sound source. FM, or ‘Frequency Modulation’, is the same method used in FM radio broadcasts.
 
----
-
----
-
-## msx_-000135
-
----
-
 5.1 What is an FM sound source?
 
 [Table 5.1: Comparing the performance of electronic musical instruments]
@@ -4695,10 +3890,10 @@ In other words, as illustrated in Figure 5.1, by changing the frequency of a dig
 
 [Figure 5.1: Exploring the structure of four types of electronic musical instruments]
 
-##### Analog Synthesizer
+**Analog Synthesizer**
 Analog Sound Source → Analog Filter
 
-##### PSG
+**PSG**
 Noise Source
 |
 Square Wave Source
@@ -4712,10 +3907,10 @@ Square Wave Source
 |
 (D/A Converter)
 
-##### Sampling Synthesizer
+**Sampling Synthesizer**
 Microphone → A/D Converter → Memory → D/A Converter
 
-##### FM Sound Source
+**FM Sound Source**
 Digital Oscillator
 |
 Change
@@ -4723,12 +3918,6 @@ Change
 Digital Oscillator → (D/A Converter)
 
 Among these, currently related to MSX machines are PSG and FM sound sources. The former has been built into MSX1 since its early models, producing sounds internal to the device. As shown in Figure 5.1, it uses three sounds and one noise to produce sounds. The latter is called MSX-MUSIC. Sound sources are also included in the FM-PAC.
-
----
-
-## msx_-000136
-
----
 
 **MSX-MUSIC Chapter 5**
 
@@ -4766,8 +3955,6 @@ Formatted Figure 5.2: Analyzing Basic Sounds
   - Time
 ```
 
----
-
 5.1.2 Let's Analyze Musical Instrument Sounds
 
 To "see" sound, you should look at the voltage of the sound signal on the screen of an "Oscilloscope."
@@ -4775,15 +3962,7 @@ Furthermore, by using a device called a "Spectrum Analyzer (sometimes abbreviate
 
 Generally, the most basic sound is called a "pure tone," represented as a sine wave shape. This tone contains only a single frequency component of the sound. Other examples include "square waves," which contain multiple components of the basic frequency, such as 440Hz, 1320Hz, and 2200Hz.
 
----
-
 Note: For full and precise scientific and technical understanding, cross-referencing with the original text or related technical manuals is encouraged, as translation may sometimes simplify technical nuances.
-
----
-
-## msx_-000137
-
----
 
 5.1 What is FM sound generation?
 
@@ -4799,15 +3978,9 @@ In contrast, the attack, decay, sustain, and release (ADSR) are categorized to p
 
 In older rock groups lead by keyboard idols, the effects were made by using a synthesizer to rotate the sound of fan-like wind against the accordion loudness when played live. To recreate these effects, synthesizers were used to produce the attack as if suddenly slicing through, and the decay ensuring it did not remain long, producing a variety of sounds across different devices. The specific combination of these unique components, including the combination of envelopes of FM sound generation, as defined earlier, can also be easily done by oneself by emitting effective sound timbres through a sense of experimentation.
 
----
+# Section 5 - MSX-MUSIC
 
----
-
-## msx_-000138
-
-### Section 5 - MSX-MUSIC
-
-#### 5.3: Instrument and Synthesizer Envelopes
+**5.3: Instrument and Synthesizer Envelopes**
 
 **Figure 5.3: Instrument and Synthesizer Envelopes**
 
@@ -4822,7 +3995,7 @@ D - Decay
 S - Sustain
 R - Release
 
-#### 5.1.3 The Pitch is not Restricted to Equal Temperament
+# 5.1.3 The Pitch is not Restricted to Equal Temperament
 
 Let's suddenly start talking about classical music here. First, let's organize the relationship between pitch and frequency. It can be summarized as follows in Table 5.2.
 
@@ -4854,11 +4027,6 @@ Beyond equal temperament, pre-equal temperament music and harmonics weren't as s
 
 Therefore, even though pitches are more frequently discussed in equal temperament today, it's important to understand its limitations and the beauty of other temperaments in order to fully appreciate the historical development and nuances in music theory.
 
----
-
-## msx_-000139
-
----
 Page 135
 
 5.1 What are FM sounds.
@@ -4889,24 +4057,15 @@ CALL VOICE COPY.
 
 This command displays the data from List 5.1. Note that this program specifies the number of tone colors for FM sources according to frequency parameters.
 
----
-
----
-
-## msx_-000140
-
----
-
 If an error occurs, in the case of the program in List 5.1,
 
 Voice No. * has no data.
 
 A message like that will be displayed.
 
----
-
 List 5.1 (READFM.BAS)
 
+```
 100 ' read VOICE data of MSX-MUSIC
 110 ' by nao-i on 20. Apr. 1990
 120 '
@@ -4951,15 +4110,11 @@ List 5.1 (READFM.BAS)
 510 PRINT " PM = "; (VO(0) / 64) AND 1;
 520 PRINT " EG = "; (VO(0) / 32) AND 1;
 530 PRINT " KSR = "; (VO(0) / 16) AND 1;
-
----
-
-## msx_-000141
-
----
+```
 
 **5.1 What FM Sound Source Is**
 
+```
 540 PRINT " MULT=";VO(0) AND 15;
 550 PRINT " Lks=";(VO(1) ¥ 64) AND 3;
 560 PRINT " Lf=";VO(1) AND 63
@@ -4967,6 +4122,7 @@ List 5.1 (READFM.BAS)
 580 PRINT (VO(3) ¥ 16) AND 15;"";" VO(3) AND 15
 590 RETURN
 600 ON ERROR GOTO 0
+```
 
 An operator that operates in a program falls into two categories. Operator 1 is basically a "Carrier Operator" that creates a basic form of sound wave, and Operator 2 is a "Modulator Operator" that modulates it. Explaining each setting’s meaning in detail would need an entire book, so let’s leave it to the reference. Try to understand this by actually listening to the sound. Also, you can change the "PRINT" section in list 5.1 to "LPRINT", which might be a useful reference material for designing your own sound.
 
@@ -4988,14 +4144,6 @@ to output 9 musical instruments.
 CALL MUSIC(1,0,1,1,1,1,1,1,1)
 to output 1 drum and 8 musical instruments.
 
----
-
----
-
-## msx_-000142
-
----
-
 Page 138: Chapter 5 MSX-MUSIC
 
 Various types of instruments + 1 percussion sound are selected.
@@ -5004,21 +4152,15 @@ The program example printed below is to listen to the difference in rhythm sound
 
 List 5.2 (BASSDRUM.BAS)
 
+```
 10 CALL MUSIC (1,0,1,1,1,3) 
 20 CALL BGM(0)
 30 CALL VOICE (031)
 40 PLAY "v15OCC", "","","","", "RRRRB!4B!4B!4B!4"
 50 CALL VOICE (00)
+```
 
 Also, with MSX, you can play FM sound source and PSG simultaneously. You can produce musical sounds using FM sound source, and percussion and sound effects using PSG. However, the volume of the FM sound source and the volume of the PSG can be different depending on the type of MSX hardware. Thus, you will need a program to adjust the sounds accordingly to match your machine.
-
----
-
----
-
-## msx_-000143
-
----
 
 **5.2 Controlling FM Sound Source**
 
@@ -5060,25 +4202,12 @@ static char fmdata[] = {        /* test data */
 ```
 };
 
----
-
-## msx_-000144
-
 The Japanese text on the image translates to the following in English:
-
----
 
 Chapter 5 MSX-MUSIC
 
----
-
 The remaining text is mostly code or comments in English and does not need translation.
 
----
-
-## msx_-000145
-
----
 5.2 Controlling FM Sound Source
 
 Next, let's briefly explain the program. First, prepare an array called "fmwork" in auto memory with a size of "FMWORK" bytes. Then, pass the address of this array to call the library "fmopen". This array needs to be above 8000H in memory, so let's declare it as auto, not static.
@@ -5109,13 +4238,7 @@ List 5.4 (FMLIB.H)
 extern char fmopen(); /* please call this first */
 extern VOID fmclose(); /* please call this last */
 
----
-
 This is a rough and straightforward translation of the given Japanese text.
-
----
-
-## msx_-000146
 
 Page 142
 Chapter 5: MSX-MUSIC
@@ -5165,10 +4288,6 @@ extern char fmtest();    /* now playing ? */
 #define FM_O8 85
 
 Next, the long List 5.5 below is the FM sound source library. From the beginning of the list, in order, there are the definitions of addresses such as BIOS, the definitions of the macros that call FM-BIOS, the definitions of the work areas used by the library, and then the main body of the library program.
-
----
-
-## msx_-000147
 
 5.2 Controlling the FM Sound Source
 
@@ -5227,10 +4346,6 @@ biosslot: ds  1   ; slot of FM-BIOS
 breaks:   ds  2   ; saving ^C vector
 p.ontime: ds  2   ; address of interrupt handler
 p.oldhook: ds  2  ; address of saved hook
-
----
-
-## msx_-000148
 
 144                                                          Chapter 5 MSX-MUSIC
 
@@ -5291,10 +4406,6 @@ fmopen@::
   ld     de,32
 ```
 
----
-
-## msx_-000149
-
 5.2 Controlling the FM Sound Source                                          145
 
 ```
@@ -5352,10 +4463,6 @@ fmclose@::
   ret
 ;
 ```
-
----
-
-## msx_-000150
 
 146                                      Chapter 5 MSX-MUSIC
 
@@ -5418,10 +4525,6 @@ fmtest0::
 ; Search FM-BIOS
 ```
 
----
-
-## msx_-000151
-
 5.2 FM Sound Source Control                                      147
 
 ```
@@ -5481,25 +4584,13 @@ chkids:
         ld      de,id_string
 ```
 
----
-
-## msx_-000152
-
----
-
 Interpreting the program points, "fmopen@" transfers the timer-embedded processing program from "ontime" to a specific location, searches for the slot where the FM-BIOS is located, initializes it, and sets the timer-embedded vector. The transferred data it references must be placed above the 8000H address, so when transferring the program, the part written as "ld iy, 0" is rewritten to "ld iy, FM-BIOS slot number * 256".
 
 The program itself, which searches for the slot where the FM-BIOS is located, references the specifications from ASCII NET MSX, examining all slots. By examining whether the string "OPLL" exists at address 401C, it finds the FM-BIOS.
 
 Now, the 192-byte work area indicated by "fmopen@" is used for embedded processing programs, temporary storage of the contents of "th.timer," and the work area of the FM-BIOS (160 bytes). At this time, the work area for FM-BIOS is necessary, including potential BIOS data, so the starting address is carefully set to align with the remaining work area.
 
----
-
----
-
-## msx_-000153
-
-### 5.2 FM Sound Source Control
+# 5.2 FM Sound Source Control
 
 Though it was not written in the specification, when you initialize the FM-BIOS with "CALLFM_ainiopl", there are cases where Page 1 is switched to another slot and does not return. In such cases, you need to switch Page 1 back to its original slot.
 
@@ -5507,19 +4598,15 @@ As mentioned earlier, it is troublesome if a program ends with a timer-side inte
 
 For the remaining part of the FM library, you can operate it just by setting the necessary value in the register and calling the FM-BIOS. Try various things by yourself.
 
-#### 5.2.3 Compiling with MSX-C
+# 5.2.3 Compiling with MSX-C
 If you enter the list in an editor such as MED or KID of MSX-DOS, save it under the filename "TESTFM.C". List 5.4 is "FMLIB.H". And List 5.5 is "FMLIB.Z80". Next, compile it with the following step to generate "TESTFM.COM". To run the program, just enter "TESTFM" from the MSX-DOS command line.
 
-#### List 5.6 (FMLIB.BAT)
+**List 5.6 (FMLIB.BAT)**
 m80 =fmlib.z80/r/m/z
 cf testfm
 cg testfm
 m80 =testfm.mac/r/m/z
 180 testfm,fmlib,ck,clib/s,crun/s,cend,testfm/n/y/e:xmain
-
----
-
-## msx_-000154
 
 150                                              Chapter 5 MSX-MUSIC
 
@@ -5557,12 +4644,7 @@ Explaining the data structure in order: first, the 0th and 1st bytes (offsets 0 
 
 In the following 2nd through 13th bytes (offsets 2 to 13) are written the offsets of the data for instrument sound channels 1 through 6. If at this time offset 0 is spec-
 
----
-
-## msx_-000155
-
----
-### 5.3 FM Sound Source Data Structure 
+# 5.3 FM Sound Source Data Structure
 
 | Offset | Content |
 |--------|---------|
@@ -5600,22 +4682,15 @@ CH2:
   DB Channel 2 Data...
 ```
 
-# Similar entries for channels CH3 to CH6
+**Similar entries for channels CH3 to CH6**
 
 With this approach, an assembler like MSX-DOS's assembler (M80) can automatically calculate offsets at the time of assembling the source list. 
 
 However, this program cannot be directly used as is. In a BASIC context where the PLAY statement is used, using a music macro language would be more appropriate.
---- 
 
 This translation should capture the essence of the technical details from the original Japanese text.
 
----
-
-## msx_-000156
-
----
-
-### Chapter 5: MSX-MUSIC
+# Chapter 5: MSX-MUSIC
 
 (MML) is necessary to convert to FM-BIOS sound source data.
 
@@ -5623,7 +4698,7 @@ Now, let's consider the data structure if you perform 9 tone sounds without perc
 
 Also, in channel 1 tone data, you start from the 18th byte (offset + 018), therefore you need to make the data structure so that if there are fewer channels in the tone data, from the 10th byte (18 in hexadecimal).
 
-#### Table 5.6: 9 Sound Instrument Data Structure
+**Table 5.6: 9 Sound Instrument Data Structure**
 
 | Offset | Content |
 |--------|---------|
@@ -5639,21 +4714,14 @@ Also, in channel 1 tone data, you start from the 18th byte (offset + 018), there
 
 Incidentally, as an aside, FM-BIOS decided at the starting point of the sound data to be 0EH and 12H decides whether 6 tone + 1 percussion instrument = 9 tone instruments. Hence if tone data in percussion is not 14 bytes (offset + 14), it is needed starting from channel 1, if tone sound does not exist, it will start from byte 18 (offset + 18).
 
-#### 5.3.2 Specifying Percussion Data
+# 5.3.2 Specifying Percussion Data
 
 Regarding the details of the figure reposted in Figure 5.4, actually a separate detail data of 5 types of percussion is expressed by alphabets "BSTCH" and sequentially as sound data.
 
 Like this data is assumed in 2 bytes, specifying each percussion sound.
 101BSTCH 0000VVVV
 
----
-
-## msx_-000157
-
----
-
-### 5.3 FM Sound Data Construction
----
+# 5.3 FM Sound Data Construction
 
 Figure 5.4: Percussion Sound Data
 
@@ -5699,15 +4767,8 @@ First, designate the type of percussion, and then next, specify the length for e
 
 This specifies the type of percussion, and the next byte indicates length (up to 255). If the length is over 255, first write 255, then the actual length from the next step.
 
----
-
 Note: This translation aims to keep the technical terminology and context intact for better comprehension.
 
----
-
-## msx_-000158
-
----
 Page 154  
 
 Chapter 5 MSX-MUSIC  
@@ -5740,12 +4801,6 @@ Each sound peg is denoted with the same data as instrument pegs, expressed from 
 Sustain is supposed to hold the decay for the instrument sound. As explained earlier, the instrument's envelope is determined by the value "ADSR". Repeating this, A is attack (speed of reach), D is decay, S is sustain (level of maintenance), R is release (decay to decay).
 
 The color of the OPLL bass sound is fixed by "ADSR." However, it was not meant to be a sustain. When the sustain is off, a loud drop can continue for both channels 1 and 2. Specific to both channels, tampering is possible to add a project-style peg only. In this case, one sound is connected from pitch Y to the next sound of pitch X. If a channel-specific decay is needed, twisting a slight peg might be necessary.
-
----
-
-## msx_-000159
-
----
 
 **5.3 FM Sound Data Structure**
 
@@ -5787,16 +4842,6 @@ Above, the combination of value specified for legato, sustain, and Q, determines
 | 29H, FFH, FFH, FFH, EBH | Octave 4, E, sound 1000 | 
 | FFH      | Data End |
 
----
-
----
-
-## msx_-000160
-
----
-
-156
-
 Chapter 5 MSX-MUSIC
 
 Next, specify the pitch and length for each note. The 1-byte value from 00H to 5FH represents the pitch, and the next 1-byte represents the length of the note. For example:
@@ -5826,12 +4871,6 @@ Therefore, if you're aiming for sound effects using FM sound sources, you should
 5.3.5 Let's Add Sound Data
 
 As mentioned earlier, FM sound source LSI (OPLL) has 15 types of control tones. FM-BIOS ROM includes 48 types of sound data.
-
----
-
-## msx_-000161
-
----
 
 **5.3 FM Tone Data Structure**  
                                                                             **157**
@@ -5872,11 +4911,6 @@ However, this book contains some errors. We should correct each page's content h
 
 Also, a resource that you should access once through your personal computer is the network's MSX "msx.spec" board. This board contains MSX machine language programs.
 
----
-
-## msx_-000162
-
----
 Page 158
 
 Chapter 5: MSX-MUSIC
@@ -5908,10 +4942,6 @@ And for volume,
 DB FM_VOL + 8
 
 In the same way, using the same scale,
-
----
-
-## msx_-000163
 
 5.3 FM Sound Source Data Structure  
 
@@ -5964,12 +4994,6 @@ static char fmdata[] =
 ```
 };
 
----
-
-## msx_-000164
-
----
-
 Page 160
 
 Chapter 5 MSX-MUSIC
@@ -5995,12 +5019,6 @@ Also, in the registers on pages 151 to 158, there were several errors in the lis
 Regarding the F-Number required for the target frequency on page 155, there was an error. Correct it as follows. The first notation in the chart,
 
 F-Number = (440 x 2^18 + 50000) ÷ 2^4 -1 = 288
-
----
-
----
-
-## msx_-000165
 
 5.4  Various things related to the FM sound source                          165
 
@@ -6046,12 +5064,6 @@ In the case of rhythm mode
 In the table, the parts marked (M) indicate operator 0, which works as the modulator, and those marked (C) indicate operator 1, which works as the carrier.
 For details, refer to "MSX2+ Powerful Utilization Methods" or to Yamaha's technical documentation.
 
----
-
-## msx_-000166
-
----
-
 Page 162             Chapter 5 MSX-MUSIC
 
 ... Actually 00H is a rest symbol and continues from 01H to 5FH, corresponding to octave 1 C to octave 7 A#.
@@ -6069,12 +5081,6 @@ Next, the various ROM-internal sound data for the FM-BIOS is listed. Until now, 
 Comparing the left and right sides of Table 5.9, you can see that the tone numbers and names are roughly the same between extended BASIC and FM-BIOS, but the sound data slightly differs. Therefore, if music is composed using BASIC MML and the data is converted for FM-BIOS, there may be slight problems with the sound.
 
 Regarding most of the sound data for FM-BIOS, there may be those who find it strange that the data written to register 3 is 20H, but since the 5th bit of register 3 is "mute," even if the value written to register 3 is 20H, the actual performance sound color will not change.
-
----
-
-## msx_-000167
-
----
 
 5.4 FM Music Tidbits
 
@@ -6111,13 +5117,10 @@ Table 5.9: List of Timbre Data
 |  26 | Synthesizer Rhythm   | 40 00 00 07 FA D9 37 04 40 00 00 20 FA D9 37 04 |
 |  27 | Harm Drum            | 02 03
 
----
-
-## msx_-000168
-
 164                                                  Chapter 5  MSX-MUSIC
 
 No.   Tone name              Tone data for Extended BASIC            Tone data for FM-BIOS
+```
 32   Piano 3                 11 11 08 04 FA B2 20 F5                11 11 08 20 FA B2 20 F4
 33   Electric Piano 2        using data of OPLL(14)                  11 11 11 20 CB B2 01 FA
 34   Santool 2               19 53 15 07 E7 8F 25 21 03              19 53 15 20 E7 8F 25 01
@@ -6147,16 +5150,9 @@ No.   Tone name              Tone data for Extended BASIC            Tone data f
 58   SE-Laser                49 40 0B 07 B4 F9 00 05                 49 40 0B 20 B4 F9 00 05
 59   SE-Noise                CD 42 06 A2 F0 03 20                    CD 42 06 20 F0 03 20
 60   SE-Star 1               51 42 13 07 13 10 42 01
-
----
-
-## msx_-000169
+```
 
 APPENDIX
-
----
-
-## msx_-000170
 
 166 APPENDIX R800 Instruction Table
 
@@ -6176,12 +5172,6 @@ In addition, concerning the abbreviations listed on the instruction table, they 
 
 This is due to the unique function of the R800. Although arithmetic commands added to the R800, which were not officially supported during the Z80 era, differ, the mnemonic operations registered are essentially identical. Please refer to the Z80 instruction tables while developing your programs.
 
----
-
-## msx_-000171
-
----
-
 A.1 How to Use the Instruction Table
 
 a.(7)  The most significant bit of register a
@@ -6198,8 +5188,10 @@ P/V        Parity overflow flag
 N           Subtract flag
 H           Half carry flag
 -             Flag doesn't change
+```
 0             Flag becomes 0 depending on execution result
 1             Flag becomes 1 depending on execution result
+```
 *             Uncertain
 M          Used when the overflow flag is reset
 P           Used when the parity flag is set
@@ -6244,11 +5236,6 @@ frequency wave number. Additionally, the value when executed with no wait and th
 executed with DRAM are listed; it is automatically inserted into the wait by the page brake
 or refresh.
 
----
-
-## msx_-000172
-
-------------------------------------
                              168              APPENDIX R800 Instruction Table
 
 A.2 8-bit Shift Commands
@@ -6257,40 +5244,21 @@ A.2 8-bit Shift Commands
 |                 |                             | SZHPNC | 76543210 | Hex | B | C |
 
 | ld r, r'        | r ← r'                        | ••●••• | 01 r r' | 1 1 |
-------------------------------------------------------------------------------------
 | ld r, n         | r ← n                         | ••●••• | 00 r n  | 2 2 |
-------------------------------------------------------------------------------------  
 | ld r, [hl]     | r ← [hl]                     | ••●●•• | 01 r 110 | 2 2 |
 | ld r, [ix+d] | r ← [ix+d]                   | ••●●•• | DD 01 r 110 | d d | 3 5 |
-------------------------------------------------------------------------------------
 | ld r, [iy+d]  | r ← [iy+d]                  | ••●●•• | FD 01 r 110 | d d | 3 5 |
-------------------------------------------------------------------------------------
 | ld [hl], r       | [hl] ← r                    | ••●••• | 01 110 r | 1 2 |
-------------------------------------------------------------------------------------
 | ld [ix+d], r  | [ix+d] ← r                  | ••●●•• | DD 01 110 r | d d | 3 5 |
-------------------------------------------------------------------------------------
 | ld [iy+d], r  | [iy+d] ← r                  | ••●●•• | FD 01 110 r | d d | 3 5 |
-------------------------------------------------------------------------------------
 | ld u, u'         | u ← u'                        | ••●••• | 01 u u'  | 2 2 |
-------------------------------------------------------------------------------------
 | ld v, v'         | v ← v'                        | ••●••• | 01 v v'  | 2 2 |
-------------------------------------------------------------------------------------
 | ld u, n          | u ← n                         | ••●••• | DD 01 110 | d n 00 u 110 | 3 3 |
-------------------------------------------------------------------------------------
 | ld v, n          | v ← n                         | ••●••• | FD 01 110 | d n 00 v 110 | 3 3 |
-------------------------------------------------------------------------------------
 | ld [hl], n       | [hl] ← n                    | ••●••• | 00 110 n | 2 3 6 |
-------------------------------------------------------------------------------------
 | ld [ix+d], n   | [ix+d] ← n                   | ••●●•• | DD 00 110 n | d n 36 | 4 5 |
-------------------------------------------------------------------------------------
 | ld [iy+d], n   | [iy+d] ← n                   | ••●●•• | FD 00 110 n | d n 36 | 4 5 |
-------------------------------------------------------------------------------------
 
----
-
-## msx_-000173
-
----
 A.3 16-bit Transfer Instructions (169)
 
 | Mnemonic | Command Operation | Flags | Opcode |
@@ -6322,20 +5290,12 @@ A.3 16-bit Transfer Instructions
 | ld sp,ix      | sp ← ix               | ........ | DD 2 2 |
 | ld sp,iy      | sp ← iy               | ........ | FD 2 2 |
 
----
-
 This table shows various 16-bit transfer commands, their operations, flag effects, and opcodes.
 
----
-
-## msx_-000174
-
----
 APPENDIX R800 Instruction Table
 
 Mnemonic | Operation | flags | Opcode | Hex | BC
    |  | S Z H P/V N C | 76 543 210|
-----------------------------------------------------------------------
 |ld ss,[nn] |ssH←[nn+1] |  | 11 101 101 | ED | 4 | 6
 |         |ssL←[nn] |  | 01 ss 1011 | |  |
 ||
@@ -6362,15 +5322,8 @@ Mnemonic | Operation | flags | Opcode | Hex | BC
 ||
 | ss bc de hl sp | 
 |00 01 10 11 |
----
 
 Note: The contents within the table columns have been translated as closely as possible given the context of electronic component nomenclature.
-
----
-
-## msx_-000175
-
----
 
 A.4 Exchange Instructions
 
@@ -6407,15 +5360,7 @@ qq,bc,de,hl,af
 
 When pop .af, all flags will change.
 
----
-
-## msx_-000176
-
----
-
 APPENDIX R800 Instruction Table
-
----
 
 A.6 Block Transfer Instructions
 
@@ -6430,8 +5375,6 @@ A.6 Block Transfer Instructions
 
    *1.bc~1=0, otherwise 1
 
----
-
 A.7 Block Search Instructions
 
 | Mnemonic                     | Operation                                          | flags             | Opcode    |
@@ -6443,8 +5386,6 @@ A.7 Block Search Instructions
 
   *2. a=(HL=0=HL=)  .: HL&cmdσ
 
----
-
 A.8 Arithmetic Instructions
 
 | Mnemonic                       | Operation                                          | flags             | Opcode    |
@@ -6455,14 +5396,6 @@ A.8 Arithmetic Instructions
    mulub (this applies).:--and  hod.,d, e→should not exist to prevent. (correct:CMD:)| [HL=||@:nn<units doesn't work]) for 11   |
    mulbw (this applies)→:ss applies should be only used with other same→HL=(&c→s ,apply [HL←SS.always work)
 ```
-
----
-
----
-
-## msx_-000177
-
----
 
 A.9 Add Commands (Arithmetic Commands)
 
@@ -6500,18 +5433,10 @@ A.9 Add Commands (Arithmetic Commands)
 | add iy, rr  | iy ← iy + rr          | •••0↑              | 11111001  FD   | 2 2  | 2  |
 |             |                       |                    | 00 rr 1001     |       |    |
 
----
-
 Key:
 - "↓↓↕↑V0" represents the flag settings.
 
 Note: "a", "r", "p", "q", "hl", "ix", "d", "n", "C", "ss", "pp", "rr" etc. in the commands and flags refer to registers and values relevant to the context of assembly language programming.
-
----
-
-## msx_-000178
-
----
 
 Page 174 APPENDIX R800 Instruction Table
 
@@ -6535,13 +5460,6 @@ rr: bc, de, iy, sp
 p: ixh, ixl
 q: iyh, iyl
 
----
-
----
-
-## msx_-000179
-
----
 A.10 Subtraction Instructions
 
 A.10 Subtraction Instructions
@@ -6563,15 +5481,8 @@ subc a,[ix+d] | a ← a - [ix+d] - c | ↑ ↑ ↓ V ↑ c | 11011101 10011110 d
 subc a,[iy+d] | a ← a - [iy+d] - c | ↑ ↑ ↓ V ↑ c | 11111101 10011110 d | FD 3 | 5
 subc a,n | a ← a - n - c | ↑ ↑ ↓ V ↑ c | 11011110 n | DE 2 | 2
 subc hl,ss | hl ← hl - ss - c | ↑ ↑ ↓ V ↑ ↑ | 11111110 01ss0010 | ED 2 | 2
----
 
 Please note that the symbols S, Z, H, P/V, N, and C represent different flags in the CPU status register, '↑' indicates the flag is affected, '↓' indicates it is reset, and 'V' indicates it might be affected based on the operation's outcome. "r", "p", "q", "n", "[hl]", "[ix+d]", "[iy+d]", and "ss" represent different registers or operands in the CPU.
-
----
-
-## msx_-000180
-
----
 
 Page 176
 
@@ -6579,7 +5490,6 @@ Page 176
 
 Mnemonic | Command Operation | flags | Op-Code | Hex | BC
 SZH P/V N C | 76543210
-----------------------------------------------------------
 decr    | r←r-1       | ↑ ↑ 1 v 1 0        | 00 r 101          | 1 1
 decp    | p←p-1       | ↑ ↑ 1 v 1 0        | 11011 101         | DD 2 2
 decq    | q←q-1       | ↑ ↑ 1 v 1 0        | 00 p 101          | FD 2 2
@@ -6590,14 +5500,13 @@ dec. [iy+d] | .iy+d←(.iy+d)-1 | ↑ ↑ 1 v 1 0 | 111011 101        | FD 3 7
            |                     |                     | 00 110 101       |    *      35
                                    |                                        |                     |
 ```
-decss   | ss←ss-1     | ........         | 00 ss 110         | 
+decss   | ss←ss-1     | ........         | 00 ss 110         | 
 dec.ix  | ix←ix-1     | ........         | 101011 101        | DD 2 2B
 dec.iy  | iy←iy-1     | ........         | 111011 101        | FD 2 2B
 
 A.11 Comparison Command
 Mnemonic | Command Operation | flags | Op-Code | Hex | BC
 SZH P/V N C | 76543210
-----------------------------------------------------------
 cmp.a,r      | a←r           | ↑ ↑ 1 v 1 0 r     | 10111 r           | 1 1
 cmp.a,p      | a←p           | ↑ ↑ 1 v 1 0 r     | 10111 101         | DD 2 2
 cmp.a,q      | a←q           | ↑ ↑ 1 v 1 0 r     | 11111 101         | FD 2 2
@@ -6608,12 +5517,6 @@ cmp.a,. [iy+d] | a←. [iy+d] | ↑ ↑ 1 v 1 0 r     | 111011 101        | FD 3
                                                       | 101111 110         | BE
 cmp.a,n | a←n  | ↑ ↑ 1 v 1 0  | 111111 110 | FE 2 2
                                                         |     n
-
----
-
----
-
-## msx_-000181
 
 A.12 Logical Operation Instructions                                            177
 
@@ -6668,12 +5571,6 @@ A.12  Logical Operation Instructions
               | n             |                        |          |     |   |
 ```
 
----
-
-## msx_-000182
-
----
-
 Page Header:
 178                               APPENDIX R800                                Instruction Table
 
@@ -6702,13 +5599,7 @@ Table Headings:
 | clr b,\[iy+d\]           | \[iy+d\]\^(b)←0        | · · · · · · · ·      |                      | FD  | 4 7|
 |                           |                       |                       |                      | CB  |    |
 
----
-
 Note: Some symbols such as \( \stackrel{x} \)  may not translate perfectly; correct representations depend on the original context or specific implementation details.
-
----
-
-## msx_-000183
 
 A.14 Rotate Instructions                                                       179
 
@@ -6747,12 +5638,6 @@ A.14  Rotate Instructions
                   |                                            |                | 00001110 | 0E  |   |
 ```
 
----
-
-## msx_-000184
-
----
-
 Page: 180
 APPENDIX R800 Instruction Table
 
@@ -6764,12 +5649,6 @@ r <- r × 2; r(0) <- tmp | | 110001011 | 0 010  r
 rolc (hl) | tmp <- C; C <- (hl)(7) | 1 0 P 0 1 | CB 2 5
 A <- A × 2; (A,0,0,3) <- (hl)(4, r) | | 111011101 | 6F 5
 .hl <- (hl)/2; (hl)(r) <- tmp | 1 0 P 0 1 | ED 2 5 67
-
----
-
----
-
-## msx_-000185
 
 A.15 Shift Commands
 
@@ -6810,11 +5689,6 @@ shl command and shla command are exactly the same, so the operand is the same -
 
 (Note: The symbols and operations represented here are based on my understanding of the contents and can vary based on context. The 'C' seems to represent the carry flag, r(x) and r(0) represent bit shifts, etc.)
 
----
-
-## msx_-000186
-
----
 182         APPENDIX R800 Instruction Table
 
 A.16    Branch Instructions
@@ -6845,15 +5719,7 @@ A.16    Branch Instructions
 | br .iy   | .pc←.iy               |               | 11101101       |DD |  2  |  2  |
 |          |                       | • • • • • • • • | 11101001       | E9 |    |    |
 
----
-
 Note: The "•" characters in the "Flags" column represent dots from the original table in the image.
-
----
-
-## msx_-000187
-
----
 
 A.17 Call Commands
 
@@ -6871,7 +5737,6 @@ short | if C=1 | .pc←.pc+e | ········ | 00111000 38 2 3
 bc | ←e-2 | ········ | 
 dbnz e | .b←.b-1;if .b≠0 | ········ | 0010100 10 2 2
     .pc←.pc+e | ←e-2 |     
----
 
 A.17 Call Commands
 
@@ -6896,12 +5761,6 @@ call p,nn | if S=0  | [.sp-2]←.pc ;[.sp-1]←.pch | ········ | 1111011
 call m,nn | if S=1  | [.sp-2]←.pc ;[.sp-1]←.pch | ········ | 111111000 FC 3 5
     .sp←.sp-2 ;.pc←nn  |  |
 
----
-
-## msx_-000188
-
----
-
 Page 184
 
 APPENDIX R800 Instruction List
@@ -6921,15 +5780,7 @@ APPENDIX R800 Instruction List
 | retn     | Non Maskable Interrupt return | SZHNC | 1110 101 | ED | 2 | 5 |
 | brk k    | sp-2 ← pc; sp-1 ← pch; sp ← sp-2; pc ← k; pch ← 0 | SZHNC | 11 k 111 | | 4 |
 
----
-
 Note: Some symbols may not display precisely due to font limitations.
-
----
-
-## msx_-000189
-
----
 
 **A.18 Input/Output Commands**
 
@@ -6946,17 +5797,9 @@ Note:
 *1. If b = 1, the value is 1; otherwise, it is 0.
 *2. The contents of [c] and the flags change according to the port indicated by the register, but the contents are not stored anywhere.
 
----
-
 The table continues with similar command structures, flags, and opcodes, but the main structure and key points should be clear from this partial translation. 
 
 This text appears to be part of a technical manual, likely for assembly language or machine code instructions for some kind of processor or microcontroller.
-
----
-
-## msx_-000190
-
----
 
 **A.19 CPU Control Instructions**
 
@@ -6984,11 +5827,6 @@ Note:
 - C: Carry flag
 - B: Borrow flag
 
----
-
-## msx_-000191
-
----
 Index
 
 A
@@ -7019,11 +5857,6 @@ Ka
 MSX made for export overseas .......... 62
 Expansion BIOS ........................ 62
 Kanji ROM expansion ................ 21
----
-
----
-
-## msx_-000192
 
 188                                                                          Index
 
@@ -7063,10 +5896,6 @@ Timer Insertion..............................................114
 Single Kanji Conversion.......................................72
 TAND........................................................106
 D/A Converter.................................................20
-
----
-
-## msx_-000193
 
 Index                                                                        189
 
@@ -7108,10 +5937,6 @@ Microsoft kanji code..........................................74
 Multi-scan monitor...........................................111
 Undefined command.............................................98
 
----
-
-## msx_-000194
-
 Main ROM ................................................ 52
 Main Memory.......................................... 50
 Memory Mapper....................................... 22
@@ -7128,10 +5953,6 @@ Reset Status............................................... 22
 Clause Conversion........................................ 72
 ROM........................................................... 50
 
----
-
-## msx_-000195
-
 References
 
 [1] ASCII-Microsoft FE Headquarters, Japan Musical Instruments Manufacturing Co., Ltd. "V9938 MSX-VIDEO Technical Data Book", ASCII, 1985 (Out of Print)
@@ -7144,19 +5965,13 @@ References
 
 [5] ASCII Corporation, "MSX-Datapack", ASCII, 1991
 
----
-
-## msx_-000196
-
-## Author's History
+**Author's History**
 
 **Naota Ishikawa**
 
 Graduated from Yokohama National University and joined ASCII Corporation, where he was involved in the development of MSX. Graduated from the Department of Information Science, Faculty of Science, University of Tokyo, as well as from the Graduate School of Industrial Science and Technology at the same university. Currently, he is a part-time lecturer at the Faculty of Education, Tokyo Gakugei University. He specializes in information processing with microcomputers such as MSX, electronic circuits, digital processing, and online information processing. Email: naotas@slab.sfc.keio.ac.jp
 
----
-
-### MSX turbo R Technical Handbook
+**MSX turbo R Technical Handbook**
 
 - **First Edition:** July 31, 1991
 - **Third Edition:** June 15, 1992
@@ -7171,8 +5986,6 @@ Graduated from Yokohama National University and joined ASCII Corporation, where 
   - **Phone:** Tokyo (03) 3486-7114, Osaka (03) 3486-1977 (Daiwa Line)
 ```
 
----
-
 **This book is produced using phototypesetting. Unauthorized reproduction or copying of any part or whole of this book (including programs) in any manner without permission is prohibited by law. For inquiries, please contact ASCII Corporation.**
 
 - **Production:** Tokyo Printing University Co., Ltd.
@@ -7182,29 +5995,11 @@ Graduated from Yokohama National University and joined ASCII Corporation, where 
 - **ISBN:** 4-7561-0621-8
 - **Printed in Japan**
 
----
-
-## msx_-000197
+*(Blank page in the original.)*
 
 *(Blank page in the original.)*
 
----
-
-## msx_-000198
-
 *(Blank page in the original.)*
-
----
-
-## msx_-000199
-
-*(Blank page in the original.)*
-
----
-
-## msx_-000200
-
----
 
 Table of Contents
 
@@ -7225,11 +6020,5 @@ Table of Contents
 Price: 2,500 yen (Base price 2,427 yen)
 
 ISBN4-7561-0621-8 C3055 P2500E
-
----
-
----
-
-## msx_-000201
 
 The text on the image translates to "MSX turbo R Technical Handbook" in English.
