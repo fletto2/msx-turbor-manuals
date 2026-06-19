@@ -2,8 +2,6 @@
 
 *English translation from the Japanese original*
 
-The Japanese text on the image translates to:
-
 "MSX Magazine Editorial Department Supervision
 MSX turbo R Technical Handbook
 ASCII Publishing Bureau"
@@ -146,8 +144,6 @@ Contents
 4.2.3 Command .........................................87
 4.2.4 Display in YJK mode .............................87
 4.3 Ban function of V9958 .............................89
-
-This translation covers the text in the table of contents provided on the image.
 
 Contents
 
@@ -894,8 +890,6 @@ NOTDOS2:
     ld c,9
 ```
 
-Note: Comments in the code remain untranslated, as they cover specific technical functions that mostly include constants and labels used for Z80 assembly programming.
-
 **1.2 How to Utilize MSX turbo R**
 
 call 5
@@ -1202,8 +1196,6 @@ REC1:
     PUSH BC
 ```
 
-The Japanese text on this image translates to:
-
 "1.3 Efficient Use of PCM Interface Methods"
 
 DEFB 0EDH,70H
@@ -1296,8 +1288,6 @@ Table 1.4: I/O Ports for PCM
 
 - **CT1, CT0: Counter data.** Counts up every 63.5 microseconds. During D/A it synchronizes with the count-up, and the data written at address 0A4H is output repeatedly. Writing data to 0A4H also clears the counter.
 
-[Note: Transcribed and translated directly from the source page.]
-
 Table 1.1: I/O ports for PCM
 
 | Address    | bit 7 | bit 6 | bit 5 | bit 4 | bit 3 | bit 2 | bit 1 | bit 0 |
@@ -1312,8 +1302,6 @@ Table 1.1: I/O ports for PCM
         ; end of data
         ; wave data
 ```
-
-[Note: this page is a severely degraded, mirror-flipped scan. The I/O-port table above was recovered from the legible cells and cross-checked against the identical PCM port table  elsewhere in this manual (Table 1.4); it is reliable. The remainder of the page (a faint assembly listing) could not be transcribed at usable fidelity.]
 
 Chapter 2
 SLOT
@@ -1694,13 +1682,9 @@ In summary, the BIOS introduced above has certain limitations. No matter which p
 2.2.4 Method to know the slot structure
 As mentioned earlier, the MSX slot structure varies depending on the machine due to options like Disk Interface. As a result, each machines' slot configuration...
 
-Note that some sentences were incomplete due to the image cut-off at the bottom.
-
 2.2.5 Exploring the System Work Area
 
 There are some game software for MSX2 that, if operated with MSX2+, display the title screen in SCREEN 12. Additionally, despite not having a modem cartridge, there are also ones that attempt to communicate.
-
-[Table Content Omitted for Simplicity]
 
 As a result, there are programs that display error messages without exception. To create such software, we will introduce methods to examine the types and features of programs and cards.
 
@@ -1721,8 +1705,6 @@ In this case, if there is "expansion BIOS", it can be checked for. This is neces
 If no value is defined, it is not a problem. The slot numbers and bit values show what is included. Therefore, unnecessary matter can be confirmed using "AND."
 
 Although the machine is similar, differences exist in expansion slots. Hence, try with your own machine or on a friend's machine. It is recommended to test on many machines to see the results.
-
-This translation provided captures the content and context based on the text in the image.
 
 2.2 Slot switching challenge       63
 
@@ -2376,7 +2358,7 @@ MSK = 1, 16 dots on the left edge in SCREEN 6 and 8 dots in other screen modes a
 
 HO₃~HO₀ settings scroll the display screen to the left by the set amount: 8 dot units (SCREEN 6) or 16 dot units in others.
 
-[Table 4.1: Horizontal Scroll (When SP2 = 0)]
+**Table 4.1: Horizontal Scroll (When SP2 = 0)**
 
 Display Screen
 
@@ -2460,8 +2442,6 @@ YAE selects the YJK data format.
 When YAE = 0
 
 No attribute. The data format is shown next. Loop the next four dots continuously.
-
-This should cover all the sections you provided in the image.
 
 For YAE = 1 case
 
@@ -2599,8 +2579,6 @@ Notes:
 3. Creates a screen display by combining patterns of 8 x 8 dots.
 4. In bitmap display, the color of the dots can be displayed regardless of the color of the surrounding dots.
 
-This is the translated text from the given image.
-
 Chapter 4: V9958 VDP
 
 The first issue is the problem of distance. Outputting text on the graphics mode screen takes time. Therefore, when entering a program, text mode, which does not use graphical representations, is advantageous.
@@ -2659,8 +2637,6 @@ Control Register Number | VDP Related Number | Storage Address | Label
 26 | 27 | FFF8H | RG26SA
 28 | FFFCH | RG27SA
 ```
-
-Note: This translation captures the specific terms and technical details as they appear in the original text.
 
 Chapter 4  V9958 VDP
 
@@ -2841,8 +2817,6 @@ There are bits in VDP's registers that can be written to normally, and some that
 Moreover, like the combination of YJK=0 and YAE=1, there are settings decided by VDP’s specifications. If such specifications are not adhered to, unless you know well what you are doing, it could cause problems in the movement. Let’s clarify: an MSX machine that runs correctly is different. Also, there is no guarantee that code for V9958 would work properly on a future VDP. It should be remembered that V9958 VDP made by some manufacturer might behave slightly differently if the method of taking advantage of 'backdoor techniques' is ignored. Currently, there are valid backdoor techniques for V9958, but these may not work in the future.
 
 There was an example in the past where VDP of an MSX machine used Z80 backdoor techniques, causing software runaways especially on HC-90 compatible boards. This was a famous example where the VDP was run on an upgraded CPU (HD64180), leading to troubles that stemmed from ignoring specifications.
-
-This translation captures the content and explanation written in the image.
 
 4.6  Deciphering the YJK Method
 
@@ -3605,8 +3579,6 @@ AD_LOAD:
         LD    D,(HL)   ; DE = parameter of USR()
 ```
 
-[Note: this dense ONSCAN.Z80 listing was transcribed from a low-resolution scan; the EQU constant block (VDPSTA/SETPAG/WRTVDP values) is at the limit of scan legibility and should be spot-checked against a higher-resolution source if exact values are needed.]
-
 124                                                            Chapter 4  V9958 VDP
 
 ```
@@ -3876,7 +3848,7 @@ Lastly, our topic of interest merges the merits of analog and digital sound sour
 
 5.1 What is an FM sound source?
 
-[Table 5.1: Comparing the performance of electronic musical instruments]
+**Table 5.1: Comparing the performance of electronic musical instruments**
 
 |                | Analog Synthesizer | PSG              | Sampling Synthesizer      | FM Sound Source       |
 |----------------|--------------------|------------------|--------------------------|-----------------------|
@@ -4202,11 +4174,7 @@ static char fmdata[] = {        /* test data */
 ```
 };
 
-The Japanese text on the image translates to the following in English:
-
 Chapter 5 MSX-MUSIC
-
-The remaining text is mostly code or comments in English and does not need translation.
 
 5.2 Controlling FM Sound Source
 
@@ -5719,8 +5687,6 @@ A.16    Branch Instructions
 | br .iy   | .pc←.iy               |               | 11101101       |DD |  2  |  2  |
 |          |                       | • • • • • • • • | 11101001       | E9 |    |    |
 
-Note: The "•" characters in the "Flags" column represent dots from the original table in the image.
-
 A.17 Call Commands
 
 Mnemonic | Command Action | Flags | Instruction Code
@@ -6021,4 +5987,4 @@ Price: 2,500 yen (Base price 2,427 yen)
 
 ISBN4-7561-0621-8 C3055 P2500E
 
-The text on the image translates to "MSX turbo R Technical Handbook" in English.
+MSX turbo R Technical Handbook
