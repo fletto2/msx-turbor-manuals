@@ -145,8 +145,6 @@ Contents
 4.2.4 Display in YJK mode .............................87
 4.3 Ban function of V9958 .............................89
 
-Contents
-
 4.4   V9958 Hardware Specifications (Modified Parts) ................................. 90
 4.5   V9958 and MSX2+ ................................................................. 91
 4.5.1  All 12 Types of Screen Modes ................................................... 91
@@ -277,8 +275,6 @@ Table of Contents
 5.5 Tone Data ............................................................. 157
 5.6 List of OPLL Registers ............................................ 161
 
-**Table of Contents**
-
 1.1  I/O Map of MSX turbo R ........................ 21  
 1.2  Comparison of Operation Speeds between Z80 and R800 ................ 24  
 1.3  List of Changes in BIOS and BASIC on MSX turbo R ................ 32  
@@ -378,8 +374,6 @@ The turbo R is expected to have many built-in ROMs; however, upon opening it, yo
 Instead of needing 4 ROMs of 32 kilobytes or 1 ROM of 128 kilobytes, simplifying board size, power consumption, and cost, the turbo R integrates few ROMs but achieves efficiency. Below version 1.20, the turbo R houses one 512-kilobyte ROM. This ROM includes the main and sub BIOS, OPLL driver, DOS, and version 1-level primary software and secondary software, overseeing the CPU ROM tasks. Thus, S1990's ROM control effectively manages internal software state.
 
 Since both the primary ROM is connected to D8H and sub ROM connected to D9H slots are visible as single ROM, it simplifies ROM management. Thus, combining primary, DOS (consisting of MSX-DOS2 with 48 kilobytes), and various segments occupies slot 3-2, interchanging between 16-kilobyte space, effectively managing internal storage.
-
-**1.1 MSX turbo R Hardware**
 
 **Fig 1.2: ROM Structure Changes in MSX turbo R**
 
@@ -569,8 +563,6 @@ Looking at the memory configuration, the R800 has a 16-bit CPU, unlike the 8-bit
 The turbo R also has a memory mapper function, but these functions are not only intended for use with the R800 or MSX. When used with turbo R, the R800 will control a slot control function mounted on the S1990 and an expanded memory mapper system.
 
 Next, we will explain "DRAM Page Access" in detail. First, this---
-
-1.1 MSX turbo R Hardware
 
 1.3: Internal Block Diagram of R800
 
@@ -2091,8 +2083,6 @@ Now, I will briefly explain the meaning of Table 3.2. First, "screen dot count" 
 
 "Kanji dot count" refers to the number of dots used to represent one Kanji character. Normal Kanji characters are presented using 16 x 16 dots, but they are compressed to 12 x 12 in the 512-dot screen width mode. Additionally, this mode can display 40 characters horizontally. Since the pattern ROM (Kanji ROM) is automatically selected when connected, the 12 x 12 dot Kanji ROM already embedded is selected.
 
-# 3.1 Analyzing Kanji BASIC
-
 **Table 3.2: Screen Modes of Kanji BASIC**
 
 | Screen Dot Count  | Kanji Character Count | Half-Width Character Count | Setting Method                  |
@@ -2155,8 +2145,6 @@ When the "CALL KANJI" command is executed after setting the MSX key, the work ar
 ```
 
 When this program is executed, the value "0" is displayed the first time (in other words, the variable has become reset). But from the second time onwards, the value "1" is displayed correctly.
-
-**3.1 Analyzing Kanji BASIC**
 
 10 GOSUB 80
 ...
@@ -2598,8 +2586,6 @@ Typically, the I/O port addresses to connect the CPU to the VDP extend from 98H 
     | Port 5 | WRITE | ROM offset 7+2 | Connector register |
 ```
 
-4.5 V9958 and MSX2+
-
 This is determined. This may be due to the consideration of increasing the VDP in the MSX itself. Note that when writing and reading to the same port, the bank difference in the I/O port may be different.
 
 Next, to set the value of the VDP control register, first write the data to the port 48 in Table 4.8, and then write the register number + 128 (to indicate continuation). It is important to satisfy the condition of "continuation". If an interruption occurs between the writes, the VDP will be confused. Therefore, in this case, it is commonly used to prohibit interruptions by “DI” command before writing a series of data.
@@ -2673,8 +2659,6 @@ Table 4.12: Details of address 0FAFCH (MODE)
 
 By the way, the ROM of MSX2+ contains BIOS with similar functions to those of subroutines, but generally, BIOS is not used to create subroutines. However, these BIOS are ROM in MSX1, called by the processor as subroutines, so ...
 
-**4.5 V9958 and MSX2+** 
-
 There is concern that it might take some time. Therefore, it seems there are bad scenarios where video problems get mixed in, and BIOS could not be used. For tables 4.10 to 4.12, a summary of the system work area has been prepared, so please refer to it.
 
 **4.5.3 V9958 Registers**
@@ -2734,8 +2718,6 @@ b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0
 Writing a number from 0 to 7 moves the screen to the right by the specified number of dots. However, be careful that in SCREEN 6 and 7, the number of dots that scroll is twice the specified number. The scroll count increases from 0 to 255, and when it overflows, the scrolled part on the left side of the screen disappears and then reappears on the right side.
 
 When the b7 bit of register 25 is set to 1, as shown in Fig. 4.4, the scrolled part of the image data is displayed, enabling the 2-page horizontal scroll. The image data at this time is stored in page 0 and 1 of the video RAM, or in pages 2 and 3.
-
-**4.5 V9958 and MSX2+**
 
 **Figure 4.4: Structure of 2 types of horizontal scrolling**
 
@@ -3853,10 +3835,8 @@ Noise Source
 Square Wave Source
 |
 |
-Square Wave Source
 |
 |
-Square Wave Source
 
 |
 (D/A Converter)
@@ -4187,7 +4167,6 @@ extern char fmopen(); /* please call this first */
 extern VOID fmclose(); /* please call this last */
 
 Page 142
-Chapter 5: MSX-MUSIC
 
 extern VOID fmwrite();   /* write to OPLL register */
 extern VOID fmtori();    /* write to OPLL register 0...7 */
@@ -4634,8 +4613,6 @@ With this approach, an assembler like MSX-DOS's assembler (M80) can automaticall
 
 However, this program cannot be directly used as is. In a BASIC context where the PLAY statement is used, using a music macro language would be more appropriate.
 
-# Chapter 5: MSX-MUSIC
-
 (MML) is necessary to convert to FM-BIOS sound source data.
 
 Now, let's consider the data structure if you perform 9 tone sounds without percussion sound as shown in Table 5.6. Basically, it will have the same 6 tone sounds + 1 percussion sound data structure, so, until the 17th byte (offset + 017) the channel 1-9 tone sound data assigns specified offset to the next, if you do not specify 00H it will not be used.
@@ -4713,8 +4690,6 @@ This specifies the type of percussion, and the next byte indicates length (up to
 
 Page 154  
 
-Chapter 5 MSX-MUSIC  
-
 Specify a value minus 255. If this value is over 255, repeat the same operation. For example,
 
 00110000
@@ -4784,8 +4759,6 @@ Above, the combination of value specified for legato, sustain, and Q, determines
 | 29H, FFH, FFH, FFH, EBH | Octave 4, E, sound 1000 | 
 | FFH      | Data End |
 
-Chapter 5 MSX-MUSIC
-
 Next, specify the pitch and length for each note. The 1-byte value from 00H to 5FH represents the pitch, and the next 1-byte represents the length of the note. For example:
 
 25H, 14H
@@ -4854,8 +4827,6 @@ However, this book contains some errors. We should correct each page's content h
 Also, a resource that you should access once through your personal computer is the network's MSX "msx.spec" board. This board contains MSX machine language programs.
 
 Page 158
-
-Chapter 5: MSX-MUSIC
 
 To use MUSIC, the "FM-BIOS" specification is published. In addition, various information regarding MSX is included.
 
@@ -4937,8 +4908,6 @@ static char fmdata[] =
 };
 
 Page 160
-
-Chapter 5 MSX-MUSIC
 
 5.4 Various Aspects of FM Sound Source
 
@@ -5300,8 +5269,6 @@ qq,bc,de,hl,af
 
 When pop .af, all flags will change.
 
-APPENDIX R800 Instruction Table
-
 A.6 Block Transfer Instructions
 
 | Mnemonic                      | Operation                                    | flags             | Opcode    | 
@@ -5425,8 +5392,6 @@ subc hl,ss | hl ← hl - ss - c | ↑ ↑ ↓ V ↑ ↑ | 11111110 01ss0010 | ED
 Please note that the symbols S, Z, H, P/V, N, and C represent different flags in the CPU status register, '↑' indicates the flag is affected, '↓' indicates it is reset, and 'V' indicates it might be affected based on the operation's outcome. "r", "p", "q", "n", "[hl]", "[ix+d]", "[iy+d]", and "ss" represent different registers or operands in the CPU.
 
 Page 176
-
-**APPENDIX R800 Instruction Table**
 
 Mnemonic | Command Operation | flags | Op-Code | Hex | BC
 SZH P/V N C | 76543210
@@ -5577,7 +5542,6 @@ A.14  Rotate Instructions
 ```
 
 Page: 180
-APPENDIX R800 Instruction Table
 
 Mnemonic | Command Action | Flags | Opcode
 ---------|------------------|-------|-------
@@ -5954,5 +5918,3 @@ Table of Contents
 Price: 2,500 yen (Base price 2,427 yen)
 
 ISBN4-7561-0621-8 C3055 P2500E
-
-MSX turbo R Technical Handbook
