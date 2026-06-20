@@ -3877,7 +3877,15 @@ Lastly, our topic of interest merges the merits of analog and digital sound sour
 
 In other words, as illustrated in Figure 5.1, by changing the frequency of a digital oscillator, it produces a more complex sound compared to PSG. This single digital oscillator is called an "operator," and as shown in Figure 5.1, combining two oscillators creates FM sound, otherwise known as a "2-operator FM sound source." Incidentally, "MSX-MUSIC" is officially called "OPLL YM2413," which is a 9-operator 2-operator FM sound source, reducing the LSI needed.
 
-![In other words, as illustrated in Figure 5.1, by changing the frequency of a digital oscillator, it produces a more complex sound compared to PSG. This single digital oscillator is called an "operator," and as shown in Figure 5.1, combining two oscillators creates FM sound, otherwise known as a "2-operator FM sound source." Incidentally, "MSX-MUSIC" is officially called "OPLL YM2413," which is a 9-operator 2-operator FM sound source, reducing the LSI needed.](figures/msx_turbor_handbook/msx_-000135.png)
+**Table 5.1: Comparing the performance of electronic musical instruments**
+
+| | Analog synth | PSG | Sampling synth | FM sound source |
+|---|---|---|---|---|
+| Hardware | Complex | LSI | LSI + large-capacity memory | LSI |
+| Stability | Weak to temperature change | Stable | Stable | Stable |
+| Tone | Varied | Poor | Versatile | Varied |
+| Data volume | Small | Small | Enormous | Small |
+| Price | High | Cheap | High | Cheap |
 
 [Figure 5.1: Exploring the structure of four types of electronic musical instruments]
 
