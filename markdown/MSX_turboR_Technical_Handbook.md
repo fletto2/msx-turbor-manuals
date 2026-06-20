@@ -623,10 +623,10 @@ Figure 1.4: Difference in memory access methods between Z80 and R800
 ![Figure 1.4: Difference in memory access methods between Z80 and R800](figures/msx_turbor_handbook/msx_-000030.png)
 
 Method of memory access with R800:
-\[ \text{Memory cycle time} \approx 140\text{nS} \]
+Memory cycle time ≈ 140nS
 
 Method of conventional memory access:
-\[ \text{Memory cycle time} \approx 280\text{nS} \]
+Memory cycle time ≈ 280nS
 
 Even with the turbo R, having just two 1-megabit DRAMs is sufficient. The first MSX developed in 1983 used 16-kilobit DRAM chips, totaling 8, yet even that provided ample RAM capacity with 16 kilobytes. Looking back, it's astonishing to think that just two 256-kilobit DRAMs were enough. While the MSX functionality has indeed increased, the size and power consumption of the hardware have decreased. It is noteworthy achievements of the latest Japanese semiconductor technologies that have resulted in the recent emergence of popular notebook computers and the turbo R.
 
@@ -3003,31 +3003,27 @@ G   G   R   R   R   B   B   B
 
 In SCREEN 12, the YJK method that considers 4 horizontal dots as a unit is used. From Y0 to Y3, the brightness of each dot is indicated by 5 bits, and K and J are represented by 12-bit color hue data for all dots (4096 colors). This is how YJK data is converted to RGB format.
 
-\[ R = Y + J \]
-\[ G = Y + K \]
-\[ B = 1.25Y - 0.5J - 0.25K \]
+R = Y + J
+G = Y + K
+B = 1.25Y - 0.5J - 0.25K
 
 However, the value of Y ranges from 0 to 31, and the values of J and K range from -32 to 31. If the RGB values calculated by the above formulas are smaller than 0 or larger than 31, they will be clipped to 0 and 31 respectively. This process is called "clipping" to within 0 to 31.
 
 For example, let's describe the 4-byte data where Y = 0, J = K = -32 representing black on the electric board.
 
-\[
-\begin{array}{cccccccc}
-b_7 & b_6 & b_5 & b_4 & b_3 & b_2 & b_1 & b_0 \\
 ```
-0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+b7 b6 b5 b4 b3 b2 b1 b0
+ 0  0  0  0  0  0  0  0
+ 0  0  0  0  0  0  0  0
+ 0  0  0  0  0  0  0  0
+ 0  1  0  0  0  0  0  0
 ```
-\end{array}
-\]
 
 Conversely, let's consider the process of converting RGB data to YJK data. According to the formula, RGB can be converted to Y, J, and K through the following three formulas:
 
-\[ Y = (2R + G + 4B) / 8 \]
-\[ J = (6R - G - 4B) / 8 \]
-\[ K = (-2R + TG - 4B) / 8 \]
+Y = (2R + G + 4B) / 8
+J = (6R - G - 4B) / 8
+K = (-2R + TG - 4B) / 8
 
 When displaying the image using the YJK method, the signals output by the VDP are converted to composite (video) signals similar to the conventional analog RGB signals, so a special monitor TV is not necessary for MSX2. The YJK image is fundamentally similar to SCREEN 8, with 1 byte corresponding to 1 dot. However, since the values of J and K are specified for each group of horizontal dots, for instance, when executing PSET(0,0,0), the K value for dots from (0,0) to (3,0) will change. Therefore, using commands such as LINE in SCREEN 12 will cause "color changes." I will explain this again later.
 
