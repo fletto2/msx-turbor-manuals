@@ -379,7 +379,38 @@ Since both the primary ROM is connected to D8H and sub ROM connected to D9H slot
 
 **Fig 1.2: ROM Structure Changes in MSX turbo R**
 
-![**Fig 1.2: ROM Structure Changes in MSX turbo R**](figures/msx_turbor_handbook/msx_-000023.png)
+**Figure 1.2: Changes in ROM configuration on MSX turbo R**
+
+*MSX2+ and earlier ROM configuration:*
+
+```
+                    Z80
+      +------+------+------+----------+----------+
+      |      |      |      |          |          |
+    Main    Sub  Kanji   Decoder   Decoder
+             driver
+    32 KB   16 KB  48 KB  128 KB     128 KB
+              |              |          |
+          (1st level     (1st level  (2nd level
+           kanji)         kanji)      kanji)
+```
+
+*MSX turbo R ROM configuration:*
+
+```
+    R800 ---- S1990 ----+-------------------+
+               |        |                   |
+              Z80   +----------+      +-------------+
+                    | Main     |      | Kanji       |
+                    | Sub      |      | conversion  |
+                    | Kanji driver    | dictionary  |
+                    | OPLL driver     |             |
+                    | DOS      |      |             |
+                    | 1st level kanji |             |
+                    | 2nd level kanji |             |
+                    +----------+      +-------------+
+                      512 KB             512 KB
+```
 
 [Diagram]
 
@@ -591,7 +622,24 @@ CPU
 
     On the other hand, the page access of DRAM in the R800 is shown in Figure 1.4 above. The upper byte of the address is fixed with the RAS signal, and the CAS signal of the lower byte of the address is changed to send to the DRAM at twice the speed of the conventional method. In this way, the R800 can automatically perform page access continuously while fixing the upper byte of the address.
 
-![On the other hand, the page access of DRAM in the R800 is shown in Figure 1.4 above. The upper byte of the address is fixed with the RAS signal, and the CAS signal of the lower byte of the address is changed to send to the DRAM at twice the speed of the conventional method. In this way, the R800 can automatically perform page access continuously while fixing the upper byte of the address.](figures/msx_turbor_handbook/msx_-000029.png)
+**Figure 1.3: Internal block diagram of the R800**
+
+```
+  +-----------------+   +-------------------+   +------------------+
+  | Clock oscillator|   | Address extension |   | MSX control      |
+  |                 |   | circuit (mapper)  |   | circuit          |
+  +-----------------+   +-------------------+   +------------------+
+          |                     |                       |
+  ====================== Extended address bus =====================
+  ============================ Address bus ========================
+  ============================= Data bus ==========================
+          |                                             |
+  +-----------------------------------------+   +------------------+
+  |                                         |   | Memory /         |
+  |                  CPU                    |   | I/O port         |
+  |                                         |   |                  |
+  +-----------------------------------------+   +------------------+
+```
 
     Next, the types of DRAM used when connected to the R800 are listed. The varieties of DRAM that can be used are 256 kilobits (32 kilobytes), 1 megabit (128 kilobytes), 4 megabits (512 kilobytes), etc. The minimum main RAM capacity is 256 kilobytes.
 ```
@@ -1328,7 +1376,19 @@ As mentioned in 2.1, CPU and memory are connected by an "address bus" and a "dat
 
 **Figure 2.1: Memory of a Z80 CPU**
 
-![Figure 2.1: Memory of a Z80 CPU](figures/msx_turbor_handbook/msx_-000053.png)
+**Figure 2.1: Memory of the Z80 CPU**
+
+```
+          Address bus
+           16 bits
+        +------------+        0000H +----------+
+  Z80   |            |  Memory      |          |
+  CPU   |            |  16 bits     |  Memory  |
+        |            |  address     |  64KB    |
+        +------------+        FFFFH +----------+
+           8 bits
+          Data bus
+```
 
 (Z80 CPU Image Diagram)
 - Address bus: 16 bits
@@ -1406,7 +1466,21 @@ Now, while you can handle memory beyond 64 kilobytes by switching slots, it is a
 
 The 16 kilobytes of memory from 0000H to 3FFFH are managed as "page 0," the 16 kilobytes from 4000H to 7FFFH as "page 1," and the 16 kilobytes from 8000H to BFFFH as "page 2." Finally, the 16 kilobytes from C000H to FFFFH are page 3. You can select a slot for each page. For example, when processing BASIC disk output commands, you switch page 0 to the BASIC interpreter's ROM, and page 2, which is responsible for text interfaces, to RAM (see Fig. 2.3).
 
-![The 16 kilobytes of memory from 0000H to 3FFFH are managed as "page 0," the 16 kilobytes from 4000H to 7FFFH as "page 1," and the 16 kilobytes from 8000H to BFFFH as "page 2." Finally, the 16 kilobytes from C000H to FFFFH are page 3. You can select a slot for each page. For example, when processing BASIC disk output commands, you switch page 0 to the BASIC interpreter's ROM, and page 2, which is responsible for text interfaces, to RAM see Fig. 2.3.](figures/msx_turbor_handbook/msx_-000055.png)
+**Figure 2.2: MSX slot configuration (part 1)**
+
+```
+                      +-----+
+                      | CPU |
+                      +-----+
+                         |
+        --------- Basic slot ----------
+        |        |       |            |
+     [slot]   [slot]  [slot]      [slot]
+                       0,1,2    Slot 3 (Extended slot)
+                                 |    |    |    |
+                              Slot Slot Slot Slot
+                              3-0  3-1  3-2  3-3
+```
 
 Chapter 2: SLOT
 
@@ -1429,7 +1503,17 @@ A BASIC interpreter is a program that processes programs written in BASIC, and i
 
 Moreover, in the case of MSX with disk interface, the external disk drive interface cartridge is equipped with its own ROM, and a 16 kilobytes ROM for interfacing with the BASIC disk output program (DISK-BASIC). This is the state as depicted in Figure 2.3.
 
-![Moreover, in the case of MSX with disk interface, the external disk drive interface cartridge is equipped with its own ROM, and a 16 kilobytes ROM for interfacing with the BASIC disk output program DISK-BASIC. This is the state as depicted in Figure 2.3.](figures/msx_turbor_handbook/msx_-000056.png)
+**Figure 2.3: MSX slot configuration (part 2)**
+
+Memory as seen from the CPU, divided into four 16 KB pages, each page selecting a slot. Example state when handling BASIC disk I/O instructions: page 0 = main ROM, page 1 = disk ROM, pages 2 and 3 = main RAM.
+
+| Memory address (as seen from CPU) | Slot 0 (Main ROM) | Slot 3-0 (RAM) | Slot 3-1 (Disk) |
+|---|---|---|---|
+| Page 0  0000H | Main ROM | | |
+| Page 1  4000H | Disk ROM | | |
+| Page 2  8000H | | RAM | |
+| Page 3  C000H | | RAM | |
+|         FFFFH | | | |
 
 2.1.5    The Secret of MSX Extension Slot
 
@@ -1522,7 +1606,25 @@ In the same manner as described for Figure 2.4, MSX2+ can theoretically hold int
 
 Figure 2.5: Example of MSX2+ Slot Configuration (when extending slots 0 and 3)
 
-![Figure 2.5: Example of MSX2+ Slot Configuration when extending slots 0 and 3](figures/msx_turbor_handbook/msx_-000059.png)
+**Figure 2.5: Example of MSX2+ slot configuration (when slots 0 and 3 are expanded)**
+
+Shaded as "standard specification" or "option specification" per the original. On an MSX2+ unit that includes communication software etc. built in, slots 0 and 3 are expanded as shown. In slot 3-3, a manufacturer's own application (such as a word processor) may be incorporated.
+
+| Address | Slot 0-0 | Slot 0-1 | Slot 0-2 | Slot 0-3 |
+|---|---|---|---|---|
+| Page 0  0000H | Main ROM | MUSIC | Comm. | Kana-to-Kanji conversion dictionary |
+| Page 1  4000H | Main ROM | MUSIC | Comm. | (dictionary) |
+| Page 2  8000H | | | | |
+| Page 3  C000H | | | | |
+|         FFFFH | | | | |
+
+| Address | Slot 3-0 | Slot 3-1 | Slot 3-2 | Slot 3-3 |
+|---|---|---|---|---|
+| Page 0  0000H | RAM | Sub ROM | | Option |
+| Page 1  4000H | RAM | Kanji driver | Disk ROM | Option |
+| Page 2  8000H | RAM | Kana-to-Kanji dictionary | | Option |
+| Page 3  C000H | RAM | | | Option |
+|         FFFFH | | | | |
 
                         Slot 0-0       Slot 0-1       Slot 0-2       Slot 0-3
 0000H      Page 0       Main ROM       (empty)        (empty)        Communication ROM
@@ -1584,7 +1686,30 @@ For instance, to specify primary slot 0, a value like 0000000B (in hexadecimal, 
 
 Figure 2.6: How to specify slot numbers
 
-![Figure 2.6: How to specify slot numbers](figures/msx_turbor_handbook/msx_-000062.png)
+**Figure 2.6: Method of specifying a slot number**
+
+A slot number is expressed using the 8 bits (= 1 byte) of one byte as shown. For example, to specify basic slot 0, the value 00000000B is used; to specify extended slot 1 of basic slot 3, the value 10000111B is used. The bits marked × in the figure are ignored (meaningless).
+
+*Basic slot case:*
+
+| b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0 |
+|----|----|----|----|----|----|----|----|
+| 0  | ×  | ×  | ×  | ×  | ×  | basic slot number | basic slot number |
+
+- b7 = 0 (no expansion)
+- b5–b2 (×) = meaningless
+- b1–b0 = basic slot number
+
+*Extended slot case:*
+
+| b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0 |
+|----|----|----|----|----|----|----|----|
+| 1  | ×  | ×  | ×  | extended slot number | extended slot number | basic slot number | basic slot number |
+
+- b7 = 1
+- b6–b4 (×) = meaningless
+- b3–b2 = extended slot number
+- b1–b0 = basic slot number
 
 In the case of primary slots:
 
@@ -1854,8 +1979,6 @@ In this section, we will explain the slot configuration of the newly released MS
 
 Fig. 2.8 depicts the slot configuration of the turbo R. To accommodate the higher CPU speeds and to facilitate the development and debugging of application programs, the slot configuration has been unified.
 
-![Fig. 2.8 depicts the slot configuration of the turbo R. To accommodate the higher CPU speeds and to facilitate the development and debugging of application programs, the slot configuration has been unified.](figures/msx_turbor_handbook/msx_-000071.png)
-
 In this figure, Slot 3 appears to have 64KB of RAM, but in actuality, it is equipped with 128KB of RAM, as 256KB is mounted overall (including slot space). Portions exceeding 64KB are used ordinarily in "D-RAM mode,” explained in the DOS2 firmware and RAM disk sections, but programs can swap in another set of RAM using expanded BIOS.
 
 Furthermore, page 1 of slot 3 has a DOS system ROM installed. In other words, slot 3-1 contains the same MSX-DOS2 ROM as the traditional MSX-DOS2. It automatically switches when necessary.
@@ -2033,7 +2156,25 @@ This kanji driver is designed to add kanji-handling capability to application pr
 
 Figure 3.1: Operating principle of the kanji driver
 
-![Figure 3.1: Operating principle of the kanji driver](figures/msx_turbor_handbook/msx_-000079.png)
+**Figure 3.1: Operating principle of the kanji driver**
+
+```
+                          Characters being
+                          displayed / converted
+  +--------+              on screen
+  | Screen |<----------------------------+
+  +--------+                              |
+                                          |
+  +----------+   kana,    +---------------+   converted   +-------------+
+  | Keyboard |--roma-ji-->| Kanji driver  |---kana------->| Application |
+  +----------+            |               |   roma-ji ->  |   program   |
+                          |   +---------+ |   kanji       +-------------+
+                          |   |  BASIC  | |
+                          |   |   DOS   | |   BASIC commands /
+                          +---+---------+-+   BIOS calls / BDOS calls
+                          | MSX - JE     |   let you use kanji
+                          +--------------+
+```
 
 [Screen]
 ```
@@ -2750,7 +2891,40 @@ Writing a number from 0 to 7 moves the screen to the right by the specified numb
 
 When the b7 bit of register 25 is set to 1, as shown in Fig. 4.4, the scrolled part of the image data is displayed, enabling the 2-page horizontal scroll. The image data at this time is stored in page 0 and 1 of the video RAM, or in pages 2 and 3.
 
-![When the b7 bit of register 25 is set to 1, as shown in Fig. 4.4, the scrolled part of the image data is displayed, enabling the 2-page horizontal scroll. The image data at this time is stored in page 0 and 1 of the video RAM, or in pages 2 and 3.](figures/msx_turbor_handbook/msx_-000100.png)
+**Figure 4.3: Functions of the control registers added in the V9958**
+
+Register 25:
+
+| b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0 |
+|----|----|----|----|----|----|----|----|
+| 0 | CMD | VDS | YAE | YJK | WTE | MSK | SP2 |
+
+- SP2: 1 = two-screen horizontal scroll
+- MSK: 1 = mask the left 8 dots
+- WTE: 1 = enable wait function
+- YJK: 1 = YJK mode
+- YAE: 1 = YJK/RGB mixed mode
+- VDS: changes the function of the terminal
+- CMD: 1 = commands in all screen modes
+- b7: always write 0
+
+Register 26:
+
+| b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0 |
+|----|----|----|----|----|----|----|----|
+| 0 | 0 | HO8 | HO7 | HO6 | HO5 | HO4 | HO3 |
+
+- HO3-HO8: number of horizontal scroll dots
+- b7, b6: always write 0
+
+Register 27:
+
+| b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0 |
+|----|----|----|----|----|----|----|----|
+| 0 | 0 | 0 | 0 | 0 | HO2 | HO1 | HO0 |
+
+- HO0-HO2: number of horizontal scroll dots
+- b7-b3: always write 0
 
 **Figure 4.4: Structure of 2 types of horizontal scrolling**
 
@@ -2842,7 +3016,11 @@ In SCREEN 8, brightness levels of R, G, and B are represented with 3, 3, and 2 b
 
 Figure 4.5: RGB Method Screen Data Structure
 
-![Figure 4.5: RGB Method Screen Data Structure](figures/msx_turbor_handbook/msx_-000103.png)
+**Figure 4.5: Data structure of the RGB-mode screen**
+
+| b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0 |
+|----|----|----|----|----|----|----|----|
+| G | G | G | R | R | R | B | B |
 
 b7 b6 b5 b4 b3 b2 b1 b0
 G   G   R   R   R   B   B   B
@@ -3085,8 +3263,6 @@ List 4.4 (S12.BAS)
 
 The data structure of SCREEN 10 and 11 is summarized in Figure 4.7; in terms of functionality, both are identical. When displaying a BLOAD screen, the differences in the hardware used are not apparent. So, what's the difference? When writing text or characters to the screen using BASIC commands, problems arise. For example, a program to display the differences using List 4.5, where a screen saved using the YJK method is loaded:
 
-![The data structure of SCREEN 10 and 11 is summarized in Figure 4.7; in terms of functionality, both are identical. When displaying a BLOAD screen, the differences in the hardware used are not apparent. So, what's the difference? When writing text or characters to the screen using BASIC commands, problems arise. For example, a program to display the differences using List 4.5, where a screen saved using the YJK method is loaded:](figures/msx_turbor_handbook/msx_-000109.png)
-
 CIRCLE (128,106),100,6
 
 Let's give it a try. In SCREEN 10, bit 3 of the video RAM is set to 1, causing the red color number specified by the circle command to be written (in binary, 0110). Thanks to the YJK palette background, a red circle can be drawn. However, in SCREEN 11, since the video RAM connects directly (i.e., follows an 8-bit pattern like 00000110), a "color shift" occurs.
@@ -3314,7 +3490,34 @@ To be honest, I first saw the VDP specifications and thought, "What would the sc
 
 Figure 4.11: Procedure for Raster Split Insertion
 
-![Figure 4.11: Procedure for Raster Split Insertion](figures/msx_turbor_handbook/msx_-000119.png)
+**Figure 4.11: Procedure for scan-line interrupts**
+
+```
++-------------------------------------------+
+| Prepare screen data on page 0 and page 1  |
++-------------------------------------------+
+                    |
+                    v
++-------------------------------------------+
+| Specify which scan line triggers the      |
+| interrupt                                 |
++-------------------------------------------+
+                    |
+                    v
++-------------------------------------------+
+| Display page 0 with the upper-screen      |
+| interrupt                                 |
++-------------------------------------------+
+                    |
+                    v
++-------------------------------------------+
+| Display page 1 with the scan-line         |
+| interrupt                                 |
++-------------------------------------------+
+
+(Prepare screens on page 0 and page 1, then switch between
+ them by interrupting at the specified scan line.)
+```
 
 1. Prepare screen data for pages 0 and 1
 2. Specify which raster to initiate the split
@@ -3341,7 +3544,30 @@ The procedure for initiating a line interrupt is as follows. First, write the li
 
 (Figure 4.12: VDP Registers Generating Line Interrupts)
 
-![Figure 4.12: VDP Registers Generating Line Interrupts](figures/msx_turbor_handbook/msx_-000120.png)
+**Figure 4.12: VDP registers that generate scan-line interrupts**
+
+VDP control register 0:
+
+| b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0 |
+|----|----|----|----|----|----|----|----|
+| 0 | DG | IE2 | IE1 | M5 | M4 | M3 | 0 |
+
+- b0: always write 0
+- M3, M4, M5: screen mode
+- IE1: permit scan-line interrupts
+- IE2: use with light pen
+- DG: use for digitize *
+- b7: always write 0
+
+VDP control register 19:
+
+| b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0 |
+|----|----|----|----|----|----|----|----|
+| IL7 | IL6 | IL5 | IL4 | IL3 | IL2 | IL1 | IL0 |
+
+- IL0-IL7: interrupt scan-line number
+
+\* Function of the V9938 only; on the V9958 always write 0.
 
 VDP Control Register 0
 
@@ -3381,7 +3607,39 @@ Now, we have explained the registers directly related to horizontal interruption
 
 In SCREEN 5 and SCREEN 6, write the page number to bits 0 to 5 of control register 2. Like the BASIC "SET PAGE" command, you can switch the display page (the screen displayed) (see Figure 4.14). bit 7 should always be 0 and bit 4 for every others should be written 1. Similarly, in SCREEN 7 and SCREEN 8, specify the page in bit 5 and always write 0 in bit 6.
 
-![In SCREEN 5 and SCREEN 6, write the page number to bits 0 to 5 of control register 2. Like the BASIC "SET PAGE" command, you can switch the display page the screen displayed see Figure 4.14. bit 7 should always be 0 and bit 4 for every others should be written 1. Similarly, in SCREEN 7 and SCREEN 8, specify the page in bit 5 and always write 0 in bit 6.](figures/msx_turbor_handbook/msx_-000121.png)
+**Figure 4.13: VDP registers that detect the scan-line interrupt**
+
+VDP Status Register 1
+
+| b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0 |
+|----|----|----|----|----|----|----|----|
+| FL | LPS | ID | ID | ID | ID | ID | FH |
+
+- FH: Detects the scan-line interrupt
+- ID (b1-b5): VDP version number
+- LPS: Used for the light pen *
+
+\* Function of the V9938 only; meaningless on the V9958.
+
+**Figure 4.14: VDP registers that control page switching**
+
+VDP Control Register 2
+
+| b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0 |
+|----|----|-----|-----|----|----|----|----|
+| 0 | A16 | A15 | 1 | 1 | 1 | 1 | 1 |
+
+- b7: Always write 0
+- b6 (A16): Display page
+- b5 (A15): Display page
+
+VDP Control Register 23
+
+| b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0 |
+|-----|-----|-----|-----|-----|-----|-----|-----|
+| DO7 | DO6 | DO5 | DO4 | DO3 | DO2 | DO1 | DO0 |
+
+- DO0-DO7: Display offset
 
 Figure 4.14: VDP Register for Controlling Page Switching
 
@@ -3433,7 +3691,24 @@ When Control Register 23 is 128:
 By writing to it, page swapping becomes possible. 
 Additionally, hardware vertical scrolling can be performed by manipulating Control Register 23. Specifically, as shown in Fig. 4.15, the screen display position changes based on the values set in the register, and a display called vertical scrolling is achieved. However, if this hardware vertical scrolling method is used, there is a possibility of splitting running numbers, necessitating corrections such as adding or subtracting the number of scroll steps from the running numbers. The sample program illustrates this correction starting from "ON_VSYNC".
 
-![Additionally, hardware vertical scrolling can be performed by manipulating Control Register 23. Specifically, as shown in Fig. 4.15, the screen display position changes based on the values set in the register, and a display called vertical scrolling is achieved. However, if this hardware vertical scrolling method is used, there is a possibility of splitting running numbers, necessitating corrections such as adding or subtracting the number of scroll steps from the running numbers. The sample program illustrates this correction starting from "ON_VSYNC".](figures/msx_turbor_handbook/msx_-000122.png)
+**Figure 4.15: How hardware vertical scrolling works**
+
+When Control Register 23 = 0:
+
+| VRAM address | Display | Display position |
+|--------------|---------|------------------|
+| 0 | display | 0 |
+| 6A00H | display | 212 |
+| 7FFFH | (not displayed) | 255 |
+
+When Control Register 23 = 128:
+
+| VRAM address | Display | Display position |
+|--------------|---------|------------------|
+| 0 | (not displayed) | 128 |
+| 2A00H | display | 212 |
+| 4000H | display | 0 |
+| 7FFFH | (not displayed) | 128 |
 
 **4.7.8 How to Assemble and the Operation of the BASIC Part**
 
@@ -3970,8 +4245,6 @@ The sounds of the timpani are similar to the timbres between string instruments 
 Instead of creating these sounds correctly by the trained hands of musicians, FM sound generation artificially creates a similar wave with an exact frequency by including the base frequency and its harmonic components. This sophisticated technique is done by synthesizing some specially designed components with the instrument. In FM sound generation, there is a specified program that combines some musical instrument sounds together to create an end result. Most importantly, the initial elements generating sound include directly affecting the base frequency and the loudness from it. This change in loudness is divided into different categories known as "envelopes".
 
 For example, if you strike a guitar or a percussion instrument, there’s a strong initial sound followed by a damping of the sound. Pressing the key of a piano initially produces a big sound that gradually decreases, holding the key continues this same sound until it’s released. Releasing the key causes the sound to decay. Xylophones exhibit the same properties where the sound grows smaller over time. The diagram (Figure 5.3) explains the setup of how the speed of sound and tone quality decrease as discussed earlier.
-
-![For example, if you strike a guitar or a percussion instrument, there’s a strong initial sound followed by a damping of the sound. Pressing the key of a piano initially produces a big sound that gradually decreases, holding the key continues this same sound until it’s released. Releasing the key causes the sound to decay. Xylophones exhibit the same properties where the sound grows smaller over time. The diagram Figure 5.3 explains the setup of how the speed of sound and tone quality decrease as discussed earlier.](figures/msx_turbor_handbook/msx_-000137.png)
 
 In contrast, the attack, decay, sustain, and release (ADSR) are categorized to produce timbre in analog synthesizers and FM sound generation. This combination generates an envelope, which in devices, is called "ADSR".
 
@@ -4715,7 +4988,20 @@ Like this data is assumed in 2 bytes, specifying each percussion sound.
 
 Figure 5.4: Percussion Sound Data
 
-![Figure 5.4: Percussion Sound Data](figures/msx_turbor_handbook/msx_-000157.png)
+**Figure 5.5: Tone (voice) data**
+
+| | b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0 | |
+|---|----|----|----|----|----|----|----|----|---|
+| 0 | AM | VIB | EGT | KSR | Multiple | | | | Op.0 |
+| 1 | AM | VIB | EGT | KSR | Multiple | | | | Op.1 |
+| 2 | KSL (Op.0) | | Total Level | | | | | Modelater | |
+| 3 | KSL (Op.1) | | (empty) | | DC | DM | | Feedback | |
+| 4 | Attack (Op.0) | | | | Decay (Op.0) | | | | |
+| 5 | Attack (Op.1) | | | | Decay (Op.1) | | | | |
+| 6 | Sustain (Op.0) | | | | Release (Op.0) | | | | |
+| 7 | Sustain (Op.1) | | | | Release (Op.1) | | | | |
+
+Op.0 denotes the modulator operator, Op.1 denotes the carrier operator. These are written as-is into registers 0-7 of the OPLL. For details, see "MSX2+ Powerful Utilization Guide" (published by ASCII).
 
 ```
       b7  b6  b5  b4  b3  b2  b1  b0
@@ -4878,7 +5164,33 @@ Op. 0 represents the Modulator Operator, and Op. 1 represents the Carrier Operat
 
 This kind of data structure illustrated in Figure 5.5 makes it possible to add even more tones.
 
-![This kind of data structure illustrated in Figure 5.5 makes it possible to add even more tones.](figures/msx_turbor_handbook/msx_-000161.png)
+**Figure 5.6: List of OPLL registers**
+
+| Addr | b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0 |
+|------|----|----|----|----|----|----|----|----|
+| 00H | AM(M) | VIB(M) | EGT(M) | KSR(M) | Multiple(M) | | | |
+| 01H | AM(C) | VIB(C) | EGT(C) | KSR(C) | Multiple(C) | | | |
+| 02H | KSL(M) | | Total Level | | | | Modelater | |
+| 03H | KSL(C) | | | DC | DM | | Feed Back | |
+| 04H | Attack(M) | | | | Decay(M) | | | |
+| 05H | Attack(C) | | | | Decay(C) | | | |
+| 06H | Sustain(M) | | | | Release(M) | | | |
+| 07H | Sustain(C) | | | | Release(C) | | | |
+| 0EH | (empty) | | R | BD | SD | TOM | T-CT | HH |
+| 0FH | Test register | | | | | | | |
+| 10H - 18H | F-number | | | | | | | |
+| 20H - 28H | (empty) | | Sus. | Key | Block | | | F-number |
+| 30H - 38H | Inst. | | | | Vol. | | | |
+
+For rhythm mode:
+
+| Addr | Description |
+|------|-------------|
+| 36H | Bass Drum |
+| 37H | Hi Hat / Snare Drum |
+| 38H | Tom Tom / Top Cymbal |
+
+In the table, items marked (M) work as the modulator (operator 0), and items marked (C) work as the carrier (operator 1). For details, see "MSX2+ Powerful Utilization Guide" or Yamaha's technical documents.
 
 These 8-byte tone data are written into registers 0 to 7 of the FM sound source LSI (OPLL) just as they are. They serve as extension commands of BASIC:
 
@@ -5018,7 +5330,39 @@ For specifying the pitch of each note, it is generally said that the values from
 
 Figure 5.6: List of OPLL registers
 
-![Figure 5.6: List of OPLL registers](figures/msx_turbor_handbook/msx_-000165.png)
+**Figure 5.4: Percussion-sound data**
+
+| b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0 |
+|----|----|----|----|----|----|----|----|
+| 1 | 0 | 1 | B | S | T | C | H |
+| 0 | 0 | 0 | 0 | Volume (0-15) | | | |
+| 0 | 0 | 1 | B | S | T | C | H |
+| Length (1-255) | | | | | | | |
+
+Percussion instruments:
+- B: Bass Drum
+- S: Snare Drum
+- T: Tom
+- C: Cymbal
+- H: Hi-Hat
+
+To select a percussion instrument, specify 1 or 0 for each of the 5 bits written B, S, T, C, H. Volume specifies the amount of attenuation relative to maximum volume; the "Length" specifies the interval from when a sound is produced until the next sound.
+
+Example data:
+
+```
+10110000   Bass Drum
+00000000   Volume 0
+10101000   Snare Drum
+00000001   Volume 1
+00110100   Bass Drum
+00010100   Length 20
+00101000   Snare Drum
+00010100   Length 20
+00010100   Cymbal
+00010100   Length 20
+11111111   End of data
+```
 
 | br | b6 | b5 | b4 | b3 | b2 | b1 | b0 |
 |----|----|----|----|----|----|----|----|
