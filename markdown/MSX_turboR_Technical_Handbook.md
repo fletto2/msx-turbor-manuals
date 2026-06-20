@@ -78,241 +78,215 @@ Note:
 
 Table of Contents
 
-1. MSX turbo R ..................................................................................................................................... 15
-```
-  1.1 MSX turbo R Hardware ................................................................................................. 16
-    1.1.1 These are the features of MSX turbo R! .............................................. 16
-    1.1.2 System Configuration of MSX turbo R .................................................... 16
-    1.1.3 Switching to elegant CPUs, ............................................................................. 18
-    1.1.4 MSX turbo R ROM structure ........................................................ 18
-    1.1.5 System timer for speed adjustment .................................................................. 19
-    1.1.6 MSX turbo R I/O ports .......................................................................................... 20
-    1.1.7 DRAM mode for speed generation ................................................................ 22
-    1.1.8 These are the features of R800! .................................................... 22
-    1.1.9 All about the R800 .................................................................................................. 23
-  1.2 Utilizing MSX turbo R: ............................................................................................ 27
-    1.2.1 Programming for the speed of R800 ........................................................... 27
-    1.2.2 Precautions and issues when using R800 .......................................... 27
-    1.2.3 Explanation of the added BIOS functions ............................................ 28
-    1.2.4 About the changes and the removed BIOS settings ........................ 30
-    1.2.5 Precautions in application development ................................................. 32
-    1.2.6 Example programs for switching CPUs ..................................................... 33
-  1.3 Utilizing PCM to the very limit ........................................................................... 37
-    1.3.1 Fundamentals..... How to use PCM in BASIC........................................... 37
-    1.3.2 BASIC commands related to PCM ........................................................... 38
-    1.3.3 Let the PCM ring with BEEP sound! ............................................................. 39
-    1.3.4 Advanced......PCM in machine language................................................. 41
-```
-2. SLOT .......................................................................................................................................  47
-  2.1 What is a slot ................................................................................................................... 48
+|  |  |
+|:----|----:|
+| 1. MSX turbo R | 15 |
+| 1.1 MSX turbo R Hardware | 16 |
+| 1.1.1 These are the features of MSX turbo R! | 16 |
+| 1.1.2 System Configuration of MSX turbo R | 16 |
+| 1.1.3 Switching to elegant CPUs, | 18 |
+| 1.1.4 MSX turbo R ROM structure | 18 |
+| 1.1.5 System timer for speed adjustment | 19 |
+| 1.1.6 MSX turbo R I/O ports | 20 |
+| 1.1.7 DRAM mode for speed generation | 22 |
+| 1.1.8 These are the features of R800! | 22 |
+| 1.1.9 All about the R800 | 23 |
+| 1.2 Utilizing MSX turbo R: | 27 |
+| 1.2.1 Programming for the speed of R800 | 27 |
+| 1.2.2 Precautions and issues when using R800 | 27 |
+| 1.2.3 Explanation of the added BIOS functions | 28 |
+| 1.2.4 About the changes and the removed BIOS settings | 30 |
+| 1.2.5 Precautions in application development | 32 |
+| 1.2.6 Example programs for switching CPUs | 33 |
+| 1.3 Utilizing PCM to the very limit | 37 |
+| 1.3.1 Fundamentals..... How to use PCM in BASIC | 37 |
+| 1.3.2 BASIC commands related to PCM | 38 |
+| 1.3.3 Let the PCM ring with BEEP sound! | 39 |
+| 1.3.4 Advanced......PCM in machine language | 41 |
+| 2. SLOT | 47 |
+| 2.1 What is a slot | 48 |
+| **Contents** |  |
+| 2.1.1 How is the CPU connected to memory? | 48 |
+| 2.1.2 Exploring the inside of the 8-bit CPU Z80 | 48 |
+| 2.1.3 Various characteristics of memory | 50 |
+| 2.1.4 What’s the slot on the MSX like? | 50 |
+| 2.1.5 The secret of MSX's expandability was in the slot | 52 |
+| 2.1.6 How the MSX2+ slot has changed | 53 |
+| 2.1.7 Let's expand the slot | 55 |
+| 2.2 Challenge to Slot Switching | 57 |
+| 2.2.1 To switch slots | 57 |
+| 2.2.2 Method to specify slot numbers | 58 |
+| 2.2.3 Functions of BIOS that operate slots | 58 |
+| 2.2.4 How to know the slot configuration | 60 |
+| 2.2.5 Exploring the system's firmware | 61 |
+| 2.2.6 MSX2+ hardware specifications | 64 |
+| 2.2.7 Device table to prevent conflicts | 65 |
+| 2.3 MSX Turbo R Slot Mechanism | 67 |
+| 2.3.1 Finally, the slot mechanism has come this far | 67 |
+| 3. Kanji BASIC | 71 |
+| 3.1 Analyzing Kanji BASIC | 72 |
+| 3.1.1 Hardware required for Kanji BASIC | 72 |
+| 3.1.2 What is the software compatible with MSX-JE? | 72 |
 
-Contents
-
-2.1.1 How is the CPU connected to memory? .............48
-2.1.2 Exploring the inside of the 8-bit CPU Z80 .......48
-2.1.3 Various characteristics of memory ...............50
-2.1.4 What’s the slot on the MSX like? ................50
-2.1.5 The secret of MSX's expandability was in the slot ...52
-2.1.6 How the MSX2+ slot has changed ..................53
-2.1.7 Let's expand the slot ............................55
-2.2 Challenge to Slot Switching .......................57
-2.2.1 To switch slots .................................57
-2.2.2 Method to specify slot numbers ..................58
-2.2.3 Functions of BIOS that operate slots ............58
-2.2.4 How to know the slot configuration ..............60
-2.2.5 Exploring the system's firmware .................61
-2.2.6 MSX2+ hardware specifications ...................64
-2.2.7 Device table to prevent conflicts ...............65
-2.3 MSX Turbo R Slot Mechanism ........................67
-2.3.1 Finally, the slot mechanism has come this far ...67
-
-3. Kanji BASIC .........................................71
-3.1 Analyzing Kanji BASIC .............................72
-3.1.1 Hardware required for Kanji BASIC ..............72
-3.1.2 What is the software compatible with MSX-JE? ....72
 3.1.3 Understanding the operating principle of Kanji drivers ..73
-3.1.4 JE compatible ROM & software ....................75
-3.1.5 Various screen modes usable with Kanji BASIC .....76
-3.1.6 Kanji text and Kanji graphics ...................77
-3.1.7 Proper usage of the Kanji driver ................78
 
-4. V9958 VDP ...........................................81
-4.1 V9958 Register List ...............................83
-4.2 New features of V9958 .............................85
-4.2.1 Horizontal scroll ...............................85
-4.2.2 Wait ............................................87
-4.2.3 Command .........................................87
-4.2.4 Display in YJK mode .............................87
-4.3 Ban function of V9958 .............................89
+|  |  |
+|:----|----:|
+| 3.1.4 JE compatible ROM & software | 75 |
+| 3.1.5 Various screen modes usable with Kanji BASIC | 76 |
+| 3.1.6 Kanji text and Kanji graphics | 77 |
+| 3.1.7 Proper usage of the Kanji driver | 78 |
+| 4. V9958 VDP | 81 |
+| 4.1 V9958 Register List | 83 |
+| 4.2 New features of V9958 | 85 |
+| 4.2.1 Horizontal scroll | 85 |
+| 4.2.2 Wait | 87 |
+| 4.2.3 Command | 87 |
+| 4.2.4 Display in YJK mode | 87 |
+| 4.3 Ban function of V9958 | 89 |
+| 4.4   V9958 Hardware Specifications (Modified Parts) | 90 |
+| 4.5   V9958 and MSX2+ | 91 |
+| 4.5.1  All 12 Types of Screen Modes | 91 |
+| 4.5.2  Controlling the VDP Registers | 92 |
+| 4.5.3  V9958 Registers | 94 |
+| 4.5.4  Horizontal Scrolling by VDP | 95 |
+| 4.5.5  Don't Use Haphazard Techniques Even If They Exist! | 98 |
+| 4.6   Understanding the YJK Method | 99 |
+| 4.6.1  TV Broadcasting and the YJK Method | 99 |
+| 4.6.2  RGB Method's YJK Data Structure | 99 |
+| 4.6.3  Color Display Program | 101 |
+| 4.6.4  Color Calculation Operations You Need to Know About | 103 |
+| 4.6.5  Softening Colors | 105 |
+| 4.6.6  How are SCREEN 10 and 11 Different? | 105 |
+| 4.6.7  Using Fill Patterns in SCREEN 11 | 106 |
+| 4.6.8  The Background for Displaying Characters in SCREEN 12 | 108 |
+| 4.6.9  VDP Registers in the YJK Method | 108 |
+| 4.7   Investigating Interlaced Sync | 110 |
+| 4.7.1  What is the Mechanism for Displaying Interlaced Sync Pictures? | 110 |
+| 4.7.2  TV Broadcasting with Interlaced Sync Mode | 110 |
+| 4.7.3  Interlaced Sync Screen on MSX2 | 112 |
+| 4.7.4  Exploring the Cause of Interlaced Sync | 113 |
+| 4.7.5  Demonstrating a Practical Use of Interlaced Sync | 116 |
+| 4.7.6  Practical Program: Let's Do It! | 116 |
+| 4.7.7  VDP Registers Used in Interlaced Sync | 117 |
+| 4.7.8  Writing a Sample Program in BASIC | 118 |
+| 4.7.9  Operational Mechanism of Assembly Parts | 121 |
+| 4.7.10  Machine Language Cheese for Interlaced Sync | 128 |
+| 5. MSX-MUSIC | 129 |
+| 5.1  What is FM Sound Source? | 130 |
+| 5.1.1  History of Electronic Music to FM Sound Source | 130 |
+| 5.1.2  Analyze Musical Tones | 132 |
+| 5.1.3  What is Operator Averaging? | 134 |
+| 5.1.4  Analyze MSX-MUSIC | 135 |
+| 5.1.5  Challenge Creating a Score Using FM Sound Source | 137 |
+| **10       Table of Contents** |  |
+| 5.2      Control FM sound source | 139 |
+| 5.2.1  Try producing sound with a machine language program | 139 |
+| 5.2.2  Explain the outline of the library | 141 |
+| 5.2.3  Let’s compile with MSX-C | 149 |
+| 5.3      Structure of FM sound source data | 150 |
+| 5.3.1  Let’s create FM sound data | 150 |
+| 5.3.2  To specify percussion sound data | 152 |
+| 5.3.3  Let’s specify musical instrument sound data | 154 |
+| 5.3.4  Things you can’t do with the OPLL driver | 156 |
+| 5.3.5  Let’s add tone data | 156 |
+| 5.3.6  Explain sample data | 158 |
+| 5.4      Various FM sound related materials | 160 |
+| 5.4.1  Description of the powerful usage method | 160 |
+| 5.4.2  List of MSX-MUSIC tone data | 162 |
+| A        R800 Instruction Table | 165 |
+| A.1    Let’s use the instruction table this way | 166 |
+| A.2    8-bit transfer command | 168 |
+| A.3    16-bit transfer command | 169 |
+| A.4    Exchange command | 171 |
+| A.5    Stack operation command | 171 |
+| A.6    Block transfer command | 172 |
+| A.7    Block search command | 172 |
+| A.8    Multiplication command | 172 |
+| A.9    Addition command | 173 |
+| A.10   Subtraction command | 175 |
+| A.11   Comparison command | 176 |
+| A.12   Logical calculation command | 177 |
+| A.13   Bit manipulation command | 178 |
+| A.14   Rotate command | 179 |
+| A.15   Shift command | 181 |
+| A.16   Branch command | 182 |
+| A.17   Call command | 183 |
+| A.18   Output command | 185 |
+| A.19   CPU control command | 186 |
+| **I. Table of Contents** |  |
+| 1.1 Configuration of the MSX turbo R system | 17 |
+| 1.2 Changes in ROM configuration on the MSX turbo R | 19 |
+| 1.3 Internal block diagram of the R800 | 25 |
+| 1.4 Differences in memory access methods between Z80 and R800 | 26 |
+| 2.1 Z80 CPU memory | 49 |
+| 2.2 MSX slot configuration (Part 1) | 51 |
+| 2.3 MSX slot configuration (Part 2) | 52 |
 
-4.4   V9958 Hardware Specifications (Modified Parts) ................................. 90
-4.5   V9958 and MSX2+ ................................................................. 91
-4.5.1  All 12 Types of Screen Modes ................................................... 91
-4.5.2  Controlling the VDP Registers ................................................  92
-4.5.3  V9958 Registers ................................................................. 94
-4.5.4  Horizontal Scrolling by VDP ................................................... 95
-4.5.5  Don't Use Haphazard Techniques Even If They Exist! ..................... 98
-4.6   Understanding the YJK Method ................................................... 99
-4.6.1  TV Broadcasting and the YJK Method .......................................... 99
-4.6.2  RGB Method's YJK Data Structure ............................................ 99
-4.6.3  Color Display Program ....................................................... 101
-4.6.4  Color Calculation Operations You Need to Know About ................. 103
-4.6.5  Softening Colors ............................................................. 105
-4.6.6  How are SCREEN 10 and 11 Different? ................................. 105
-4.6.7  Using Fill Patterns in SCREEN 11 ........................................ 106
-4.6.8  The Background for Displaying Characters in SCREEN 12 ........... 108
-4.6.9  VDP Registers in the YJK Method ........................................ 108
-4.7   Investigating Interlaced Sync  ................................................ 110
-4.7.1  What is the Mechanism for Displaying Interlaced Sync Pictures? .... 110
-4.7.2  TV Broadcasting with Interlaced Sync Mode ............................ 110
-4.7.3  Interlaced Sync Screen on MSX2 ......................................... 112
-4.7.4  Exploring the Cause of Interlaced Sync ................................. 113
-4.7.5  Demonstrating a Practical Use of Interlaced Sync ..................... 116
-4.7.6  Practical Program: Let's Do It! ......................................... 116
-4.7.7  VDP Registers Used in Interlaced Sync .................................. 117
-4.7.8  Writing a Sample Program in BASIC .................................... 118
-4.7.9  Operational Mechanism of Assembly Parts ............................. 121
-4.7.10  Machine Language Cheese for Interlaced Sync ......................... 128
-
-5. MSX-MUSIC ....................................................................................129
-5.1  What is FM Sound Source? ..................................................... 130
-5.1.1  History of Electronic Music to FM Sound Source .................. 130
-5.1.2  Analyze Musical Tones ....................................................... 132
-5.1.3  What is Operator Averaging? ............................................... 134
-5.1.4  Analyze MSX-MUSIC ......................................................... 135
-5.1.5  Challenge Creating a Score Using FM Sound Source .................. 137
-
-10       Table of Contents
-
-5.2      Control FM sound source .......................................................... 139
-```
-  5.2.1  Try producing sound with a machine language program ...... 139
-  5.2.2  Explain the outline of the library ...................................... 141
-  5.2.3  Let’s compile with MSX-C ................................................ 149
-```
-
-5.3      Structure of FM sound source data .......................................... 150
-```
-  5.3.1  Let’s create FM sound data .................................................. 150
-  5.3.2  To specify percussion sound data ....................................... 152
-  5.3.3  Let’s specify musical instrument sound data ......................... 154
-  5.3.4  Things you can’t do with the OPLL driver ............................ 156
-  5.3.5  Let’s add tone data .............................................................. 156
-  5.3.6  Explain sample data ............................................................ 158
-```
-
-5.4      Various FM sound related materials ........................................ 160
-```
-  5.4.1  Description of the powerful usage method .......................... 160
-  5.4.2  List of MSX-MUSIC tone data .............................................. 162
-```
-
-A        R800 Instruction Table .............................................................. 165
-```
-  A.1    Let’s use the instruction table this way ................................... 166
-  A.2    8-bit transfer command ......................................................... 168
-  A.3    16-bit transfer command ........................................................ 169
-  A.4    Exchange command ............................................................... 171
-  A.5    Stack operation command .................................................... 171
-  A.6    Block transfer command ....................................................... 172
-  A.7    Block search command ........................................................ 172
-  A.8    Multiplication command ....................................................... 172
-  A.9    Addition command ............................................................... 173
-  A.10   Subtraction command ............................................................ 175
-  A.11   Comparison command .......................................................... 176
-  A.12   Logical calculation command ................................................ 177
-  A.13   Bit manipulation command ................................................... 178
-  A.14   Rotate command ................................................................. 179
-  A.15   Shift command ................................................................ 181
-  A.16   Branch command ................................................................. 182
-  A.17   Call command .................................................................. 183
-  A.18   Output command ................................................................. 185
-  A.19   CPU control command ........................................................ 186
-```
-
-I. Table of Contents
-
-1.1 Configuration of the MSX turbo R system ...................... 17
-1.2 Changes in ROM configuration on the MSX turbo R ............. 19
-1.3 Internal block diagram of the R800 ........................... 25
-1.4 Differences in memory access methods between Z80 and R800 ... 26
-
-2.1 Z80 CPU memory ............................................. 49
-2.2 MSX slot configuration (Part 1) ............................. 51
-2.3 MSX slot configuration (Part 2) ............................. 52
 2.4 Example of MSX2+ slot configuration (Expanding only slot 3) . 54
-2.5 Example of MSX2+ slot configuration (Expanding slots other than slot 3) ......... 55
-2.6 How to specify the slot number ............................. 58
-2.7 Device table ............................................... 60
-2.8 Slot configuration of MSX turbo R .......................... 68
 
-3.1 Kanji driver operating principles .......................... 75
-3.2 Switching screen modes ..................................... 78
-
-4.1 Horizontal scroll (SP2=0 case).............................. 85
-4.2 Horizontal scroll (SP2=1 case).............................. 86
-4.3 List of functions of the V9958 control register added with ..... 96
-4.4 Mechanism of the two types of horizontal scroll ............ 97
-4.5 RGB screen data structure ................................. 99
-4.6 YJK screen data structure ................................. 101
-4.7 Mixed screen data structure ............................... 101
-4.8 How to draw interlaced lines on a TV screen ............... 110
-4.9 This is what happens in interlace mode! .................... 112
-4.10 The principle of load cutting is ......................... 114
-
-Table of Contents
-
-4.11 Procedure for Raster Line Slicing ............................ 115
-4.12 VDP Register that Generates Raster Line Slicing ........... 116
-4.13 VDP Register that Captures Raster Line Slicing ............. 117
-4.14 VDP Register that Controls Screen Switching ............... 117
-4.15 Mechanism of Hardware Vertical Scroll ........................ 118
-
-5.1 Exploring the Structure of Four Types of Electronic Instruments ..................... 131
-5.2 Analyzing Basic Tones ............................................ 132
-5.3 Envelope of Instruments and Synthesizers .................. 134
-5.4 Drum Tone Data .................................................... 153
-5.5 Tone Data ............................................................. 157
-5.6 List of OPLL Registers ............................................ 161
-
-1.1  I/O Map of MSX turbo R ........................ 21  
-1.2  Comparison of Operation Speeds between Z80 and R800 ................ 24  
-1.3  List of Changes in BIOS and BASIC on MSX turbo R ................ 32  
-1.4  I/O Ports for PCM ........................ 45  
-
-2.1  System Work Area Related to Slots ................ 61  
-2.2  I/O Ports of MSX2+ ........................ 64  
-
-3.1  List of MSX-JE Built-in Hardware ................ 73  
-3.2  Screen Modes of Kanji BASIC ................ 77  
-3.3  Hooks used by Kanji Drivers ................ 79  
-
-4.1  Screen Modes of VDP and BASIC ................ 82  
-4.2  Mode Register ........................ 83  
-4.3  Command Register ........................ 84  
-4.4  Status Register ........................ 84  
-4.5  Changes to V9958 Terminals ................ 90  
-4.6  Characteristics of V9958 ................ 90  
-4.7  Screen Modes of MSX2+ ................ 91  
-4.8  I/O Ports of VDP ........................ 92  
-4.9  Locations to Save Control Registers ........... 93  
-4.10  Other Convenient System Work Areas ........... 94  
-4.11  Detailed Explanation of Added and Modified System Work Areas on MSX2+ ........... 94  
-4.12  Details of the 0FAFCH Bank (MODE) ........... 104  
-4.13  Logical Screen Operations ................. 104  
-
-5.1  Comparison of Performance of Electronic Instruments ........ 131  
-5.2  Relationship between Pitch and Frequency .......... 134
-
-Contents
-
-5.3 List of Tones that Can Be Set with MSX-Music .................. 135
-5.4 Data Structure of 6 Instrument + 1 Drum Sound ................ 150
-5.5 Example of Data Structure of 6 Instruments + 1 Drum Sound ... 151
-5.6 Data Structure of 9 Instruments ................................... 152
-5.7 Example of Data of Instruments ................................... 155
-5.8 Example of Instrument Data ....................................... 155
-5.9 List of Preset Data ....................................................... 163
+|  |  |
+|:----|----:|
+| 2.5 Example of MSX2+ slot configuration (Expanding slots other than slot 3) | 55 |
+| 2.6 How to specify the slot number | 58 |
+| 2.7 Device table | 60 |
+| 2.8 Slot configuration of MSX turbo R | 68 |
+| 3.1 Kanji driver operating principles | 75 |
+| 3.2 Switching screen modes | 78 |
+| 4.1 Horizontal scroll (SP2=0 case) | 85 |
+| 4.2 Horizontal scroll (SP2=1 case) | 86 |
+| 4.3 List of functions of the V9958 control register added with | 96 |
+| 4.4 Mechanism of the two types of horizontal scroll | 97 |
+| 4.5 RGB screen data structure | 99 |
+| 4.6 YJK screen data structure | 101 |
+| 4.7 Mixed screen data structure | 101 |
+| 4.8 How to draw interlaced lines on a TV screen | 110 |
+| 4.9 This is what happens in interlace mode! | 112 |
+| 4.10 The principle of load cutting is | 114 |
+| **Table of Contents** |  |
+| 4.11 Procedure for Raster Line Slicing | 115 |
+| 4.12 VDP Register that Generates Raster Line Slicing | 116 |
+| 4.13 VDP Register that Captures Raster Line Slicing | 117 |
+| 4.14 VDP Register that Controls Screen Switching | 117 |
+| 4.15 Mechanism of Hardware Vertical Scroll | 118 |
+| 5.1 Exploring the Structure of Four Types of Electronic Instruments | 131 |
+| 5.2 Analyzing Basic Tones | 132 |
+| 5.3 Envelope of Instruments and Synthesizers | 134 |
+| 5.4 Drum Tone Data | 153 |
+| 5.5 Tone Data | 157 |
+| 5.6 List of OPLL Registers | 161 |
+| 1.1  I/O Map of MSX turbo R | 21 |
+| 1.2  Comparison of Operation Speeds between Z80 and R800 | 24 |
+| 1.3  List of Changes in BIOS and BASIC on MSX turbo R | 32 |
+| 1.4  I/O Ports for PCM | 45 |
+| 2.1  System Work Area Related to Slots | 61 |
+| 2.2  I/O Ports of MSX2+ | 64 |
+| 3.1  List of MSX-JE Built-in Hardware | 73 |
+| 3.2  Screen Modes of Kanji BASIC | 77 |
+| 3.3  Hooks used by Kanji Drivers | 79 |
+| 4.1  Screen Modes of VDP and BASIC | 82 |
+| 4.2  Mode Register | 83 |
+| 4.3  Command Register | 84 |
+| 4.4  Status Register | 84 |
+| 4.5  Changes to V9958 Terminals | 90 |
+| 4.6  Characteristics of V9958 | 90 |
+| 4.7  Screen Modes of MSX2+ | 91 |
+| 4.8  I/O Ports of VDP | 92 |
+| 4.9  Locations to Save Control Registers | 93 |
+| 4.10  Other Convenient System Work Areas | 94 |
+| 4.11  Detailed Explanation of Added and Modified System Work Areas on MSX2+ | 94 |
+| 4.12  Details of the 0FAFCH Bank (MODE) | 104 |
+| 4.13  Logical Screen Operations | 104 |
+| 5.1  Comparison of Performance of Electronic Instruments | 131 |
+| 5.2  Relationship between Pitch and Frequency | 134 |
+| **Contents** |  |
+| 5.3 List of Tones that Can Be Set with MSX-Music | 135 |
+| 5.4 Data Structure of 6 Instrument + 1 Drum Sound | 150 |
+| 5.5 Example of Data Structure of 6 Instruments + 1 Drum Sound | 151 |
+| 5.6 Data Structure of 9 Instruments | 152 |
+| 5.7 Example of Data of Instruments | 155 |
+| 5.8 Example of Instrument Data | 155 |
+| 5.9 List of Preset Data | 163 |
 
 Chapter 1
 MSX turbo R
@@ -6148,127 +6122,127 @@ Index
 
 A
 
-I/O Ports ........................................ 57
-Access Time .............................. 22
-Address ..................................... 48
-Address Bus ................................ 48
-Interlace .................................... 111
-Wait Function ......................... 95
-ADSR ........................................... 133
-SECAM ........................................ 111
-SRAM .......................................... 50
-NTSC .......................................... 110
-FM-BIOS ..................................... 139
-MSX-Engine ............................ 17
-MSX-JE ........................................ 72
-MSX-MUSIC ........................... 131
-Types of MSX ........................... 62
-Envelope .................................... 133
-OPLL YM2413 ......................... 131
-OPLL Driver ........................... 156
-Operators ................................. 131
-Sound Noise ............................ 133
-
-Ka
-
-MSX made for export overseas .......... 62
-Expansion BIOS ........................ 62
-Kanji ROM expansion ................ 21
+|  |  |
+|:----|----:|
+| I/O Ports | 57 |
+| Access Time | 22 |
+| Address | 48 |
+| Address Bus | 48 |
+| Interlace | 111 |
+| Wait Function | 95 |
+| ADSR | 133 |
+| SECAM | 111 |
+| SRAM | 50 |
+| NTSC | 110 |
+| FM-BIOS | 139 |
+| MSX-Engine | 17 |
+| MSX-JE | 72 |
+| MSX-MUSIC | 131 |
+| Types of MSX | 62 |
+| Envelope | 133 |
+| OPLL YM2413 | 131 |
+| OPLL Driver | 156 |
+| Operators | 131 |
+| Sound Noise | 133 |
+| **Ka** |  |
+| MSX made for export overseas | 62 |
+| Expansion BIOS | 62 |
+| Kanji ROM expansion | 21 |
 
 188                                                                          Index
 
-Kanji Graphic Mode...........................................77
-Kanji Text Mode...............................................77
-Kanji Driver..................................................74
-Perfect Average..............................................134
-Capacity......................................................99
-Carrier Operator.............................................137
-K (Kilo)......................................................48
-Square Wave..................................................132
-Command Register..............................................92
-Control Register.............................................92
+|  |  |
+|:----|----:|
+| Kanji Graphic Mode | 77 |
+| Kanji Text Mode | 77 |
+| Kanji Driver | 74 |
+| Perfect Average | 134 |
+| Capacity | 99 |
+| Carrier Operator | 137 |
+| K (Kilo) | 48 |
+| Square Wave | 132 |
+| Command Register | 92 |
+| Control Register | 92 |
+| **[Sa]** |  |
+| Sub ROM | 52 |
+| Sampling Synthesizer | 130 |
+| CPU | 48 |
+| Hue Phase | 99 |
+| JIS Code | 74 |
 
-[Sa]
-Sub ROM.......................................................52
-Sampling Synthesizer.........................................130
-CPU...........................................................48
-Hue Phase.....................................................99
-JIS Code......................................................74
 System Timer...............................................20, 27
-System Work Area..............................................61
-Shift JIS Code...............................................74
-Hexadecimal...................................................48
-Main Memory...................................................50
-Vertical Line Insertion.....................................114
-Horizontal Resolution.......................................111
-Status Register..............................................92
-Superimpose..................................................113
-Slot Expansion................................................55
-Correct Display..............................................132
-Full-size Characters..........................................74
-Software Stack................................................78
 
-[Ta]
-Timer Insertion..............................................114
-Single Kanji Conversion.......................................72
-TAND........................................................106
-D/A Converter.................................................20
+|  |  |
+|:----|----:|
+| System Work Area | 61 |
+| Shift JIS Code | 74 |
+| Hexadecimal | 48 |
+| Main Memory | 50 |
+| Vertical Line Insertion | 114 |
+| Horizontal Resolution | 111 |
+| Status Register | 92 |
+| Superimpose | 113 |
+| Slot Expansion | 55 |
+| Correct Display | 132 |
+| Full-size Characters | 74 |
+| Software Stack | 78 |
+| **[Ta]** |  |
+| Timer Insertion | 114 |
+| Single Kanji Conversion | 72 |
+| TAND | 106 |
+| D/A Converter | 20 |
 
 Index                                                                        189
 
-DRAM page access...............................................24
-DRAM mode.....................................................22
-TC9769........................................................17
-Disk presence detection.......................................62
-Diskware......................................................61
-Data bus......................................................48
-Sync signal..................................................110
-
-[Na]
-Binary........................................................48
-Residual wave................................................133
-Non-interlace................................................111
-
-[Ha]
-BIOS..........................................................57
-Byte..........................................................48
-PAL..........................................................111
-Half-width character..........................................74
-Channel.......................................................48
-PSG..........................................................130
-Bit...........................................................48
-Bit image print...............................................79
-Video RAM (VRAM).............................................50
-Video RAM capacity............................................62
-Video digitize...............................................113
-VDP command...................................................95
-VDP mode......................................................82
-Hook.........................................................121
-Programmable Sound Generator.................................130
-Basic Input Output System.....................................57
-Page..........................................................51
-Pause key control.............................................20
-
-[Ma]
-Microsoft kanji code..........................................74
-Multi-scan monitor...........................................111
-Undefined command.............................................98
-
-Main ROM ................................................ 52
-Main Memory.......................................... 50
-Memory Mapper....................................... 22
-MORALE................................................ 113
-Modulator Operator.................................... 137
-
-Ya
-USR Function............................................ 119
-
-Ra
-RAM.......................................................... 50
-Rhythm Tone.............................................. 137
-Reset Status............................................... 22
-Clause Conversion........................................ 72
-ROM........................................................... 50
+|  |  |
+|:----|----:|
+| DRAM page access | 24 |
+| DRAM mode | 22 |
+| TC9769 | 17 |
+| Disk presence detection | 62 |
+| Diskware | 61 |
+| Data bus | 48 |
+| Sync signal | 110 |
+| **[Na]** |  |
+| Binary | 48 |
+| Residual wave | 133 |
+| Non-interlace | 111 |
+| **[Ha]** |  |
+| BIOS | 57 |
+| Byte | 48 |
+| PAL | 111 |
+| Half-width character | 74 |
+| Channel | 48 |
+| PSG | 130 |
+| Bit | 48 |
+| Bit image print | 79 |
+| Video RAM (VRAM) | 50 |
+| Video RAM capacity | 62 |
+| Video digitize | 113 |
+| VDP command | 95 |
+| VDP mode | 82 |
+| Hook | 121 |
+| Programmable Sound Generator | 130 |
+| Basic Input Output System | 57 |
+| Page | 51 |
+| Pause key control | 20 |
+| **[Ma]** |  |
+| Microsoft kanji code | 74 |
+| Multi-scan monitor | 111 |
+| Undefined command | 98 |
+| Main ROM | 52 |
+| Main Memory | 50 |
+| Memory Mapper | 22 |
+| MORALE | 113 |
+| Modulator Operator | 137 |
+| **Ya** |  |
+| USR Function | 119 |
+| **Ra** |  |
+| RAM | 50 |
+| Rhythm Tone | 137 |
+| Reset Status | 22 |
+| Clause Conversion | 72 |
+| ROM | 50 |
 
 References
 
